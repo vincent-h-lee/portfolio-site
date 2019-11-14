@@ -68,6 +68,13 @@ function SEO({ description, lang, meta, title }) {
           content: metaDescription,
         },
       ].concat(meta)}
+      link={[
+        {
+          href:
+            "https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap",
+          rel: "stylesheet",
+        },
+      ]}
     />
   )
 }

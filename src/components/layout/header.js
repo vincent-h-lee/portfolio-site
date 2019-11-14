@@ -9,9 +9,9 @@ const Header = ({ menuLinks, siteTitle }) => (
       <h1>
         <Link to="/">{siteTitle}</Link>
       </h1>
-      <ul css={tw`flex flex-row`}>
+      <ul css={tw`flex flex-row list-none -mx-4`}>
         {menuLinks.map(menuItem => (
-          <li>
+          <li css={tw`mx-4 text-2xl`}>
             <Link to={menuItem.link}>{menuItem.name}</Link>
           </li>
         ))}
