@@ -20,5 +20,21 @@ CtaLink.propTypes = {
 export default CtaLink
 
 const StylizedLink = styled(Link)`
-  ${tw``}
+  ${tw`relative text-black text-2xl`}
+
+  &::after {
+    content: "";
+    width: 50px;
+    top: 50%;
+    transform: translateY(-50%) translateX(10px);
+    transition: width 0.5s;
+
+    ${tw`absolute h-1 bg-blue-600`}
+  }
+
+  &:hover {
+    &::after {
+      width: 70px;
+    }
+  }
 `
