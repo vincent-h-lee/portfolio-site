@@ -5,8 +5,8 @@ import tw from "tailwind.macro"
 
 import QuoteSVG from "../../svg/quotes"
 
-const Testimonial = ({ attestant, testimonial }) => (
-  <section css={tw`relative`}>
+const Testimonial = ({ attestant, testimonial, style }) => (
+  <section css={tw`relative`} style={style}>
     <StyledQuoteSVG />
     <h3>{testimonial}</h3>
     <p>{attestant}</p>

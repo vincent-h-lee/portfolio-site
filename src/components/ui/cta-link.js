@@ -2,8 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import tw from "tailwind.macro"
 import PropTypes from "prop-types"
-
-import { Link } from "gatsby"
+import LinkArbiter from "./link-arbiter"
 
 const CtaLink = ({ children, to }) => {
   return <StylizedLink to={to}>{children}</StylizedLink>
@@ -19,8 +18,8 @@ CtaLink.propTypes = {
 
 export default CtaLink
 
-const StylizedLink = styled(Link)`
-  ${tw`relative text-black text-2xl`}
+const StylizedLink = styled(LinkArbiter)`
+  ${tw`relative text-black text-2xl tracking-wider`}
 
   &::after {
     content: "";

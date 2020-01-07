@@ -10,10 +10,12 @@ module.exports = {
       xl: "1280px",
     },
     colors: {
-      brand: theme => ({
-        primary: theme("colors.blue.600"),
-        secondary: theme("colors.orange.600"),
-      }),
+      brand: {
+        primary: "#279AEE",
+        secondary: "#FFE9E9",
+        tertiary: "#7FB069",
+        neutral: "#EDEFF1",
+      },
 
       transparent: "transparent",
 

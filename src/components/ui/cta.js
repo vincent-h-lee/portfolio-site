@@ -6,9 +6,9 @@ import CTALink from "./cta-link"
 
 const CTA = ({ description, link, linkUrl, title }) => {
   return (
-    <div css={tw`w-full md:pl-16`}>
-      <h2>{title}</h2>
-      <p>{description}</p>
+    <div css={tw`w-full `}>
+      <h2 css={tw`text-3xl tracking-widest uppercase`}>{title}</h2>
+      <p css={tw`text-2xl leading-normal`}>{description}</p>
 
       <CTALink to={linkUrl}>{link}</CTALink>
     </div>
@@ -16,10 +16,11 @@ const CTA = ({ description, link, linkUrl, title }) => {
 }
 
 CTA.defaultProps = {
-  description: "Open to talk client solutions",
+  description:
+    "Description of skills, methodology and accomplishments. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
   link: "Let's connect",
   linkUrl: "/",
-  title: "Want to collaborate?",
+  title: "Let's Collaborate",
 }
 
 CTA.propTypes = {

@@ -4,6 +4,7 @@ import { Link } from "gatsby"
 import tw from "tailwind.macro"
 
 import Container from "./container"
+import LinkArbiter from "../ui/link-arbiter"
 import LogoSVG from "../../svg/logo"
 import Testimonial from "../ui/testimonial"
 
@@ -12,11 +13,11 @@ const Footer = ({ mediaLinks, menuLinks, siteTitle }) => (
     <Container css={tw`flex flex-col md:flex-row justify-between py-10`}>
       <section css={tw`flex flex-row md:w-1/2`}>
         <div css={tw`mr-12`}>
-          <h5 css={tw`uppercase`}>Quick Links</h5>
+          <h5 css={tw`uppercase`}>Sitemap</h5>
           <ul css={tw`p-0 flex flex-col list-none`}>
             {menuLinks.map(menuItem => (
-              <li css={tw`text-xl pb-4 font-thin`}>
-                <Link to={menuItem.link}>{menuItem.name}</Link>
+              <li css={tw`text-xl pb-4 font-thin`} key={menuItem.name}>
+                <LinkArbiter to={menuItem.link}>{menuItem.name}</LinkArbiter>
               </li>
             ))}
           </ul>
@@ -26,7 +27,7 @@ const Footer = ({ mediaLinks, menuLinks, siteTitle }) => (
           <h5 css={tw`uppercase`}>Media</h5>
           <ul css={tw`p-0 flex flex-col list-none`}>
             {mediaLinks.map(menuItem => (
-              <li css={tw`text-xl pb-4 font-thin`}>
+              <li css={tw`text-xl pb-4 font-thin`} key={menuItem.name}>
                 <Link to={menuItem.link}>{menuItem.name}</Link>
               </li>
             ))}
@@ -34,7 +35,11 @@ const Footer = ({ mediaLinks, menuLinks, siteTitle }) => (
         </div>
       </section>
       <section css={tw`flex flex-col justify-between md:w-1/2`}>
-        <Testimonial />
+        <div css={tw`flex flex-row justify-end`}>
+          <div css={tw`w-full md:w-2/3`}>
+            <Testimonial />
+          </div>
+        </div>
 
         <div css={tw`text-right mt-24`}>
           <h4>

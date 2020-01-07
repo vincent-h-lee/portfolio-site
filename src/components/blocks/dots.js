@@ -3,23 +3,25 @@ import styled from "styled-components"
 import tw from "tailwind.macro"
 import PropTypes from "prop-types"
 import Container from "../layout/container"
+import Module from "../layout/module"
 import PinkSwath from "../../svg/pink-swath"
 
 const Dots = ({ dots }) => {
   return (
-    <section css={tw`relative`}>
-      <Container>
-        {dots.map(dot => (
-          <article css={tw`relative md:pl-10 md:pb-32`}>
-            <Dot />
+    <Module css={tw`relative`}>
+      <DotsContainer>
+        <div css={tw`relative`}>
+          <Line />
 
-            <h2 css={tw`uppercase text-lg text-gray-600 font-normal`}>
-              {dot.title}
-            </h2>
-            <p css={tw`text-4xl md:w-2/3`}>{dot.description}</p>
-          </article>
-        ))}
-      </Container>
+          {dots.map(dot => (
+            <DotItem key={dot.title}>
+              <Dot />
+              <DotTitle>{dot.title}</DotTitle>
+              <DotText>{dot.description}</DotText>
+            </DotItem>
+          ))}
+        </div>
+      </DotsContainer>
       <PinkSwath
         style={{
           width: "100vw",
@@ -29,7 +31,7 @@ const Dots = ({ dots }) => {
           zIndex: -1,
         }}
       />
-    </section>
+    </Module>
   )
 }
 
@@ -65,6 +67,29 @@ Dots.propTypes = {
 export default Dots
 
 const Dot = styled.div`
-  top: 0.5rem;
-  ${tw`absolute rounded-full bg-blue-400 left-0 h-3 w-3`}
+  ${tw`absolute rounded-full bg-blue-400 left-0 h-3 w-3 z-10`}
+`
+
+const DotText = styled.h2`
+  ${tw`text-2xl my-0 md:text-4xl md:w-2/5 font-normal`}
+`
+
+const DotTitle = styled.h5`
+  ${tw`uppercase text-lg text-gray-600 font-normal m-0 mb-6`}
+`
+
+const DotsContainer = styled(Container)`
+  ${tw`py-16 md:py-40`}
+`
+
+const DotItem = styled.article`
+  ${tw`relative pl-10 pb-12 md:pb-32`}
+
+  &:last-child {
+    ${tw`pb-16`}
+  }
+`
+
+const Line = styled.div`
+  ${tw`absolute top-0 ml-1 w-1 h-full bg-black`}
 `

@@ -2,15 +2,25 @@ import React from "react"
 
 const PinkSwathSVG = props => (
   <svg
-    width="1024px"
-    height="853px"
-    viewBox="0 0 1024 853"
+    width="1440px"
+    height="1072px"
+    viewBox="0 0 1440 1072"
     version="1.1"
+    preserveAspectRatio="none"
     {...props}
   >
-    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-      <g transform="translate(0.000000, -261.000000)" fill="#FFE9E9">
-        <polygon points="219.5 547.411842 1024 261 1024 387.630687 0 1113.41184 0 689.40885"></polygon>
+    <g
+      id="Page-1"
+      stroke="none"
+      stroke-width="1"
+      fill="none"
+      fill-rule="evenodd"
+    >
+      <g id="Home" transform="translate(0.000000, -156.000000)" fill="#FFE9E9">
+        <polygon
+          id="Polygon"
+          points="0 156 1440 156 1440 334.118353 589.310334 1228 0 1228 0 758.598633"
+        ></polygon>
       </g>
     </g>
   </svg>
