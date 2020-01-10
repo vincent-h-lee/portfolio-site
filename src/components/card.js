@@ -49,6 +49,16 @@ Card.propTypes = {
 
 export default Card
 
+const CardImageContainer = styled.div`
+  height: 322px;
+
+  ${tw`rounded-t-lg overflow-hidden`}
+
+  img {
+    transition: transform ease 0.5s;
+  }
+`
+
 const CardContainer = styled.article`
   transition: color ease 0.5s;
   min-width: 300px;
@@ -56,7 +66,7 @@ const CardContainer = styled.article`
   min-height: 525px;
   max-height: 525px;
 
-  ${tw`w-full shadow-xl rounded-lg border border-gray-600`}
+  ${tw`w-full shadow-xl rounded-lg bg-white border border-gray-600`}
 
   &:hover {
     ${tw`border-l border-blue-600 border`}
@@ -66,15 +76,5 @@ const CardContainer = styled.article`
         transform: scale(1.15);
       }
     }
-  }
-`
-
-const CardImageContainer = styled.div`
-  height: 322px;
-
-  ${tw`rounded-t-lg overflow-hidden`}
-
-  img {
-    transition: transform ease 0.5s;
   }
 `

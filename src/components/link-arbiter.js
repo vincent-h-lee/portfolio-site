@@ -18,8 +18,8 @@ const LinkArbiter = ({ children, to, ...rest }) => {
   )
 }
 
-/* LinkArbiter.propTypes = {
+LinkArbiter.propTypes = {
   to: PropTypes.string.isRequired,
-} */
+}
 
 export default LinkArbiter

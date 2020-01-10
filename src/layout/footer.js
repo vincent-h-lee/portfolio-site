@@ -4,9 +4,9 @@ import { Link } from "gatsby"
 import tw from "tailwind.macro"
 
 import Container from "./container"
-import LinkArbiter from "../ui/link-arbiter"
-import LogoSVG from "../../svg/logo"
-import Testimonial from "../ui/testimonial"
+import LinkArbiter from "../components/link-arbiter"
+import LogoSVG from "../svg/logo"
+import Testimonial from "../components/testimonial"
 
 const Footer = ({ mediaLinks, menuLinks, siteTitle }) => (
   <footer css={tw`bg-black text-white`}>

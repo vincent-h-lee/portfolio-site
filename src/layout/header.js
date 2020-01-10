@@ -5,7 +5,7 @@ import styled from "styled-components"
 import tw from "tailwind.macro"
 import { useScrollPosition } from "@n8tb1t/use-scroll-position"
 import Container from "./container"
-import LogoSVG from "../../svg/logo"
+import LogoSVG from "../svg/logo"
 
 const Header = ({ menuLinks }) => {
   const [isScrolled, setScrolled] = useState(false)
@@ -28,7 +28,13 @@ const Header = ({ menuLinks }) => {
         <NavMenuList>
           {menuLinks.map(menuItem => (
             <NavMenuListItem>
-              <Link to={menuItem.link}>{menuItem.name}</Link>
+              {menuItem.download ? (
+                <a href={menuItem.link} download>
+                  {menuItem.name}
+                </a>
+              ) : (
+                <Link to={menuItem.link}>{menuItem.name}</Link>
+              )}
             </NavMenuListItem>
           ))}
         </NavMenuList>

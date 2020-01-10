@@ -5,12 +5,8 @@ module.exports = {
     author: `@gatsbyjs`,
     menuLinks: [
       {
-        name: "Works",
-        link: "/works",
-      },
-      {
         name: "Resume",
-        link: "/works",
+        link: "/vincent-lee-resume-software-developer.pdf",
       },
       {
         name: "Contact",
@@ -19,6 +15,7 @@ module.exports = {
     ],
   },
   plugins: [
+    `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,

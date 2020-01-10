@@ -3,14 +3,16 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import tw from "tailwind.macro"
 
-import QuoteSVG from "../../svg/quotes"
+import QuoteSVG from "../svg/quotes"
 
 const Testimonial = ({ attestant, testimonial, style }) => (
-  <section css={tw`relative`} style={style}>
+  <TestimonialWrapper style={style}>
     <StyledQuoteSVG />
-    <h3>{testimonial}</h3>
-    <p>{attestant}</p>
-  </section>
+    <div>
+      <h3>{testimonial}</h3>
+      <p>{attestant}</p>
+    </div>
+  </TestimonialWrapper>
 )
 
 Testimonial.defaultProps = {
@@ -26,8 +28,14 @@ Testimonial.propTypes = {
 
 export default Testimonial
 
+const TestimonialWrapper = styled.section`
+  ${tw`relative flex flex-col md:flex-row`}
+`
+
 const StyledQuoteSVG = styled(QuoteSVG)`
-  right: 100%;
-  top: 5px;
-  position: absolute;
+  ${tw`pr-2`}
+
+  @media only screen and (max-width: 768px) {
+    transform: translate(-20px, 10px);
+  }
 `

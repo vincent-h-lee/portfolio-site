@@ -1,54 +1,71 @@
 import React from "react"
 import tw from "tailwind.macro"
+import styled from "styled-components"
 
-import Layout from "../components/layout/layout"
-import SEO from "../components/layout/seo"
-import TwoColumnSection from "../components/layout/two-column-section"
+import Container from "../layout/container"
+import Layout from "../layout/layout"
+import Module from "../layout/module"
+import SEO from "../layout/seo"
+import TwoColumnSection from "../layout/two-column-section"
 
-import Card from "../components/ui/card"
-import CTA from "../components/ui/cta"
-import Dots from "../components/blocks/dots"
-import SlantCard from "../components/ui/slant-card"
+import Card from "../components/card"
+import CTA from "../components/cta"
+import TwoColumnWithImage from "../modules/two-column-with-image"
+import Hero from "../modules/hero"
+import SlantCard from "../components/slant-card"
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
 
-    <Dots css={tw`pt-24`} />
+    <Module>
+      <Container css={tw`pt-16 pb-24 xl:py-40`}>
+        <h2 css={tw`text-5xl md:w-4/5 font-medium`}>
+          Connecting the dots between business challenges and technical
+          solutions
+        </h2>
+      </Container>
+    </Module>
+
+    <TwoColumnWithImage css={tw`pt-24`} />
 
     <div css={tw`relative bg-brand-neutral`}>
       <TwoColumnSection>
-        <TwoColumnSection.Column>
-          <Card />
-        </TwoColumnSection.Column>
-        <TwoColumnSection.Column>
-          <CTA />
-        </TwoColumnSection.Column>
+        <TwoColumnSection.Row>
+          <TwoColumnSection.Column>
+            <Card />
+          </TwoColumnSection.Column>
+          <TwoColumnSection.Column>
+            <CTA />
+          </TwoColumnSection.Column>
+        </TwoColumnSection.Row>
       </TwoColumnSection>
     </div>
 
     <TwoColumnSection css={tw`flex-col-reverse md:flex-row`}>
-      <TwoColumnSection.Column vertical>
-        <CTA />
-      </TwoColumnSection.Column>
-      <TwoColumnSection.Column vertical>
-        <div css={tw`pb-10`}>
-          <SlantCard />
-        </div>
-        <div style={{ transform: "translateX(-50px)" }}>
-          <SlantCard />
-        </div>
-      </TwoColumnSection.Column>
+      <TwoColumnSection.Row>
+        <TwoColumnSection.Column vertical>
+          <CTA />
+        </TwoColumnSection.Column>
+        <TwoColumnSection.Column vertical>
+          <div css={tw`pb-10`}>
+            <SlantCard />
+          </div>
+          <SlantCardWrapper>
+            <SlantCard />
+          </SlantCardWrapper>
+        </TwoColumnSection.Column>
+      </TwoColumnSection.Row>
     </TwoColumnSection>
 
-    <div css={tw`relative py-48`}>
-      <img
-        src="https://picsum.photos/1000/500"
-        css={tw`w-full h-full absolute top-0 bottom-0 left-0 right-0 object-cover`}
-      />
-      <CTA />
-    </div>
+    <Hero />
   </Layout>
 )
 
 export default IndexPage
+
+const SlantCardWrapper = styled.div`
+  @media only screen and (min-width: 768px) {
+    transform: translateX(-50px);
+  }
+`
