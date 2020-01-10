@@ -9,6 +9,23 @@ const ContactPage = () => (
     <SEO title="Contact" />
 
     <Hero />
+
+    <form name="contact" method="POST" data-netlify="true">
+      <label>
+        Name
+        <input type="text" name="name" />
+      </label>
+
+      <label>
+        Email
+        <input type="email" name="email" />
+      </label>
+
+      <label>
+        Message
+        <textarea name="message" />
+      </label>
+    </form>
   </Layout>
 )
 
