@@ -12,20 +12,14 @@ import Card from "../components/card"
 import CTA from "../components/cta"
 import TwoColumnWithImage from "../modules/two-column-with-image"
 import Hero from "../modules/hero"
+import Intro from "../modules/intro"
 import SlantCard from "../components/slant-card"
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
 
-    <Module>
-      <Container css={tw`pt-16 pb-24 xl:py-40`}>
-        <h2 css={tw`text-5xl md:w-4/5 font-medium`}>
-          Connecting the dots between business challenges and technical
-          solutions
-        </h2>
-      </Container>
-    </Module>
+    <Intro />
 
     <TwoColumnWithImage css={tw`pt-24`} />
 

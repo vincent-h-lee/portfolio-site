@@ -1,7 +1,3 @@
-dots:
-  - title: SOLUTIONS FIRST
-    description: Connecting the dots between business challenges and technical solutions
-  - title: SOLUTIONS FIRST
-    description: Connecting the dots between business challenges and technical solutions
-  - title: SOLUTIONS FIRST
-    description: Connecting the dots between business challenges and technical solutions
+templateKey: home-page
+intro:
+  text: hello
