@@ -1,6 +1,7 @@
 backend:
-  name: github
-  repo: vincent-h-lee/portfolio-site
+  name: test-repo
+  /* name: github
+  repo: vincent-h-lee/portfolio-site */
 media_folder: static/assets
 public_folder: assets
 collections:
@@ -23,7 +24,7 @@ collections:
           - label: Template Key 
             name: templateKey 
             widget: hidden 
-            default: home-page
+            default: index-page
           - label: Intro 
             name: intro 
             widget: object 
@@ -31,6 +32,46 @@ collections:
               - label: Text
                 name: text
                 widget: string
+          - label: Two Column Card and CTA 
+            name: cta_with_card 
+            widget: object 
+            fields: 
+              - label: Card
+                name: card
+                widget: object
+                fields: 
+                  - label: Title
+                    name: title
+                    widget: string
+                  - label: Description
+                    name: description
+                    widget: string
+                  - label: Link
+                    name: link
+                    widget: string
+                  - label: Image
+                    name: image
+                    widget: image
+              - label: CTA
+                name: cta
+                widget: object
+                fields: 
+                  - label: Title
+                    name: title
+                    widget: string
+                  - label: Description
+                    name: description
+                    widget: string
+                  - label: Link
+                    name: link
+                    widget: object
+                    fields: 
+                      - label: Text
+                        name: text
+                        widget: string 
+                      - label: URL
+                        name: url
+                        widget: string
       - file: "src/data/pages/contact.yaml"
         label: "Contact"
         name: "Contact"

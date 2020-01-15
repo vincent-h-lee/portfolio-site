@@ -28,7 +28,7 @@ const Footer = ({ mediaLinks, menuLinks, siteTitle }) => (
           <ul css={tw`p-0 flex flex-col list-none`}>
             {mediaLinks.map(menuItem => (
               <li css={tw`text-xl pb-4 font-thin`} key={menuItem.name}>
-                <Link to={menuItem.link}>{menuItem.name}</Link>
+                <LinkArbiter to={menuItem.link}>{menuItem.name}</LinkArbiter>
               </li>
             ))}
           </ul>

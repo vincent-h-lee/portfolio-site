@@ -13,11 +13,6 @@ const Intro = ({ text }) => (
   </Module>
 )
 
-Intro.defaultProps = {
-  text:
-    "Connecting the dots between business challenges and technical solutions",
-}
-
 Intro.propTypes = {
   text: PropTypes.string.isRequired,
 }
