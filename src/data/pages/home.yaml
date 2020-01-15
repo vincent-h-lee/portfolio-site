@@ -1,2 +1,13 @@
+templateKey: home-page
 intro:
-  text: test
+  text: Connecting the dots between business challenges and technical solutions
+cta_with_card:
+  card:
+    title: Grace Student Tracker
+    description: This was a project for Briteweb
+  cta:
+    title: title
+    description: description
+    link:
+      text: Let's connect
+      url: https://google.com

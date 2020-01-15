@@ -1,4 +1,5 @@
 import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
 import tw from "tailwind.macro"
 import styled from "styled-components"
 
@@ -10,59 +11,70 @@ import TwoColumnSection from "../layout/two-column-section"
 
 import Card from "../components/card"
 import CTA from "../components/cta"
-import TwoColumnWithImage from "../modules/two-column-with-image"
+import CTAWithCard from "../modules/cta-with-card"
+import CTAWithImage from "../modules/cta-with-image"
 import Hero from "../modules/hero"
+import Intro from "../modules/intro"
 import SlantCard from "../components/slant-card"
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
+const IndexPage = () => {
+  const { pagesYaml } = useStaticQuery(indexPageQuery)
 
-    <Module>
-      <Container css={tw`pt-16 pb-24 xl:py-40`}>
-        <h2 css={tw`text-5xl md:w-4/5 font-medium`}>
-          Connecting the dots between business challenges and technical
-          solutions
-        </h2>
-      </Container>
-    </Module>
+  return (
+    <Layout>
+      <SEO title="Home" />
 
-    <TwoColumnWithImage css={tw`pt-24`} />
+      <Intro {...pagesYaml.intro} />
 
-    <div css={tw`relative bg-brand-neutral`}>
-      <TwoColumnSection>
+      <CTAWithImage css={tw`pt-24`} />
+
+      <CTAWithCard {...pagesYaml.two_col_card_cta} />
+
+      <TwoColumnSection css={tw`flex-col-reverse md:flex-row`}>
         <TwoColumnSection.Row>
-          <TwoColumnSection.Column>
-            <Card />
-          </TwoColumnSection.Column>
-          <TwoColumnSection.Column>
+          <TwoColumnSection.Column vertical>
             <CTA />
+          </TwoColumnSection.Column>
+          <TwoColumnSection.Column vertical>
+            <div css={tw`pb-10`}>
+              <SlantCard />
+            </div>
+            <SlantCardWrapper>
+              <SlantCard />
+            </SlantCardWrapper>
           </TwoColumnSection.Column>
         </TwoColumnSection.Row>
       </TwoColumnSection>
-    </div>
 
-    <TwoColumnSection css={tw`flex-col-reverse md:flex-row`}>
-      <TwoColumnSection.Row>
-        <TwoColumnSection.Column vertical>
-          <CTA />
-        </TwoColumnSection.Column>
-        <TwoColumnSection.Column vertical>
-          <div css={tw`pb-10`}>
-            <SlantCard />
-          </div>
-          <SlantCardWrapper>
-            <SlantCard />
-          </SlantCardWrapper>
-        </TwoColumnSection.Column>
-      </TwoColumnSection.Row>
-    </TwoColumnSection>
-
-    <Hero />
-  </Layout>
-)
-
+      <Hero />
+    </Layout>
+  )
+}
 export default IndexPage
+
+const indexPageQuery = graphql`
+  query IndexPageQuery {
+    pagesYaml(templateKey: { eq: "home-page" }) {
+      intro {
+        text
+      }
+      cta_with_card {
+        card {
+          description
+          title
+        }
+        cta {
+          description
+          title
+          link {
+            text
+            url
+          }
+        }
+      }
+    }
+  }
+`
 
 const SlantCardWrapper = styled.div`
   @media only screen and (min-width: 768px) {

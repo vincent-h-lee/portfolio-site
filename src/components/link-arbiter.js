@@ -1,20 +1,22 @@
-import React, { createElement } from "react"
+import React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 
 const LinkArbiter = ({ children, to, ...rest }) => {
-  const isExternalLink = /^http(s)?/.test(to)
+  const isExternalLink = !!to || /^http(s)?/.test(to)
 
-  const Element = isExternalLink ? createElement("a") : Link
-  const linkPropName = isExternalLink ? "href" : "to"
-  const linkProps = {
-    [linkPropName]: to,
+  if (isExternalLink) {
+    return (
+      <a href={to} {...rest}>
+        {children}
+      </a>
+    )
   }
 
   return (
-    <Element {...linkProps} {...rest}>
+    <Link to={to} {...rest}>
       {children}
-    </Element>
+    </Link>
   )
 }
 
