@@ -1,7 +1,6 @@
 backend:
-  name: test-repo
-  /* name: github
-  repo: vincent-h-lee/portfolio-site */
+  name: github
+  repo: vincent-h-lee/portfolio-site
 media_folder: static/assets
 public_folder: assets
 collections:
