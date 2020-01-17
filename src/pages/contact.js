@@ -86,14 +86,14 @@ const contactPageQuery = graphql`
 const SkewedModuleWrapper = styled(TwoColumnSection)`
   ${tw`relative`}
 
-  &::after {
+  &::before {
     content: "";
-    height: 50px;
-    transform: skewY(-2deg);
-    transform-origin: 100%;
-    bottom: 100%;
+    height: 50%;
+    width: 150%;
+    transform: skewY(-2deg) translateY(-25%);
+    transform-origin: 0 0;
     z-index: -1;
-    ${tw`absolute block w-full bg-white right-0`}
+    ${tw`absolute block top-0 bg-white`}
   }
 `
 
@@ -115,7 +115,7 @@ const ContactFieldWrapper = styled.div`
 `
 
 const ContactForm = styled.div`
-  transform: translateY(-15%);
+  transform: translateY(-20%);
   box-sizing: border-box;
-  ${tw`py-8 px-4 md:py-16 md:px-10 bg-white rounded shadow-lg w-full md:w-3/4 lg:w-2/3 z-10`}
+  ${tw`py-8 px-4 md:py-16 md:px-10 bg-white rounded shadow-xl w-full md:w-3/4 lg:w-2/3 z-10`}
 `

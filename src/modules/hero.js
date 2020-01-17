@@ -35,7 +35,7 @@ const HeroModule = styled(Module)`
 `
 
 const HeroContainer = styled(Container)`
-  ${tw`py-16`}
+  ${tw`py-32`}
   text-align: ${styledMap("align", {
     left: "left",
     right: "right",
