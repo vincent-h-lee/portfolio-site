@@ -20,7 +20,7 @@ Intro.propTypes = {
 export default Intro
 
 const IntroContainer = styled(Container)`
-  ${tw`pt-16 pb-24 xl:py-40`}
+  ${tw`py-16`}
 `
 
 const Text = styled.h2`

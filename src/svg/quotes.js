@@ -2,7 +2,7 @@ import React from "react"
 
 const QuotesSVG = props => (
   <svg width="48px" height="40px" viewBox="0 0 48 40" version="1.1" {...props}>
-    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
       <g
         transform="translate(-523.000000, -52.000000)"
         fill="#D8D8D8"

@@ -1,17 +1,16 @@
 import React from "react"
-import styled from "styled-components"
 import tw from "tailwind.macro"
 import PropTypes from "prop-types"
 import CTALink from "./cta-link"
 
 const CTA = ({ description, link, title }) => {
   return (
-    <div css={tw`w-full`}>
+    <section>
       <h2 css={tw`text-3xl tracking-widest uppercase`}>{title}</h2>
       <p css={tw`text-2xl leading-normal`}>{description}</p>
 
-      <CTALink to={link.url}>{link.text}</CTALink>
-    </div>
+      {link && <CTALink to={link.url}>{link.text}</CTALink>}
+    </section>
   )
 }
 

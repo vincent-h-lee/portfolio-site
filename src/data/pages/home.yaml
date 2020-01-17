@@ -11,3 +11,18 @@ cta_with_card:
     link:
       text: Let's connect
       url: https://google.com
+cta_with_slants:
+  cta:
+    title: Let's Collaborate
+    description: Description of skills, methodology and accomplishments. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    link:
+      text: Let's connect
+      url: https://google.com
+  slants:
+    - title: Briteweb
+      subtitle: Fullstack Developer
+    - title: Grace
+      subtitle: Fullstack Developer
+hero:
+  title: Let's Collaborate
+  description: Description of skills, methodology and accomplishments. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.

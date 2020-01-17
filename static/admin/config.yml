@@ -31,7 +31,7 @@ collections:
               - label: Text
                 name: text
                 widget: string
-          - label: Two Column Card and CTA 
+          - label: CTA with Card 
             name: cta_with_card 
             widget: object 
             fields: 
@@ -71,6 +71,55 @@ collections:
                       - label: URL
                         name: url
                         widget: string
+      
+          - label: CTA with Slants 
+            name: cta_with_slants 
+            widget: object 
+            fields: 
+              - label: Slants
+                name: card
+                widget: list
+                max: 2
+                fields: 
+                  - label: Title
+                    name: title
+                    widget: string
+                  - label: Subtitle
+                    name: subtitle
+                    widget: string
+                  - label: Image
+                    name: image
+                    widget: image
+              - label: CTA
+                name: cta
+                widget: object
+                fields: 
+                  - label: Title
+                    name: title
+                    widget: string
+                  - label: Description
+                    name: description
+                    widget: string
+                  - label: Link
+                    name: link
+                    widget: object
+                    fields: 
+                      - label: Text
+                        name: text
+                        widget: string 
+                      - label: URL
+                        name: url
+                        widget: string
+          - label: Hero
+            name: hero
+            widget: object
+            fields: 
+              - label: Title
+                name: title
+                widget: string
+              - label: Description
+                name: description
+                widget: string
       - file: "src/data/pages/contact.yaml"
         label: "Contact"
         name: "Contact"

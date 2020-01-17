@@ -19,7 +19,7 @@ const Header = ({ menuLinks }) => {
   return (
     <HeaderLayout isScrolled={isScrolled}>
       <HeaderContainer as="nav" isScrolled={isScrolled}>
-        <h1>
+        <h1 css={tw`m-0`}>
           <Link to="/">
             <LogoSVG />
           </Link>
@@ -65,15 +65,15 @@ const HeaderLayout = styled.header`
 
   ${tw`border-b border-black fixed w-full`}
 
-  ${props => props.isScrolled && tw`bg-white shadow`}
+  ${props => props.isScrolled && tw`bg-white shadow-lg`}
 `
 
 const HeaderContainer = styled(Container)`
   transition: padding 0.2s ease;
 
-  ${tw`flex flex-row justify-between items-center py-4 md:py-10`}
+  ${tw`flex flex-row justify-between items-center py-6`}
 
-  ${props => props.isScrolled && tw`py-0 md:py-0`}
+  ${props => props.isScrolled && tw`py-2 md:py-4`}
 `
 
 const NavMenuList = styled.ul`
