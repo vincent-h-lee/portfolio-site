@@ -3,7 +3,7 @@ import tw from "tailwind.macro"
 
 const Module = styled.section`
   &:first-child {
-    ${tw`pt-32`}
+    ${tw`py-32`}
   }
 `
 export default Module

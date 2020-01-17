@@ -3,32 +3,7 @@ import tw from "tailwind.macro"
 import styled from "styled-components"
 import PropTypes from "prop-types"
 
-const SlantCard = ({ description, title, image }) => {
-  return (
-    <SlantCardWrapper>
-      <SkewedImageWrapper>
-        <SkewedImage src={image.src} alt={image.alt} title={image.title} />
-      </SkewedImageWrapper>
-      <ContentWrapper>
-        <Title>{title}</Title>
-        <Text>{description}</Text>
-      </ContentWrapper>
-    </SlantCardWrapper>
-  )
-}
-
-SlantCard.defaultProps = {
-  description: "Senior Fullstack Developer",
-  image: {
-    alt: "image alt",
-    src: "https://picsum.photos/500/300",
-    title: "image title",
-  },
-  link: "/",
-  title: "Briteweb",
-}
-
-SlantCard.propTypes = {
+export const SlantCardProps = {
   description: PropTypes.string,
   image: PropTypes.objectOf({
     alt: PropTypes.string,
@@ -38,6 +13,33 @@ SlantCard.propTypes = {
   link: PropTypes.string,
   title: PropTypes.string,
 }
+
+const SlantCard = ({ subtitle, title, image }) => {
+  return (
+    <SlantCardWrapper>
+      <SkewedImageWrapper>
+        <SkewedImage src={image.src} alt={image.alt} title={image.title} />
+      </SkewedImageWrapper>
+      <ContentWrapper>
+        <Title>{title}</Title>
+        <Text>{subtitle}</Text>
+      </ContentWrapper>
+    </SlantCardWrapper>
+  )
+}
+
+SlantCard.defaultProps = {
+  subtitle: "Senior Fullstack Developer",
+  image: {
+    alt: "image alt",
+    src: "https://picsum.photos/500/300",
+    title: "image title",
+  },
+  link: "/",
+  title: "Briteweb",
+}
+
+SlantCard.propTypes = SlantCardProps
 
 export default SlantCard
 

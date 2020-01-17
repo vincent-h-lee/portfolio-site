@@ -5,7 +5,7 @@ import TwoColumnSection from "../layout/two-column-section"
 import Card from "../components/card"
 import CTA from "../components/cta"
 
-const TwoColumnCardCTA = ({ card, cta }) => {
+const CTAWithCard = ({ card, cta }) => {
   return (
     <div css={tw`relative bg-brand-neutral`}>
       <TwoColumnSection>
@@ -22,9 +22,9 @@ const TwoColumnCardCTA = ({ card, cta }) => {
   )
 }
 
-TwoColumnCardCTA.propTypes = {
+CTAWithCard.propTypes = {
   card: PropTypes.object,
   cta: PropTypes.object,
 }
 
-export default TwoColumnCardCTA
+export default CTAWithCard
