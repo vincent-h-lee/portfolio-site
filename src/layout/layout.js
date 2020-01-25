@@ -15,7 +15,7 @@ import Header from "./header"
 import "./normalize.css"
 
 const Layout = ({ children }) => {
-  const { site, dataYaml } = useStaticQuery(graphql`
+  const { site, globalYaml } = useStaticQuery(graphql`
     query SiteQuery {
       site {
         siteMetadata {
@@ -26,7 +26,7 @@ const Layout = ({ children }) => {
           }
         }
       }
-      dataYaml {
+      globalYaml {
         testimonial {
           attestant
           quote
@@ -49,10 +49,10 @@ const Layout = ({ children }) => {
       <main>{children}</main>
 
       <Footer
-        mediaLinks={dataYaml.socialLinks}
+        mediaLinks={globalYaml.socialLinks}
         menuLinks={site.siteMetadata.menuLinks}
         siteTitle={site.siteMetadata.title}
-        testimonial={dataYaml.testimonial}
+        testimonial={globalYaml.testimonial}
       />
     </>
   )

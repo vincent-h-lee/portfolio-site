@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import PropTypes from "prop-types"
-import { withPrefix, Link } from "gatsby"
+import { Link } from "gatsby"
 import styled from "styled-components"
 import tw from "tailwind.macro"
 import { bubble as Menu } from "react-burger-menu"
