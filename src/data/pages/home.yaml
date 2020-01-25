@@ -17,15 +17,15 @@ cta_with_slants:
   cta:
     title: Experience
     description: "
+    I have years of working in cross-functional teams, shipping and maintaining product, and understanding clients.
+    <br/>
+    <br/>
     We should work together if you're building complex, requirement-heavy applications, 
     a small development team setting up project workflows, 
     or transitioning your stack between front-end technologies.
-    <br/>
-    <br/>
-    I have years of working in cross-functional teams, shipping and maintaining product, and understanding clients.
     "
     link:
-      text: What's challenging you
+      text: Work together
       url: /contact
   slants:
     - title: Briteweb

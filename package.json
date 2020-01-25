@@ -21,6 +21,7 @@
     "netlify-cms-app": "^2.11.1",
     "prop-types": "^15.7.2",
     "react": "^16.11.0",
+    "react-burger-menu": "^2.6.13",
     "react-dom": "^16.11.0",
     "react-helmet": "^5.2.1",
     "react-intersection-observer": "^8.25.2",

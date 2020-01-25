@@ -9,8 +9,8 @@ import LogoSVG from "../svg/logo"
 import Testimonial from "../components/testimonial"
 
 const Footer = ({ mediaLinks, menuLinks, siteTitle, testimonial }) => (
-  <footer css={tw`bg-brand-secondary text-white`}>
-    <Container css={tw`flex flex-col md:flex-row justify-between py-10`}>
+  <FooterWrapper>
+    <Container css={tw`flex flex-col md:flex-row justify-between`}>
       <section css={tw`flex flex-row md:w-1/2`}>
         <div css={tw`mr-12`}>
           <FooterMenuTitle>Sitemap</FooterMenuTitle>
@@ -43,13 +43,15 @@ const Footer = ({ mediaLinks, menuLinks, siteTitle, testimonial }) => (
 
         <div css={tw`text-right mt-12 md:mt-24`}>
           <h4>
-            <LogoSVG color="white" />
+            <LinkArbiter to="/" title={siteTitle}>
+              <LogoSVG color="white" />
+            </LinkArbiter>
           </h4>
           <p>Solutions First. Software Engineer. Change Consultant.</p>
         </div>
       </section>
     </Container>
-  </footer>
+  </FooterWrapper>
 )
 
 Footer.propTypes = {
@@ -85,4 +87,8 @@ const FooterMenuList = styled.ul`
 
 const FooterMenuListItem = styled.li`
   ${tw`text-normal pb-4 font-thin hover:text-gray-500`}
+`
+
+const FooterWrapper = styled.footer`
+  ${tw`bg-brand-secondary text-white py-10`}
 `

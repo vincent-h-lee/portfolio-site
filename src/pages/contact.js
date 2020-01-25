@@ -92,7 +92,7 @@ const SkewedModuleWrapper = styled(TwoColumnSection)`
     content: "";
     height: 50%;
     width: 100%;
-    transform: skewY(-2deg) translateY(-20%);
+    transform: skewY(-3deg) translateY(-20%);
     transform-origin: 0 0;
     z-index: -1;
     ${tw`absolute block top-0 bg-brand-neutral`}

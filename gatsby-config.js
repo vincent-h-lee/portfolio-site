@@ -6,7 +6,7 @@ module.exports = {
     menuLinks: [
       {
         name: "Resume",
-        link: "/vincent-lee-resume-software-developer.pdf",
+        link: "vincent-lee-resume-software-developer.pdf",
       },
       {
         name: "Contact",

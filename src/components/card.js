@@ -9,17 +9,12 @@ const Card = ({ description, image, link, title }) => {
     <LinkArbiter to={link}>
       <CardContainer>
         <CardImageContainer>
-          <img
-            css={tw`w-full object-cover h-full`}
-            src={image.src}
-            alt={image.alt}
-            title={image.title}
-          />
+          <Image src={image.src} alt={image.alt} title={image.title} />
         </CardImageContainer>
-        <div css={tw`px-4 py-5`}>
-          <h5 css={tw`uppercase m-0 font-bold`}>{title}</h5>
+        <CardContent>
+          <Title>{title}</Title>
           <p>{description}</p>
-        </div>
+        </CardContent>
       </CardContainer>
     </LinkArbiter>
   )
@@ -46,12 +41,16 @@ Card.propTypes = {
 
 export default Card
 
+const Image = styled.img`
+  ${tw`w-full object-cover h-full`}
+`
+
 const CardImageContainer = styled.div`
   height: 322px;
 
   ${tw`rounded-t-lg overflow-hidden`}
 
-  img {
+  ${Image} {
     transition: transform ease 0.5s;
   }
 `
@@ -74,4 +73,12 @@ const CardContainer = styled.article`
       }
     }
   }
+`
+
+const CardContent = styled.div`
+  ${tw`px-4 py-5`}
+`
+
+const Title = styled.h5`
+  ${tw`uppercase m-0 font-bold`}
 `

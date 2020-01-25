@@ -39,7 +39,7 @@ const DataBlock = ({ title, description }) => {
 
 const ListWithImage = ({ data, description, title }) => {
   return (
-    <section css={tw`relative py-24`}>
+    <section css={tw`relative py-16 md:py-24`}>
       <Container css={tw`text-center mb-20 md:w-2/3 lg:w-1/2`}>
         <h2 css={tw`text-4xl font-medium tracking-widest uppercase`}>
           {title}
