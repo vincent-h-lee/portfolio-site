@@ -2,9 +2,9 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 import tw from "tailwind.macro"
+
+import BaseButton from "../components/base-button"
 import Layout from "../layout/layout"
-import Container from "../layout/container"
-import Module from "../layout/module"
 import TwoColumnSection from "../layout/two-column-section"
 import SEO from "../layout/seo"
 import Hero from "../modules/hero"
@@ -16,7 +16,13 @@ const ContactPage = () => {
     <Layout>
       <SEO title="Contact" />
 
-      <Hero align="center" background="neutral" {...pagesYaml.hero} />
+      <Hero
+        align="center"
+        background="secondary"
+        {...pagesYaml.hero}
+        image="https://picsum.photos/800/500"
+        size="xl"
+      />
 
       <SkewedModuleWrapper>
         <TwoColumnSection.Row>
@@ -51,12 +57,9 @@ const ContactPage = () => {
                   </ContactFieldWrapper>
                 </ContactField>
 
-                <button
-                  type="submit"
-                  css={tw`py-4 px-6 w-full rounded-sm bg-blue-500 text-white hover:bg-blue-600 hover:shadow`}
-                >
+                <BaseButton color="accent" full type="submit">
                   Send Message
-                </button>
+                </BaseButton>
               </form>
             </ContactForm>
           </TwoColumnSection.Column>
@@ -77,23 +80,22 @@ const contactPageQuery = graphql`
     pagesYaml(templateKey: { eq: "contact-page" }) {
       hero {
         title
-        description
       }
     }
   }
 `
 
 const SkewedModuleWrapper = styled(TwoColumnSection)`
-  ${tw`relative`}
+  ${tw`relative bg-brand-neutral`}
 
   &::before {
     content: "";
     height: 50%;
-    width: 150%;
-    transform: skewY(-2deg) translateY(-25%);
+    width: 100%;
+    transform: skewY(-2deg) translateY(-20%);
     transform-origin: 0 0;
     z-index: -1;
-    ${tw`absolute block top-0 bg-white`}
+    ${tw`absolute block top-0 bg-brand-neutral`}
   }
 `
 
@@ -101,7 +103,7 @@ const ContactField = styled.div`
   ${tw`flex flex-col mb-8`}
 
   label {
-    ${tw`uppercase text-xs tracking-wider mb-2 text-gray-900 font-semibold`}
+    ${tw`uppercase text-xs tracking-wider mb-2 text-gray-900 font-bold`}
   }
 `
 
@@ -110,7 +112,7 @@ const ContactFieldWrapper = styled.div`
   textarea {
     outline: none;
     box-sizing: border-box;
-    ${tw`w-full border rounded-sm p-3 border-gray-500 border-solid hover:shadow focus:border-blue-500`}
+    ${tw`w-full max-w-full border rounded-sm p-3 border-gray-500 border-solid focus:shadow focus:border-blue-500`}
   }
 `
 

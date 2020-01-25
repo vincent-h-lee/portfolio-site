@@ -8,12 +8,16 @@ const SlantCards = ({ cards }) => {
   return (
     <div css={tw`w-3/4`}>
       {cards.map((card, idx) => (
-        <SlantCardWrapper key={idx} {...card}>
-          <SlantCard />
+        <SlantCardWrapper key={idx}>
+          <SlantCard {...card} />
         </SlantCardWrapper>
       ))}
     </div>
   )
+}
+
+SlantCards.defaultProps = {
+  cards: [],
 }
 
 SlantCards.propTypes = {

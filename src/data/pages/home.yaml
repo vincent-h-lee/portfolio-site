@@ -6,23 +6,45 @@ cta_with_card:
     title: Grace Student Tracker
     description: This was a project for Briteweb
   cta:
-    title: title
-    description: description
+    title: Methodology
+    description: "
+    
+    "
     link:
       text: Let's connect
       url: https://google.com
 cta_with_slants:
   cta:
-    title: Let's Collaborate
-    description: Description of skills, methodology and accomplishments. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    title: Experience
+    description: "
+    We should work together if you're building complex, requirement-heavy applications, 
+    a small development team setting up project workflows, 
+    or transitioning your stack between front-end technologies.
+    <br/>
+    <br/>
+    I have years of working in cross-functional teams, shipping and maintaining product, and understanding clients.
+    "
     link:
-      text: Let's connect
-      url: https://google.com
+      text: What's challenging you
+      url: /contact
   slants:
     - title: Briteweb
-      subtitle: Fullstack Developer
-    - title: Grace
-      subtitle: Fullstack Developer
+      subtitle: Senior Fullstack Developer
+    - title: CMLS Financial
+      subtitle: Systems Consultant
 hero:
+  link:
+    text: Get in touch
+    url: /contact
   title: Let's Collaborate
-  description: Description of skills, methodology and accomplishments. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  subtitle: Let's Connect Now
+list_with_image:
+  title: Your technology consultant
+  description: Hi, I'm Vincent, a technology consultant based in Vancouver. I help small businesses, growth companies, national organizations build tools, deliver projects, and find operational efficiencies.
+  data:
+    - title: Solutions Design 
+      description: Understanding your goals, challenges, and the problem domain are the first steps in designing a solution with a holistic approach.
+    - title: Software Implementation
+      description: Experienced polyglot developer skilled in end-to-end implementation of dynamic applications with modern technologies.
+    - title: Process Frameworks
+      description: Centralizing documentation, establishing project workflows, and templating handoffs - I build frameworks of procedures for smooth operations enabling teams to focus on what matters.

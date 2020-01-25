@@ -7,7 +7,7 @@ const TwoColumnSection = styled(Module)`
   ${tw`flex flex-col w-full md:flex-row justify-center items-center`}
 `
 const Column = styled.div`
-  ${tw`pb-16 md:pb-0 md:w-1/2`}
+  ${tw`pb-8 md:pb-0 md:w-1/2`}
 `
 
 const Row = styled(Container)`

@@ -4,6 +4,7 @@ import tw from "tailwind.macro"
 import PropTypes from "prop-types"
 import { useInView } from "react-intersection-observer"
 import { useSpring, animated } from "react-spring"
+import Container from "../layout/container"
 import TwoColumnSection from "../layout/two-column-section"
 
 const DataBlock = ({ title, description }) => {
@@ -36,82 +37,58 @@ const DataBlock = ({ title, description }) => {
   )
 }
 
-const TwoColumnWithImage = ({ data }) => {
+const ListWithImage = ({ data, description, title }) => {
   return (
-    <div css={tw`relative bg-pink-300`}>
-      <TwoColumnSection css={tw`md:py-20`}>
+    <section css={tw`relative py-24`}>
+      <Container css={tw`text-center mb-20 md:w-2/3 lg:w-1/2`}>
+        <h2 css={tw`text-4xl font-medium tracking-widest uppercase`}>
+          {title}
+        </h2>
+        <p css={tw`text-medium leading-relaxed`}>{description}</p>
+      </Container>
+      <TwoColumnSection>
         <TwoColumnSection.Row css={tw`flex-col-reverse lg:flex-row`}>
           <TwoColumnSection.Column vertical>
             {data.map(datum => (
               <DataBlock key={datum.title} {...datum} />
             ))}
           </TwoColumnSection.Column>
-          <TwoColumnSection.Column css={tw`relative`}>
+          <TwoColumnSection.Column css={tw`flex justify-center items-center`}>
             <Image src="https://picsum.photos/500/500" />
           </TwoColumnSection.Column>
         </TwoColumnSection.Row>
       </TwoColumnSection>
-    </div>
+    </section>
   )
 }
 
-TwoColumnWithImage.defaultProps = {
-  data: [
-    {
-      title: "Solutions First",
-      description:
-        "Connecting the dots between business challenges and technical solutions",
-    },
-    {
-      title: "Solutions First",
-      description:
-        "Connecting the dots between business challenges and technical solutions",
-    },
-  ],
+ListWithImage.defaultProps = {
+  data: [],
 }
 
-TwoColumnWithImage.propTypes = {
+ListWithImage.propTypes = {
   data: PropTypes.arrayOf(
     PropTypes.objectOf({
       title: PropTypes.string,
       description: PropTypes.string,
     })
   ),
+  description: PropTypes.string,
+  title: PropTypes.string,
 }
 
-export default TwoColumnWithImage
+export default ListWithImage
 
 const DataBlockText = styled.h2`
-  ${tw`text-2xl my-0 md:text-3xl font-normal`}
+  ${tw`text-lg my-0 md:text-xl font-normal`}
 `
 
 const DataBlockTitle = styled.h5`
-  ${tw`uppercase text-lg font-normal m-0 mb-4`}
+  ${tw`uppercase text-medium font-semibold m-0 mb-4 text-gray-600`}
 `
 
 const Image = styled.img`
-  transform: translateY(-50%);
-  width: 60vw;
-  ${tw`-mb-40`}
-  ${tw`relative md:absolute object-cover rounded-full`};
-
-  @media only screen and (min-width: 480px) {
-    transform: translateY(-50%);
-    width: 55%;
-    ${tw`-mb-40`}
-  }
-
-  @media only screen and (min-width: 640px) {
-    transform: translateY(-35%);
-    width: 60%;
-    ${tw`-mb-48`}
-  }
-
-  @media only screen and (min-width: 768px) {
-    transform: translateY(-50%);
-    width: 80%;
-    max-width: 400px;
-  }
+  ${tw`w-full md:w-2/3 object-cover rounded-full`}
 `
 
 const DataBlockItem = styled.article`

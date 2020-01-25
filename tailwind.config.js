@@ -11,10 +11,10 @@ module.exports = {
     },
     colors: {
       brand: {
-        primary: "#279AEE",
-        secondary: "#FFE9E9",
-        tertiary: "#7FB069",
-        neutral: "#EDEFF1",
+        accent: "#279AEE", // dot
+        primary: "#2C5282", // dark blue
+        secondary: "#2d3748", // dark gray
+        neutral: "#EDF2F7", // light gray
       },
 
       transparent: "transparent",

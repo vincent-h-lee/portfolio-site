@@ -46,22 +46,7 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: "pages",
-        path: `./src/data/pages`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: "global",
-        path: `./src/data/global`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: "posts",
-        path: `./src/data/posts`,
+        path: `./src/data`,
       },
     },
   ],

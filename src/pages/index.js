@@ -1,32 +1,45 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
+import styled from "styled-components"
 import tw from "tailwind.macro"
+import Particles from "react-particles-js"
 
-import Container from "../layout/container"
 import Layout from "../layout/layout"
-import Module from "../layout/module"
 import SEO from "../layout/seo"
 
 import Card from "../components/card"
 import CTA from "../modules/cta"
-import CTAWithImage from "../modules/cta-with-image"
+import ListWithImage from "../modules/list-with-image"
 import Hero from "../modules/hero"
 import Intro from "../modules/intro"
 import SlantCards from "../components/slant-cards"
+import particleParams from "../modules/particles.config.json"
 
 const IndexPage = () => {
   const { pagesYaml } = useStaticQuery(indexPageQuery)
-  const { intro, cta_with_card, cta_with_slants, hero } = pagesYaml
+  const {
+    intro,
+    cta_with_card,
+    cta_with_slants,
+    hero,
+    list_with_image,
+  } = pagesYaml
 
   return (
     <Layout>
       <SEO title="Home" />
 
-      <Intro {...intro} />
+      <div
+        css={tw`bg-blue-800 flex flex-col justify-center h-auto min-h-screen md:h-screen`}
+      >
+        <Intro {...intro} />
 
-      <CTAWithImage css={tw`pt-24`} />
+        <StyledParticles params={particleParams} />
+      </div>
 
-      <div css={tw`bg-brand-neutral`}>
+      <ListWithImage css={tw`pt-24`} {...list_with_image} />
+
+      <div css={tw`bg-gray-100`}>
         <CTA reverse={true} {...cta_with_card.cta}>
           <Card {...cta_with_card.card} />
         </CTA>
@@ -36,7 +49,7 @@ const IndexPage = () => {
         <SlantCards cards={cta_with_slants.slants} />
       </CTA>
 
-      <Hero {...hero} align="center" />
+      <Hero {...hero} align="center" color="primary" size="sm" />
     </Layout>
   )
 }
@@ -77,10 +90,26 @@ const indexPageQuery = graphql`
           subtitle
         }
       }
-      hero {
+      list_with_image {
         title
         description
+        data {
+          title
+          description
+        }
+      }
+      hero {
+        title
+        subtitle
+        link {
+          url
+          text
+        }
       }
     }
   }
+`
+
+const StyledParticles = styled(Particles)`
+  ${tw`absolute top-0 w-full h-full`}
 `

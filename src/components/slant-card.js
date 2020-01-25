@@ -48,7 +48,7 @@ const SkewedImage = styled.img`
 `
 
 const SkewedImageWrapper = styled.div`
-  ${tw`relative md:w-2/5 lg:w-1/4 overflow-hidden`}
+  ${tw`relative md:w-2/5 lg:w-1/4 overflow-hidden flex-grow-0`}
 
   &::after {
     content: "";
@@ -65,7 +65,7 @@ const SkewedImageWrapper = styled.div`
 `
 
 const ContentWrapper = styled.div`
-  ${tw`pl-4 pt-8 pb-10 md:py-12 flex flex-col justify-center`}
+  ${tw`pl-4 pt-8 pb-10 md:py-12 flex flex-1 flex-col justify-center`}
 `
 
 const SlantCardWrapper = styled.article`

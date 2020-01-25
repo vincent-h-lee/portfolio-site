@@ -10,7 +10,7 @@ import LogoSVG from "../svg/logo"
 const Header = ({ menuLinks }) => {
   const [isScrolled, setScrolled] = useState(false)
   useScrollPosition(({ currPos }) => {
-    const currentlyScrolled = Math.abs(currPos.y) > 50
+    const currentlyScrolled = Math.abs(currPos.y) > 75
     if (currentlyScrolled !== isScrolled) {
       setScrolled(currentlyScrolled)
     }
@@ -21,7 +21,7 @@ const Header = ({ menuLinks }) => {
       <HeaderContainer as="nav" isScrolled={isScrolled}>
         <h1 css={tw`m-0`}>
           <Link to="/">
-            <LogoSVG />
+            <LogoSVG color={isScrolled ? undefined : "white"} />
           </Link>
         </h1>
 
@@ -61,17 +61,17 @@ export default Header
 const HeaderLayout = styled.header`
   background: transparent;
   z-index: 99;
-  transition: background 0.5s ease;
+  transition: background 0.4s linear;
 
-  ${tw`border-b border-black fixed w-full`}
+  ${tw`border-b border-black fixed w-full text-white`}
 
-  ${props => props.isScrolled && tw`bg-white shadow-lg`}
+  ${props => props.isScrolled && tw`bg-white shadow-lg text-black`}
 `
 
 const HeaderContainer = styled(Container)`
-  transition: padding 0.2s ease;
+  transition: padding 0.5s ease;
 
-  ${tw`flex flex-row justify-between items-center py-6`}
+  ${tw`flex flex-row justify-between items-center py-12`}
 
   ${props => props.isScrolled && tw`py-2 md:py-4`}
 `
@@ -81,5 +81,5 @@ const NavMenuList = styled.ul`
 `
 
 const NavMenuListItem = styled.li`
-  ${tw`mx-4 lowercase`}
+  ${tw`mx-4 lowercase hover:text-gray-400`}
 `

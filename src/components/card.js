@@ -1,12 +1,12 @@
 import React from "react"
 import styled from "styled-components"
-import { Link } from "gatsby"
 import tw from "tailwind.macro"
 import PropTypes from "prop-types"
+import LinkArbiter from "./link-arbiter"
 
 const Card = ({ description, image, link, title }) => {
   return (
-    <Link to={link}>
+    <LinkArbiter to={link}>
       <CardContainer>
         <CardImageContainer>
           <img
@@ -17,23 +17,20 @@ const Card = ({ description, image, link, title }) => {
           />
         </CardImageContainer>
         <div css={tw`px-4 py-5`}>
-          <h5 css={tw`uppercase m-0`}>{title}</h5>
+          <h5 css={tw`uppercase m-0 font-bold`}>{title}</h5>
           <p>{description}</p>
         </div>
       </CardContainer>
-    </Link>
+    </LinkArbiter>
   )
 }
 
 Card.defaultProps = {
-  description: "Lorem ipsum cal boreal albium coral sala rae lore sum",
   image: {
     alt: "image alt",
     src: "https://picsum.photos/500/300",
     title: "image title",
   },
-  link: "/",
-  title: "Grace Student Tracker",
 }
 
 Card.propTypes = {

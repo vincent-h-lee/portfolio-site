@@ -5,37 +5,36 @@ import tw from "tailwind.macro"
 
 import QuoteSVG from "../svg/quotes"
 
-const Testimonial = ({ attestant, testimonial, style }) => (
+const Testimonial = ({ attestant, quote, style }) => (
   <TestimonialWrapper style={style}>
     <StyledQuoteSVG />
     <div>
-      <h3>{testimonial}</h3>
+      <Quote>{quote}</Quote>
       <p>{attestant}</p>
     </div>
   </TestimonialWrapper>
 )
 
-Testimonial.defaultProps = {
-  attestant: "Puneet Sekhon, Front End Developer",
-  testimonial:
-    "Testimonial lorem ipsum caro saul sea flor calum ispam cor zal bamar raos",
-}
-
 Testimonial.propTypes = {
   attestant: PropTypes.string,
-  testimonial: PropTypes.string,
+  quote: PropTypes.string,
 }
 
 export default Testimonial
 
 const TestimonialWrapper = styled.section`
-  ${tw`relative flex flex-col md:flex-row`}
+  ${tw`relative flex flex-col md:flex-row leading-normal`}
 `
 
 const StyledQuoteSVG = styled(QuoteSVG)`
   ${tw`pr-2`}
+  min-width: 2rem;
 
   @media only screen and (max-width: 768px) {
     transform: translate(-20px, 10px);
   }
+`
+
+const Quote = styled.h4`
+  ${tw`text-base`}
 `

@@ -9,9 +9,12 @@ const CTA = ({ background, children, description, link, reverse, title }) => {
     <TwoColumnSection css={tw`py-20 lg:py-48`}>
       <TwoColumnSection.Row reverse={reverse}>
         <TwoColumnSection.Column css={tw`flex flex-col justify-center`}>
-          <article css={tw`w-4/5`}>
+          <article css={tw`w-full md:w-4/5`}>
             <h2 css={tw`text-3xl tracking-widest uppercase`}>{title}</h2>
-            <p css={tw`text-2xl leading-normal`}>{description}</p>
+            <p
+              css={tw`text-xl leading-normal`}
+              dangerouslySetInnerHTML={{ __html: description }}
+            />
 
             {link && <CTALink to={link.url}>{link.text}</CTALink>}
           </article>

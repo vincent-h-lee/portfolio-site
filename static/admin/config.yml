@@ -20,25 +20,25 @@ collections:
         label: "Landing Page"
         name: "index"
         fields:
-          - label: Template Key 
-            name: templateKey 
-            widget: hidden 
+          - label: Template Key
+            name: templateKey
+            widget: hidden
             default: index-page
-          - label: Intro 
-            name: intro 
-            widget: object 
-            fields: 
+          - label: Intro
+            name: intro
+            widget: object
+            fields:
               - label: Text
                 name: text
                 widget: string
-          - label: CTA with Card 
-            name: cta_with_card 
-            widget: object 
-            fields: 
+          - label: CTA with Card
+            name: cta_with_card
+            widget: object
+            fields:
               - label: Card
                 name: card
                 widget: object
-                fields: 
+                fields:
                   - label: Title
                     name: title
                     widget: string
@@ -54,7 +54,7 @@ collections:
               - label: CTA
                 name: cta
                 widget: object
-                fields: 
+                fields:
                   - label: Title
                     name: title
                     widget: string
@@ -64,23 +64,38 @@ collections:
                   - label: Link
                     name: link
                     widget: object
-                    fields: 
+                    fields:
                       - label: Text
                         name: text
-                        widget: string 
+                        widget: string
                       - label: URL
                         name: url
                         widget: string
-      
-          - label: CTA with Slants 
-            name: cta_with_slants 
-            widget: object 
-            fields: 
+          - label: List with Image
+            name: list_with_image
+            widget: object
+            fields:
+              - label: Data
+                name: data
+                widget: list
+                max: 3
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                  - label: Description
+                    name: description
+                    widget: string
+
+          - label: CTA with Slants
+            name: cta_with_slants
+            widget: object
+            fields:
               - label: Slants
                 name: card
                 widget: list
                 max: 2
-                fields: 
+                fields:
                   - label: Title
                     name: title
                     widget: string
@@ -93,7 +108,7 @@ collections:
               - label: CTA
                 name: cta
                 widget: object
-                fields: 
+                fields:
                   - label: Title
                     name: title
                     widget: string
@@ -103,43 +118,61 @@ collections:
                   - label: Link
                     name: link
                     widget: object
-                    fields: 
+                    fields:
                       - label: Text
                         name: text
-                        widget: string 
+                        widget: string
                       - label: URL
                         name: url
                         widget: string
           - label: Hero
             name: hero
             widget: object
-            fields: 
+            fields:
               - label: Title
                 name: title
                 widget: string
-              - label: Description
-                name: description
+              - label: Subtitle
+                name: subtitle
                 widget: string
+              - label: Link
+                name: link
+                widget: object
+                fields:
+                  - label: Text
+                    name: text
+                    widget: string
+                  - label: URL
+                    name: url
+                    widget: string
       - file: "src/data/pages/contact.yaml"
         label: "Contact"
         name: "Contact"
         fields:
-          - label: Template Key 
-            name: templateKey 
-            widget: hidden 
+          - label: Template Key
+            name: templateKey
+            widget: hidden
             default: contact-page
           - label: Hero
             name: Hero
             widget: object
-            fields: 
+            fields:
               - label: Title
                 name: title
                 widget: string
-              - label: Description
-                name: description
-                widget: string
-              - label: Background Image
-                name: background_image
+              - label: Image
+                name: image
                 widget: image
-
-      
+              - label: Subtitle
+                name: subtitle
+                widget: string
+              - label: Link
+                name: link
+                widget: object
+                fields:
+                  - label: Text
+                    name: text
+                    widget: string
+                  - label: URL
+                    name: url
+                    widget: string
