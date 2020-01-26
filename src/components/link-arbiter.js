@@ -7,7 +7,7 @@ const LinkArbiter = ({ children, to, ...rest }) => {
 
   if (isExternalLink) {
     return (
-      <a href={to} {...rest}>
+      <a href={to} target="_blank" {...rest}>
         {children}
       </a>
     )
