@@ -26,10 +26,6 @@ const Layout = ({ children }) => {
           }
         }
       }
-      testimonialsYaml {
-        attestant
-        quote
-      }
     }
   `)
 
@@ -46,7 +42,7 @@ const Layout = ({ children }) => {
         mediaLinks={[]}
         menuLinks={site.siteMetadata.menuLinks}
         siteTitle={site.siteMetadata.title}
-        testimonial={testimonialsYaml}
+        testimonial={null}
       />
     </>
   )

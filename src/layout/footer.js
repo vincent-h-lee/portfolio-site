@@ -37,7 +37,7 @@ const Footer = ({ mediaLinks, menuLinks, siteTitle, testimonial }) => (
       <section css={tw`flex flex-col justify-between md:w-1/2`}>
         <div css={tw`flex flex-row justify-end`}>
           <div css={tw`w-full lg:w-10/12`}>
-            <Testimonial {...testimonial} />
+            {testimonial && <Testimonial {...testimonial} />}
           </div>
         </div>
 
