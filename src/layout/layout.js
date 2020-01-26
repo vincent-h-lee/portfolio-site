@@ -15,7 +15,7 @@ import Header from "./header"
 import "./normalize.css"
 
 const Layout = ({ children }) => {
-  const { site, allLinksYaml, allTestimonialsYaml } = useStaticQuery(graphql`
+  const { site } = useStaticQuery(graphql`
     query SiteQuery {
       site {
         siteMetadata {
@@ -26,20 +26,25 @@ const Layout = ({ children }) => {
           }
         }
       }
-      allLinksYaml {
-        nodes {
-          name
-          link
-        }
-      }
-      allTestimonialsYaml {
-        nodes {
-          attestant
-          quote
-        }
-      }
     }
   `)
+
+  // netlify doesn't want to build sitequery with testimonials/links so hard code data for now
+  const mediaLinks = [
+    {
+      name: "Github",
+      link: "https://github.com/vincent-h-lee",
+    },
+    {
+      name: "Linkedin",
+      link: "https://linkedin.com/in/leevincenth",
+    },
+  ]
+  const testimonial = {
+    attestant: "Puneet Sekhon, Front End Developer",
+    quote:
+      "I had the pleasure of working with Vincent at CMLS. He was exceptionally good at understanding the business requirements and implementing them without any delays. I am very impressed by the approach he takes to mentor team members. He would definitely be an asset to any company.",
+  }
 
   return (
     <>
@@ -51,10 +56,10 @@ const Layout = ({ children }) => {
       <main>{children}</main>
 
       <Footer
-        mediaLinks={allLinksYaml.nodes}
+        mediaLinks={mediaLinks}
         menuLinks={site.siteMetadata.menuLinks}
         siteTitle={site.siteMetadata.title}
-        testimonial={allTestimonialsYaml.nodes[0]}
+        testimonial={testimonial}
       />
     </>
   )

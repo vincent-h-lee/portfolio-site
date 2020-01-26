@@ -70,11 +70,6 @@ Footer.propTypes = {
   }),
 }
 
-Footer.defaultProps = {
-  menuLinks: [],
-  testimonial: {},
-}
-
 export default Footer
 
 const FooterMenuTitle = styled.h5`
