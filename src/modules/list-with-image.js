@@ -37,7 +37,7 @@ const DataBlock = ({ title, description }) => {
   )
 }
 
-const ListWithImage = ({ data, description, title }) => {
+const ListWithImage = ({ data, description, image, title }) => {
   return (
     <section css={tw`relative py-16 md:py-24`}>
       <Container css={tw`text-center mb-20 md:w-2/3 lg:w-1/2`}>
@@ -54,7 +54,7 @@ const ListWithImage = ({ data, description, title }) => {
             ))}
           </TwoColumnSection.Column>
           <TwoColumnSection.Column css={tw`flex justify-center items-center`}>
-            <Image src="https://picsum.photos/500/500" />
+            <Image src={image.src} alt={image.alt} />
           </TwoColumnSection.Column>
         </TwoColumnSection.Row>
       </TwoColumnSection>
@@ -68,7 +68,7 @@ ListWithImage.defaultProps = {
 
 ListWithImage.propTypes = {
   data: PropTypes.arrayOf(
-    PropTypes.objectOf({
+    PropTypes.shape({
       title: PropTypes.string,
       description: PropTypes.string,
     })

@@ -41,7 +41,9 @@ const IndexPage = () => {
 
       <div css={tw`bg-gray-100`}>
         <CTA reverse={true} {...cta_with_card.cta}>
-          <Card {...cta_with_card.card} />
+          <div css={tw`md:pr-8 lg:px-0`}>
+            <Card {...cta_with_card.card} padding={true} />
+          </div>
         </CTA>
       </div>
 
@@ -65,6 +67,10 @@ const indexPageQuery = graphql`
       cta_with_card {
         card {
           description
+          image {
+            alt
+            src
+          }
           title
         }
         cta {
@@ -80,14 +86,14 @@ const indexPageQuery = graphql`
         cta {
           description
           title
-          link {
-            text
-            url
-          }
         }
         slants {
           title
           subtitle
+          image {
+            src
+            alt
+          }
         }
       }
       list_with_image {
@@ -96,6 +102,10 @@ const indexPageQuery = graphql`
         data {
           title
           description
+        }
+        image {
+          alt
+          src
         }
       }
       hero {

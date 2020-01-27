@@ -19,7 +19,7 @@ CtaLink.propTypes = {
 export default CtaLink
 
 const StylizedLink = styled(LinkArbiter)`
-  ${tw`relative text-2xl tracking-wider`}
+  ${tw`relative text-xl font-semibold tracking-tighter`}
 
   &::after {
     content: "";

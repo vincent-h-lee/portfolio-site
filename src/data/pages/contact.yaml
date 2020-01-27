@@ -1,3 +1,6 @@
 templateKey: contact-page
 hero:
-  title: Contact Me
+  title: Get in touch
+  image:
+    alt: Contact Hero Advisor and Advisee
+    src: "/advice-advise-advisor-business-7075.jpg"

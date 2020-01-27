@@ -18,7 +18,7 @@ const SlantCard = ({ subtitle, title, image }) => {
   return (
     <SlantCardWrapper>
       <SkewedImageWrapper>
-        <SkewedImage src={image.src} alt={image.alt} title={image.title} />
+        {image && <SkewedImage src={image.src} alt={image.alt} />}
       </SkewedImageWrapper>
       <ContentWrapper>
         <Title>{title}</Title>
@@ -28,23 +28,14 @@ const SlantCard = ({ subtitle, title, image }) => {
   )
 }
 
-SlantCard.defaultProps = {
-  subtitle: "Senior Fullstack Developer",
-  image: {
-    alt: "image alt",
-    src: "https://picsum.photos/500/300",
-    title: "image title",
-  },
-  link: "/",
-  title: "Briteweb",
-}
-
 SlantCard.propTypes = SlantCardProps
 
 export default SlantCard
 
 const SkewedImage = styled.img`
   ${tw`rounded-l w-full object-cover h-full`}
+
+  ${props => props.svg && tw`bg-gray-900`}
 `
 
 const SkewedImageWrapper = styled.div`

@@ -4,7 +4,7 @@ import tw from "tailwind.macro"
 import CTALink from "../components/cta-link"
 import TwoColumnSection from "../layout/two-column-section"
 
-const CTA = ({ background, children, description, link, reverse, title }) => {
+const CTA = ({ children, description, link, reverse, title }) => {
   return (
     <TwoColumnSection css={tw`py-20 lg:py-48`}>
       <TwoColumnSection.Row reverse={reverse}>

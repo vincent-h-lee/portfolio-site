@@ -14,7 +14,7 @@ const Hero = ({ align, background, link, image, title, size, subtitle }) => {
   return (
     <Module>
       <ImageWrapper background={background}>
-        {image && <Image src={image} />}
+        {image && <Image src={image.src} alt={image.alt} />}
       </ImageWrapper>
       <HeroContainer align={align} color={background} size={size}>
         {subtitle && <Subtitle>{subtitle}</Subtitle>}
@@ -38,6 +38,10 @@ const Hero = ({ align, background, link, image, title, size, subtitle }) => {
 Hero.propTypes = {
   align: PropTypes.oneOf(["left", "center", "right"]),
   background: PropTypes.oneOf(["primary", "secondary"]),
+  image: PropTypes.shape({
+    alt: PropTypes.string,
+    src: PropTypes.string,
+  }),
   size: PropTypes.oneOf(["sm", "md", "lg"]),
   subtitle: PropTypes.string,
   title: PropTypes.string.isRequired,

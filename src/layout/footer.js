@@ -17,7 +17,9 @@ const Footer = ({ mediaLinks, menuLinks, siteTitle, testimonial }) => (
           <FooterMenuList>
             {menuLinks.map(menuItem => (
               <FooterMenuListItem key={menuItem.name}>
-                <LinkArbiter to={menuItem.link}>{menuItem.name}</LinkArbiter>
+                <LinkArbiter to={menuItem.link} file={menuItem.file}>
+                  {menuItem.name}
+                </LinkArbiter>
               </FooterMenuListItem>
             ))}
           </FooterMenuList>
@@ -28,7 +30,9 @@ const Footer = ({ mediaLinks, menuLinks, siteTitle, testimonial }) => (
           <FooterMenuList>
             {mediaLinks.map(menuItem => (
               <FooterMenuListItem key={menuItem.name}>
-                <LinkArbiter to={menuItem.link}>{menuItem.name}</LinkArbiter>
+                <LinkArbiter to={menuItem.link} file={menuItem.file}>
+                  {menuItem.name}
+                </LinkArbiter>
               </FooterMenuListItem>
             ))}
           </FooterMenuList>
@@ -47,7 +51,7 @@ const Footer = ({ mediaLinks, menuLinks, siteTitle, testimonial }) => (
               <LogoSVG color="white" />
             </LinkArbiter>
           </h4>
-          <p>Solutions First. Software Engineer. Change Consultant.</p>
+          <p>Solutions Designer. Software Developer. Process Consultant.</p>
         </div>
       </section>
     </Container>
@@ -55,14 +59,18 @@ const Footer = ({ mediaLinks, menuLinks, siteTitle, testimonial }) => (
 )
 
 Footer.propTypes = {
-  mediaLinks: PropTypes.arrayOf({
-    name: PropTypes.string,
-    link: PropTypes.string,
-  }),
-  menuLinks: PropTypes.arrayOf({
-    name: PropTypes.string,
-    link: PropTypes.string,
-  }),
+  mediaLinks: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string,
+      link: PropTypes.string,
+    })
+  ),
+  menuLinks: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string,
+      link: PropTypes.string,
+    })
+  ),
   siteTitle: PropTypes.string,
   testimonial: PropTypes.shape({
     attestant: PropTypes.string,

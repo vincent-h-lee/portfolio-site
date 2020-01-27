@@ -1,15 +1,15 @@
 import React from "react"
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 import tw from "tailwind.macro"
 import PropTypes from "prop-types"
 import LinkArbiter from "./link-arbiter"
 
-const Card = ({ description, image, link, title }) => {
+const Card = ({ description, hoverable, image, link, title }) => {
   return (
     <LinkArbiter to={link}>
-      <CardContainer>
+      <CardContainer hoverable={hoverable}>
         <CardImageContainer>
-          <Image src={image.src} alt={image.alt} title={image.title} />
+          {image && <Image src={image.src} alt={image.alt} />}
         </CardImageContainer>
         <CardContent>
           <Title>{title}</Title>
@@ -20,20 +20,11 @@ const Card = ({ description, image, link, title }) => {
   )
 }
 
-Card.defaultProps = {
-  image: {
-    alt: "image alt",
-    src: "https://picsum.photos/500/300",
-    title: "image title",
-  },
-}
-
 Card.propTypes = {
   description: PropTypes.string,
   image: PropTypes.objectOf({
     alt: PropTypes.string,
     src: PropTypes.string,
-    title: PropTypes.string,
   }),
   link: PropTypes.string,
   title: PropTypes.string,
@@ -46,7 +37,7 @@ const Image = styled.img`
 `
 
 const CardImageContainer = styled.div`
-  height: 322px;
+  height: 300px;
 
   ${tw`rounded-t-lg overflow-hidden`}
 
@@ -57,22 +48,25 @@ const CardImageContainer = styled.div`
 
 const CardContainer = styled.article`
   transition: color ease 0.5s;
-  min-width: 300px;
-  max-width: 385px;
-  min-height: 525px;
-  max-height: 525px;
+  width: 100%;
+  max-width: 380px;
+  height: 525px;
 
   ${tw`w-full shadow-xl rounded-lg bg-white border border-gray-600`}
 
-  &:hover {
-    ${tw`border-l border-blue-600 border`}
+  ${props =>
+    props.hoverable &&
+    css`
+      &:hover {
+        ${tw`border-l border-blue-600 border`}
 
-    ${CardImageContainer} {
-      img {
-        transform: scale(1.15);
+        ${CardImageContainer} {
+          img {
+            transform: scale(1.15);
+          }
+        }
       }
-    }
-  }
+    `}
 `
 
 const CardContent = styled.div`

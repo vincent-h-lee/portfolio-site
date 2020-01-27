@@ -2,10 +2,10 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 
-const LinkArbiter = ({ children, to, ...rest }) => {
-  const isExternalLink = !!to || /^http(s)?/.test(to)
-
-  if (isExternalLink) {
+const LinkArbiter = ({ children, file, to, ...rest }) => {
+  const isExternalLink = !to ? true : /^http(s)?:\/\//.test(to)
+  console.log(isExternalLink, file, to, rest)
+  if (isExternalLink || file) {
     return (
       <a href={to} target="_blank" {...rest}>
         {children}
@@ -21,7 +21,8 @@ const LinkArbiter = ({ children, to, ...rest }) => {
 }
 
 LinkArbiter.propTypes = {
-  to: PropTypes.string.isRequired,
+  file: PropTypes.bool,
+  to: PropTypes.string,
 }
 
 export default LinkArbiter

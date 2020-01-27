@@ -3,10 +3,21 @@ module.exports = {
     title: `Vincent Lee Software Engineer Personal Website`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
+    mediaLinks: [
+      {
+        name: "Github",
+        link: "https://github.com/vincent-h-lee",
+      },
+      {
+        name: "Linkedin",
+        link: "https://linkedin.com/in/leevincenth",
+      },
+    ],
     menuLinks: [
       {
         name: "Resume",
-        link: "vincent-lee-resume-software-developer.pdf",
+        link: "/vincent-lee-resume-software.pdf",
+        file: true,
       },
       {
         name: "Contact",

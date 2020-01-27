@@ -20,7 +20,6 @@ const ContactPage = () => {
         align="center"
         background="secondary"
         {...pagesYaml.hero}
-        image="https://picsum.photos/800/500"
         size="xl"
       />
 
@@ -31,6 +30,7 @@ const ContactPage = () => {
               <form
                 name="contact"
                 method="post"
+                action="/pages/success"
                 data-netlify="true"
                 data-netlify-honeypot="bot-field"
               >
@@ -64,8 +64,12 @@ const ContactPage = () => {
             </ContactForm>
           </TwoColumnSection.Column>
           <TwoColumnSection.Column vertical>
-            <h2>Contact Me</h2>
-            <p>How can I help</p>
+            <h2>I want to hear from you!</h2>
+            <p>
+              Let me know what you're working on, what's challenging your team,
+              or any questions you might have about applications or project
+              delivery.
+            </p>
           </TwoColumnSection.Column>
         </TwoColumnSection.Row>
       </SkewedModuleWrapper>
@@ -80,6 +84,10 @@ const contactPageQuery = graphql`
     pagesYaml(templateKey: { eq: "contact-page" }) {
       hero {
         title
+        image {
+          alt
+          src
+        }
       }
     }
   }

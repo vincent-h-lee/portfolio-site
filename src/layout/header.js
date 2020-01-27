@@ -1,11 +1,11 @@
 import React, { useState } from "react"
 import PropTypes from "prop-types"
-import { Link } from "gatsby"
 import styled from "styled-components"
 import tw from "tailwind.macro"
 import { bubble as Menu } from "react-burger-menu"
 import { useScrollPosition } from "@n8tb1t/use-scroll-position"
 import Container from "./container"
+import LinkArbiter from "../components/link-arbiter"
 import LogoSVG from "../svg/logo"
 
 const Header = ({ menuLinks }) => {
@@ -21,9 +21,9 @@ const Header = ({ menuLinks }) => {
     <HeaderLayout isScrolled={isScrolled}>
       <HeaderContainer as="nav" isScrolled={isScrolled}>
         <h1 css={tw`m-0`}>
-          <Link to="/">
+          <LinkArbiter to="/">
             <LogoSVG color={isScrolled ? undefined : "white"} />
-          </Link>
+          </LinkArbiter>
         </h1>
 
         <div css={tw`sm:hidden`}>
@@ -86,36 +86,25 @@ const Header = ({ menuLinks }) => {
               },
             }}
           >
-            <Link to="/">Home</Link>
-            {menuLinks.map(menuItem =>
-              menuItem.download ? (
-                <a href={menuItem.link} key={menuItem.name} download>
-                  {menuItem.name}
-                </a>
-              ) : (
-                <Link to={menuItem.link} key={menuItem.name}>
-                  {menuItem.name}
-                </Link>
-              )
-            )}
+            <LinkArbiter to="/">Home</LinkArbiter>
+            {menuLinks.map(menuItem => (
+              <LinkArbiter
+                to={menuItem.link}
+                key={menuItem.name}
+                file={menuItem.file}
+              >
+                {menuItem.name}
+              </LinkArbiter>
+            ))}
           </Menu>
         </div>
 
         <NavMenuList css={tw`hidden sm:flex`}>
           {menuLinks.map(menuItem => (
             <NavMenuListItem key={menuItem.name}>
-              {menuItem.download ? (
-                <a
-                  href={menuItem.link}
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  download
-                >
-                  {menuItem.name}
-                </a>
-              ) : (
-                <Link to={menuItem.link}>{menuItem.name}</Link>
-              )}
+              <LinkArbiter to={menuItem.link} file={menuItem.file}>
+                {menuItem.name}
+              </LinkArbiter>
             </NavMenuListItem>
           ))}
         </NavMenuList>
@@ -125,10 +114,12 @@ const Header = ({ menuLinks }) => {
 }
 
 Header.propTypes = {
-  menuLinks: PropTypes.arrayOf({
-    name: PropTypes.string,
-    link: PropTypes.string,
-  }),
+  menuLinks: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string,
+      link: PropTypes.string,
+    })
+  ),
   siteTitle: PropTypes.string,
 }
 

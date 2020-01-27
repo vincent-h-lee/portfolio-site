@@ -6,7 +6,7 @@ import SlantCard, { SlantCardProps } from "./slant-card"
 
 const SlantCards = ({ cards }) => {
   return (
-    <div css={tw`w-3/4`}>
+    <div css={tw`w-3/4 md:w-11/12 lg:w-3/4`}>
       {cards.map((card, idx) => (
         <SlantCardWrapper key={idx}>
           <SlantCard {...card} />
