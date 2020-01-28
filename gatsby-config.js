@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Vincent Lee Software Engineer Personal Website`,
+    siteUrl: `https://www.leevincenth.com`,
+    title: `Vincent Lee Technology Consulting`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
     mediaLinks: [
@@ -52,5 +53,14 @@ module.exports = {
         path: `./src/data`,
       },
     },
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: "https://www.leevincenth.com",
+        sitemap: "https://www.leevincenth.com/sitemap.xml",
+        policy: [{ userAgent: "*", allow: "/" }],
+      },
+    },
+    `gatsby-plugin-sitemap`,
   ],
 }

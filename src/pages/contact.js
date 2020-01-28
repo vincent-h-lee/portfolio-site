@@ -25,7 +25,7 @@ const ContactPage = () => {
 
       <SkewedModuleWrapper>
         <TwoColumnSection.Row>
-          <TwoColumnSection.Column css={tw`flex flex-row justify-center`}>
+          <TwoColumnSection.Column css={tw`flex flex-row justify-center pb-0`}>
             <ContactForm>
               <form
                 name="contact"
@@ -65,7 +65,7 @@ const ContactPage = () => {
           </TwoColumnSection.Column>
           <TwoColumnSection.Column vertical>
             <h2>I want to hear from you!</h2>
-            <p>
+            <p css={tw`leading-loose text-xl`}>
               Let me know what you're working on, what's challenging your team,
               or any questions you might have about applications or project
               delivery.
