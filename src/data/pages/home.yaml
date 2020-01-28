@@ -61,5 +61,5 @@ list_with_image:
     - title: Process Consultation
       description: Centralizing documentation, establishing project workflows, and templating handoffs - I build frameworks of procedures for smooth operations enabling teams to focus on what matters.
   image: 
-    src: /profile.jpg
+    src: /profile.png
     alt: Vincent Lee profile picture
