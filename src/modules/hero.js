@@ -50,7 +50,7 @@ Hero.propTypes = {
 export default Hero
 
 const Image = styled.img`
-  ${tw`object-cover w-full h-full object-cover`}
+  ${tw`object-cover w-full h-full object-cover relative`}
 `
 
 const ImageWrapper = styled.div`
@@ -62,6 +62,11 @@ const ImageWrapper = styled.div`
     secondary: tw`bg-brand-secondary`,
     default: tw`bg-brand-primary`,
   })}
+
+  &:after {
+    content: "";
+    ${tw`absolute top-0 left-0 w-full h-full opacity-50 bg-gray-800`}
+  }
 `
 
 const HeroContainer = styled(Container)`
