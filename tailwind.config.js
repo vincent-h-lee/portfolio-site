@@ -493,6 +493,8 @@ module.exports = {
     wordBreak: ["responsive"],
     zIndex: ["responsive"],
   },
-  corePlugins: {},
+  corePlugins: {
+    float: false,
+  },
   plugins: [],
 }
