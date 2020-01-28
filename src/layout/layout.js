@@ -40,13 +40,6 @@ const Layout = ({ children }) => {
     }
   `)
 
-  // netlify doesn't want to build sitequery with testimonials so hard code data for now
-  const testimonial = {
-    attestant: "Puneet Sekhon, Front End Developer",
-    quote:
-      "I had the pleasure of working with Vincent at CMLS. He was exceptionally good at understanding the business requirements and implementing them without any delays. I am very impressed by the approach he takes to mentor team members. He would definitely be an asset to any company.",
-  }
-
   return (
     <>
       <GlobalStyle />
