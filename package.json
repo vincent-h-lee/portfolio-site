@@ -25,7 +25,6 @@
     "react-dom": "^16.11.0",
     "react-helmet": "^5.2.1",
     "react-intersection-observer": "^8.25.2",
-    "react-particles-js": "^2.7.0",
     "react-spring": "^8.0.27",
     "styled-components": "^5.0.0",
     "styled-map": "^3.3.0",

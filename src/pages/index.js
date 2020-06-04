@@ -2,7 +2,6 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 import tw from "tailwind.macro"
-import Particles from "react-particles-js"
 
 import Layout from "../layout/layout"
 import SEO from "../layout/seo"
@@ -13,7 +12,6 @@ import ListWithImage from "../modules/list-with-image"
 import Hero from "../modules/hero"
 import Intro from "../modules/intro"
 import SlantCards from "../components/slant-cards"
-import particleParams from "../modules/particles.config.json"
 
 const IndexPage = () => {
   const { pagesYaml } = useStaticQuery(indexPageQuery)
@@ -33,8 +31,6 @@ const IndexPage = () => {
         css={tw`bg-blue-800 flex flex-col justify-center h-auto min-h-screen md:h-screen`}
       >
         <Intro {...intro} />
-
-        <StyledParticles params={particleParams} />
       </div>
 
       <ListWithImage css={tw`pt-24`} {...list_with_image} />
@@ -118,8 +114,4 @@ const indexPageQuery = graphql`
       }
     }
   }
-`
-
-const StyledParticles = styled(Particles)`
-  ${tw`absolute top-0 w-full h-full`}
 `
