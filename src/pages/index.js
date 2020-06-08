@@ -2,11 +2,15 @@ import React, { useState } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import classnames from "classnames"
 
+import Card from "../components/card"
+import FeaturedProject from "../components/featured-project"
+import Project from "../components/project"
+import Tab, { useTabs } from "../components/tab"
 import Layout from "../layout/layout"
 import SEO from "../layout/seo"
 
 const IndexPage = () => {
-  const [selectedExp, setSelectedExp] = useState(0)
+  const tabControls = useTabs(0)
   const { pagesYaml } = useStaticQuery(indexPageQuery)
   const {
     intro,
@@ -109,11 +113,11 @@ const IndexPage = () => {
 
       <div className="container py-16">
         <article>
-          <h2 className="text-brand-lightgreen font-bold text-5xl m-0">
+          <h2 className="text-brand-lightgreen font-bold text-3xl m-0 mb-8">
             About
           </h2>
           <section className="flex flex-wrap flex-col md:flex-row">
-            <div className="text-xl font-thin py-0 md:py-8 md:w-1/2">
+            <div className="text-xl font-thin md:w-1/2">
               I design and develop services for customers of all sizes,
               specializing in creating stylish, modern websites, web services
               and online stores. My passion is to design digital user
@@ -150,36 +154,28 @@ const IndexPage = () => {
 
       <div className="bg-brand-lightgray py-16">
         <div className="container">
-          <h2 className="font-bold text-5xl">Work Experience</h2>
+          <h2 className="font-bold text-3xl mb-8">Work Experience</h2>
           <section className="flex flex-col md:flex-row flex-wrap">
             <nav className="flex flex-row pr-20 md:flex-col">
               {workExperiences.map((workExp, index) => (
-                <button
+                <Tab
                   key={workExp.company}
-                  className={classnames(
-                    "py-4 pl-4 bg-transparent outline-none border-0 border-l border-brand-gray text-left hover:text-brand-lightgreen cursor-pointer",
-                    {
-                      "border-brand-lightgreen text-brand-lightgreen":
-                        index === selectedExp,
-                    }
-                  )}
-                  onClick={() => setSelectedExp(index)}
+                  active={tabControls.isCurrentTab(index)}
+                  setActive={tabControls.setCurrentTab}
+                  tabKey={index}
                 >
                   {workExp.company}
-                </button>
+                </Tab>
               ))}
             </nav>
             <div className="relative">
               {workExperiences.map((workExp, index) => (
-                <div
+                <Card
                   key={workExp.company}
-                  className={classnames(
-                    "shadow-lg rounded bg-white p-4 absolute",
-                    {
-                      hidden: index !== selectedExp,
-                      block: index === selectedExp,
-                    }
-                  )}
+                  className={classnames({
+                    hidden: !tabControls.isCurrentTab(index),
+                    block: tabControls.isCurrentTab(index),
+                  })}
                 >
                   <div
                     className="flex flex-col md:flex-row md:justify-between mb-8"
@@ -196,7 +192,7 @@ const IndexPage = () => {
                     </span>
                   </div>
                   <p>{workExp.description}</p>
-                </div>
+                </Card>
               ))}
             </div>
           </section>
@@ -204,50 +200,13 @@ const IndexPage = () => {
       </div>
 
       <div className="container py-16">
-        <h2>Projects</h2>
+        <h2 className="font-bold text-3xl mb-8">Projects</h2>
 
         <section>
-          <article className="flex flex-col w-full my-8 md:flex-row">
-            <img className="md:w-1/2 rounded-sm" />
-            <div className="w-full md:w-1/2">
-              <h4 className="text-brand-lightgreen m-0 text-right font-semibold">
-                Featured Project
-              </h4>
-              <h4 className="m-0 text-right font-semibold">Portfolio</h4>
-
-              <div className="mt-12" style={{ direction: "rtl" }}>
-                <p
-                  className="p-4 text-white bg-brand-darkgreen rounded-sm text-left"
-                  style={{ width: "102%" }}
-                >
-                  Description desc long featured project lorem ipsum carpe diem
-                  dolce amore
-                </p>
-              </div>
-              <div className="text-right text-brand-darkgray mb-8">
-                react nodejs
-              </div>
-            </div>
-          </article>
+          <FeaturedProject />
           <div className="flex flex-row -mx-4">
             {projects.map((project) => (
-              <article
-                key={project.title}
-                className="w-full md:w-1/3 text-white bg-brand-green p-4 mx-4 h-56 flex flex-col justify-between"
-              >
-                <div>
-                  <h4 className="mt-4 mb-2 font-semibold">{project.title}</h4>
-                  <p className="m-0">{project.description}</p>
-                </div>
-
-                <div className="flex flex-row flex-wrap">
-                  {project.skills.map((skill) => (
-                    <span key={skill} className="mr-2 font-thin">
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </article>
+              <Project key={project.title} {...project} />
             ))}
           </div>
         </section>
