@@ -1,5 +1,6 @@
 module.exports = {
   prefix: "",
+  purge: ["./src/**/*.js", "./src/**/*.jsx", "./src/**/*.ts", "./src/**/*.tsx"],
   important: false,
   separator: ":",
   theme: {
@@ -11,10 +12,12 @@ module.exports = {
     },
     colors: {
       brand: {
-        accent: "#279AEE", // dot
-        primary: "#2C5282", // dark blue
-        secondary: "#2d3748", // dark gray
-        neutral: "#EDF2F7", // light gray
+        darkgreen: "#4E6766",
+        lightgreen: "#5AB1BB",
+        yellow: "#F7DD72",
+        green: "#A5C882",
+        lightgray: "#F7F7F7",
+        gray: "#D1D1D1",
       },
 
       transparent: "transparent",
@@ -154,7 +157,7 @@ module.exports = {
       "56": "14rem",
       "64": "16rem",
     },
-    backgroundColor: theme => theme("colors"),
+    backgroundColor: (theme) => theme("colors"),
     backgroundPosition: {
       bottom: "bottom",
       center: "center",
@@ -171,7 +174,7 @@ module.exports = {
       cover: "cover",
       contain: "contain",
     },
-    borderColor: theme => ({
+    borderColor: (theme) => ({
       ...theme("colors"),
       default: theme("colors.gray.300", "currentColor"),
     }),
@@ -279,7 +282,7 @@ module.exports = {
       extrabold: "800",
       black: "900",
     },
-    height: theme => ({
+    height: (theme) => ({
       auto: "auto",
       ...theme("spacing"),
       full: "100%",
@@ -377,13 +380,13 @@ module.exports = {
       "11": "11",
       "12": "12",
     },
-    padding: theme => theme("spacing"),
-    placeholderColor: theme => theme("colors"),
+    padding: (theme) => theme("spacing"),
+    placeholderColor: (theme) => theme("colors"),
     stroke: {
       current: "currentColor",
     },
-    textColor: theme => theme("colors"),
-    width: theme => ({
+    textColor: (theme) => theme("colors"),
+    width: (theme) => ({
       auto: "auto",
       ...theme("spacing"),
       "1/2": "50%",
@@ -423,6 +426,12 @@ module.exports = {
       "30": "30",
       "40": "40",
       "50": "50",
+    },
+    extend: {
+      transitionProperty: {
+        background: "background",
+        padding: "padding",
+      },
     },
   },
   variants: {

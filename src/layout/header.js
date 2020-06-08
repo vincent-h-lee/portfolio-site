@@ -1,11 +1,8 @@
 import React, { useState } from "react"
 import PropTypes from "prop-types"
-import styled from "styled-components"
-import tw from "tailwind.macro"
+import classnames from "classnames"
 import { bubble as Menu } from "react-burger-menu"
 import { useScrollPosition } from "@n8tb1t/use-scroll-position"
-import Container from "./container"
-import LinkArbiter from "../components/link-arbiter"
 import LogoSVG from "../svg/logo"
 
 const Header = ({ menuLinks }) => {
@@ -18,15 +15,30 @@ const Header = ({ menuLinks }) => {
   })
 
   return (
-    <HeaderLayout isScrolled={isScrolled}>
-      <HeaderContainer as="nav" isScrolled={isScrolled}>
-        <h1 css={tw`m-0`}>
-          <LinkArbiter to="/">
+    <header
+      className={classnames(
+        "z-50 bg-transparent fixed w-full transition ease-linear duration-150",
+        {
+          "text-white": !isScrolled,
+          "bg-white shadow-lg text-black": isScrolled,
+        }
+      )}
+    >
+      <nav
+        className={classnames(
+          "container py-10 flex flex-row justify-between items-center transition-colors transition-padding ease-in-out duration-300",
+          {
+            "py-3 md:py-4": isScrolled,
+          }
+        )}
+      >
+        <h1 className="m-0">
+          <a href="/">
             <LogoSVG color={isScrolled ? undefined : "white"} />
-          </LinkArbiter>
+          </a>
         </h1>
 
-        <div css={tw`sm:hidden`}>
+        <div className="sm:hidden">
           <Menu
             right={true}
             styles={{
@@ -86,30 +98,27 @@ const Header = ({ menuLinks }) => {
               },
             }}
           >
-            <LinkArbiter to="/">Home</LinkArbiter>
-            {menuLinks.map(menuItem => (
-              <LinkArbiter
-                to={menuItem.link}
-                key={menuItem.name}
-                file={menuItem.file}
-              >
+            <a href="/">Home</a>
+            {menuLinks.map((menuItem) => (
+              <a href={menuItem.link} key={menuItem.name}>
                 {menuItem.name}
-              </LinkArbiter>
+              </a>
             ))}
           </Menu>
         </div>
 
-        <NavMenuList css={tw`hidden sm:flex`}>
-          {menuLinks.map(menuItem => (
-            <NavMenuListItem key={menuItem.name}>
-              <LinkArbiter to={menuItem.link} file={menuItem.file}>
-                {menuItem.name}
-              </LinkArbiter>
-            </NavMenuListItem>
+        <ul className="flex flex-col sm:flex-row list-none -mx-4 my-0 text-xl hidden sm:flex">
+          {menuLinks.map((menuItem) => (
+            <li
+              key={menuItem.name}
+              className="mx-4 lowercase hover:text-gray-400"
+            >
+              <a href={menuItem.link}>{menuItem.name}</a>
+            </li>
           ))}
-        </NavMenuList>
-      </HeaderContainer>
-    </HeaderLayout>
+        </ul>
+      </nav>
+    </header>
   )
 }
 
@@ -129,29 +138,3 @@ Header.defaultProps = {
 }
 
 export default Header
-
-const HeaderLayout = styled.header`
-  background: transparent;
-  z-index: 99;
-  transition: background 0.4s linear;
-
-  ${tw`border-b border-black fixed w-full text-white`}
-
-  ${props => props.isScrolled && tw`bg-white shadow-lg text-black`}
-`
-
-const HeaderContainer = styled(Container)`
-  transition: padding 0.5s ease;
-
-  ${tw`flex flex-row justify-between items-center py-12`}
-
-  ${props => props.isScrolled && tw`py-3 md:py-4`}
-`
-
-const NavMenuList = styled.ul`
-  ${tw`flex flex-col sm:flex-row list-none -mx-4 my-0 text-xl`}
-`
-
-const NavMenuListItem = styled.li`
-  ${tw`mx-4 lowercase hover:text-gray-400`}
-`

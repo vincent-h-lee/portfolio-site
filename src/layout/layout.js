@@ -9,10 +9,8 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Footer from "./footer"
-import GlobalStyle from "./global-style"
 import Header from "./header"
-import "./normalize.css"
+import "../styles/index.scss"
 
 const Layout = ({ children }) => {
   const { allTestimonialsYaml, site } = useStaticQuery(graphql`
@@ -42,19 +40,11 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <GlobalStyle />
       <Header
         menuLinks={site.siteMetadata.menuLinks}
         siteTitle={site.siteMetadata.title}
       />
       <main>{children}</main>
-
-      <Footer
-        mediaLinks={site.siteMetadata.mediaLinks}
-        menuLinks={site.siteMetadata.menuLinks}
-        siteTitle={site.siteMetadata.title}
-        testimonial={allTestimonialsYaml.nodes[0]}
-      />
     </>
   )
 }
