@@ -4,7 +4,10 @@ import classnames from "classnames"
 
 const Card = ({ children, className, ...props }) => (
   <section
-    className={classnames("shadow-lg rounded bg-white p-4 absolute", className)}
+    className={classnames(
+      "shadow-lg rounded-xl bg-white p-6 lg:p-10",
+      className
+    )}
     {...props}
   >
     {children}
