@@ -1,0 +1,47 @@
+.featured-project {
+  @apply relative my-8;
+}
+
+.featured-project__label {
+  @apply text-brand-lightgreen text-3xl text-right font-semibold;
+}
+
+.featured-project__title {
+  @apply text-right text-3xl font-semibold mb-12;
+
+  @screen md {
+    @apply mb-20;
+  }
+}
+
+.featured-project__image {
+  min-height: 300px;
+  z-index: -1;
+  @apply h-full bg-black rounded-sm relative top-0 left-0;
+
+  @screen md {
+    @apply absolute w-7/12;
+  }
+}
+
+.featured-project__content {
+  direction: "rtl";
+  @apply ml-auto pb-10;
+
+  @screen md {
+    @apply w-1/2 pb-24;
+  }
+}
+
+.featured-project__description {
+  @apply px-6 py-4 mt-5 text-white bg-brand-darkgreen rounded-sm text-left text-2xl;
+
+  @screen md {
+    width: 102%;
+    @apply mt-0;
+  }
+}
+
+.featured-project__skills {
+  @apply text-right text-2xl text-brand-darkgray mt-2;
+}
