@@ -1,11 +1,13 @@
-import React, { useState } from "react"
+import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import classnames from "classnames"
+import { FaArrowRight } from "react-icons/fa"
 
 import Card from "../components/card"
 import FeaturedProject from "../components/featured-project"
 import Project from "../components/project"
 import Tab, { useTabs } from "../components/tab"
+import UnderstatedButton from "../components/understated-button"
 import Layout from "../layout/layout"
 import SEO from "../layout/seo"
 
@@ -102,40 +104,40 @@ const IndexPage = () => {
 
       <div className="bg-brand-darkgreen flex flex-col justify-center h-auto min-h-screen md:h-screen">
         <div className="container">
-          <h1 className="text-white text-6xl font-bold m-0">
+          <h1 className="text-white text-4xl md:text-5xl font-bold m-0">
             Hi, I'm Vincent Lee
           </h1>
-          <h2 className="text-brand-gray text-6xl font-bold m-0">
+          <h2 className="text-white opacity-7 text-4xl md:text-5xl font-bold m-0">
             I build applications for complex domains
           </h2>
         </div>
       </div>
 
-      <div className="container py-16">
+      <div className="container module">
         <article>
-          <h2 className="text-brand-lightgreen font-bold text-3xl m-0 mb-8">
+          <h2 className="text-brand-lightgreen font-bold text-4xl md:text-5xl m-0 mb-8 md:mb-16">
             About
           </h2>
           <section className="flex flex-wrap flex-col md:flex-row">
-            <div className="text-xl font-thin md:w-1/2">
+            <p className="paragraph font-thin md:w-1/2 pb-10">
               I design and develop services for customers of all sizes,
               specializing in creating stylish, modern websites, web services
               and online stores. My passion is to design digital user
               experiences through the bold interface and meaningful
               interactions.
-            </div>
+            </p>
             <div className="flex justify-center md:justify-end py-16 md:py-0 md:w-1/2">
               <img src="https://picsum.photos/250/300" className="rounded-lg" />
             </div>
           </section>
-          <ul className="list-none p-0">
+          <ul className="text-xl list-none p-0">
             {skills.map(({ area, competencies }) => (
               <li
                 key={area}
                 className="pb-4 flex flex-col md:flex-row flex-wrap"
               >
-                <div className="font-bold md:w-24">{area}</div>
-                <div>
+                <div className="font-bold md:w-40">{area}</div>
+                <div className="flex flex-wrap">
                   {competencies.map((competency) => (
                     <span key={competency} className="mr-2">
                       {competency}
@@ -146,17 +148,19 @@ const IndexPage = () => {
             ))}
           </ul>
 
-          <button className="font-bold text-xl bg-transparent border-0">
-            Get in touch
-          </button>
+          <UnderstatedButton>Get in touch</UnderstatedButton>
         </article>
       </div>
 
-      <div className="bg-brand-lightgray py-16">
+      <div className="bg-brand-lightgray module">
         <div className="container">
-          <h2 className="font-bold text-3xl mb-8">Work Experience</h2>
-          <section className="flex flex-col md:flex-row flex-wrap">
-            <nav className="flex flex-row pr-20 md:flex-col">
+          <h2 className="font-bold text-4xl md:text-5xl mb-8 md:mb-16">
+            Work Experience
+          </h2>
+        </div>
+        <div className="container scroll-container">
+          <section className="flex flex-col lg:flex-row flex-wrap">
+            <nav className="flex flex-row overflow-x-auto w-full mb-12 px-8 sm:px-0 lg:mb-0 lg:flex-col lg:w-auto lg:pr-32">
               {workExperiences.map((workExp, index) => (
                 <Tab
                   key={workExp.company}
@@ -164,11 +168,13 @@ const IndexPage = () => {
                   setActive={tabControls.setCurrentTab}
                   tabKey={index}
                 >
-                  {workExp.company}
+                  <span className="text-2xl lg:text-3xl font-semibold">
+                    {workExp.company}
+                  </span>
                 </Tab>
               ))}
             </nav>
-            <div className="relative">
+            <div className="relative flex-1 px-8 md:px-0">
               {workExperiences.map((workExp, index) => (
                 <Card
                   key={workExp.company}
@@ -177,21 +183,24 @@ const IndexPage = () => {
                     block: tabControls.isCurrentTab(index),
                   })}
                 >
-                  <div
-                    className="flex flex-col md:flex-row md:justify-between mb-8"
-                    style={{ minWidth: "400px" }}
-                  >
+                  <div className="flex flex-col-reverse mb-8 md:mb-16 md:mb-20 lg:flex-row lg:justify-between lg:items-center">
                     <div>
-                      <h3 className="m-0 font-semibold">{workExp.title}</h3>
-                      <h3 className="m-0 font-semibold text-brand-lightgreen">
+                      <h3 className="text-2xl md:text-3xl m-0 font-semibold">
+                        {workExp.title}
+                      </h3>
+                      <h3 className="text-2xl md:text-3xl m-0 font-semibold text-brand-lightgreen">
                         {workExp.company}
                       </h3>
                     </div>
-                    <span className="bg-brand-lightgreen text-white rounded-full p-2">
-                      {workExp.date.start} - {workExp.date.end}
-                    </span>
+                    <div className="flex flex-row justify-end mb-12 md:mb-0">
+                      <div className="text-lg md:text-xl text-center inline-block bg-brand-lightgreen text-white rounded-full py-2 px-3 w-auto">
+                        {workExp.date.start} - {workExp.date.end}
+                      </div>
+                    </div>
                   </div>
-                  <p>{workExp.description}</p>
+                  <p className="paragraph text-brand-darkgray">
+                    {workExp.description}
+                  </p>
                 </Card>
               ))}
             </div>
@@ -199,12 +208,18 @@ const IndexPage = () => {
         </div>
       </div>
 
-      <div className="container py-16">
-        <h2 className="font-bold text-3xl mb-8">Projects</h2>
+      <div className="container module">
+        <h2 className="font-bold text-4xl md:text-5xl mb-8 md:mb-16">
+          Projects
+        </h2>
 
         <section>
           <FeaturedProject />
-          <div className="flex flex-row -mx-4">
+
+          <h3 className="text-2xl md:text-3xl mb-4 font-semibold text-right md:hidden">
+            More Projects
+          </h3>
+          <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-8">
             {projects.map((project) => (
               <Project key={project.title} {...project} />
             ))}
@@ -212,20 +227,23 @@ const IndexPage = () => {
         </section>
       </div>
 
-      <div className="container flex flex-col md:flex-row my-32">
-        <h2 className="text-5xl font-semibold md:w-1/2">Let's connect</h2>
-        <p className="text-5xl font-thin md:w-1/2">
+      <div className="container flex flex-col md:flex-row pb-24">
+        <h2 className="text-4xl md:text-5xl font-semibold md:w-1/2">
+          Let's connect
+        </h2>
+        <p className="text-4xl md:text-5xl font-thin md:w-1/2">
           Shorter blurb lorem ipsum dora crape diem
         </p>
       </div>
 
-      <div className="bg-brand-lightgray py-16">
+      <div className="bg-brand-lightgray module">
         <div className="container">
-          <section className="bg-white rounded-lg shadow p-8 md:mx-32">
+          <section className="bg-white rounded-lg shadow p-8 md:mx-32 lg:mx-56">
             <h3 className="text-center mt-0 mb-8 font-semibold">
               Don’t hesitate to reach out with any questions
             </h3>
             <form
+              id="contact"
               name="contact"
               method="post"
               action="/pages/success"
@@ -234,22 +252,22 @@ const IndexPage = () => {
             >
               <input type="hidden" name="form-name" value="contact" />
 
-              <div className="grid grid-cols-2 gap-4">
-                <div className="border border-solid border-brand-gray rounded-sm p-2">
+              <div className="grid gap-4">
+                <div className="border border-solid border-brand-gray rounded-sm p-2 focus-within:border-brand-lightgreen">
                   <input
                     type="text"
                     placeholder="Name"
                     className="border-0 w-full outline-none"
                   />
                 </div>
-                <div className="border border-solid border-brand-gray rounded-sm p-2">
+                <div className="border border-solid border-brand-gray rounded-sm p-2 focus-within:border-brand-lightgreen">
                   <input
                     type="email"
                     placeholder="Email"
                     className="border-0 w-full outline-none"
                   />
                 </div>
-                <div className="col-span-2 border border-solid border-brand-gray rounded-sm p-2">
+                <div className="md:col-span-2 border border-solid border-brand-gray rounded-sm p-2 focus-within:border-brand-lightgreen">
                   <textarea
                     placeholder="Message"
                     className="border-0 w-full outline-none"
@@ -257,8 +275,8 @@ const IndexPage = () => {
                 </div>
               </div>
               <div className="flex flex-row justify-center w-full">
-                <button className="text-brand-lightgreen border-brand-lightgreen border-2 outline-none px-5 py-3 mt-8 rounded font-bold">
-                  Contact
+                <button className="flex flex-row items-center text-brand-lightgreen border-brand-lightgreen border-2 outline-none px-5 py-3 mt-8 rounded font-bold">
+                  Contact <FaArrowRight className="ml-2" />
                 </button>
               </div>
             </form>
