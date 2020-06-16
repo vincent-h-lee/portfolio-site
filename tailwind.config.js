@@ -12,12 +12,14 @@ module.exports = {
     },
     colors: {
       brand: {
-        darkgreen: "#4E6766",
+        darkgreen: "#1A5E63",
         lightgreen: "#5AB1BB",
         yellow: "#F7DD72",
         green: "#A5C882",
         lightgray: "#F7F7F7",
         gray: "#D1D1D1",
+        darkgray: "#979797",
+        darkblue: "#0A1128",
       },
 
       transparent: "transparent",
@@ -183,6 +185,7 @@ module.exports = {
       sm: "0.125rem",
       default: "0.25rem",
       lg: "0.5rem",
+      xl: "1rem",
       full: "9999px",
     },
     borderWidth: {
@@ -208,6 +211,12 @@ module.exports = {
     },
     container: {
       center: true,
+      padding: {
+        default: "1.5rem",
+        sm: "2rem",
+        lg: "4rem",
+        xl: "5rem",
+      },
     },
     cursor: {
       auto: "auto",
@@ -448,7 +457,7 @@ module.exports = {
     backgroundRepeat: ["responsive"],
     backgroundSize: ["responsive"],
     borderCollapse: ["responsive"],
-    borderColor: ["responsive", "hover", "focus"],
+    borderColor: ["responsive", "hover", "focus", "focus-within"],
     borderRadius: ["responsive"],
     borderStyle: ["responsive"],
     borderWidth: ["responsive"],
@@ -467,6 +476,7 @@ module.exports = {
     fontSmoothing: ["responsive"],
     fontStyle: ["responsive"],
     fontWeight: ["responsive", "hover", "focus"],
+    gridColumn: ["responsive"],
     height: ["responsive"],
     inset: ["responsive"],
     justifyContent: ["responsive"],
