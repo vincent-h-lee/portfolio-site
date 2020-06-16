@@ -5,16 +5,16 @@ import classnames from "classnames"
 const Project = ({ background, description, skills, title }) => (
   <article
     className={classnames(
-      "w-full md:w-1/3 text-white p-4 mx-4 h-56 flex flex-col justify-between",
+      "text-white p-4 rounded-sm flex flex-col justify-between",
       background
     )}
   >
     <div>
-      <h4 className="mt-1 mb-2 font-semibold">{title}</h4>
-      <p className="m-0 font-thin">{description}</p>
+      <h4 className="mt-1 mb-2 font-semibold text-2xl">{title}</h4>
+      <p className="m-0 text-xl font-thin">{description}</p>
     </div>
 
-    <div className="flex flex-row flex-wrap">
+    <div className="flex flex-row flex-wrap mt-12 text-xl">
       {skills &&
         skills.map((skill) => (
           <span key={skill} className="mr-2 font-thin">
