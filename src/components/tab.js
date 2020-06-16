@@ -17,9 +17,9 @@ export const useTabs = (initialTab) => {
 const Tab = ({ active, children, setActive, tabKey }) => (
   <button
     className={classnames(
-      "py-4 pl-3 bg-transparent outline-none border-0 border-l-2 text-left hover:text-brand-lightgreen cursor-pointer focus:outline-none",
+      "px-6 py-5 bg-transparent outline-none border-0 border-b-4 whitespace-no-wrap text-left lg:border-b-0 lg:border-l-4 hover:text-brand-lightgreen cursor-pointer focus:outline-none",
       {
-        "border-brand-gray": !active,
+        "border-brand-gray text-brand-darkgray": !active,
         "border-brand-lightgreen text-brand-lightgreen": active,
       }
     )}
@@ -33,7 +33,7 @@ Tab.propTypes = {
   active: PropTypes.bool,
   children: PropTypes.node,
   setActive: PropTypes.func.isRequired,
-  tabKey: PropTypes.string.isRequired,
+  tabKey: PropTypes.any.isRequired,
 }
 
 export default Tab
