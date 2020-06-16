@@ -16,7 +16,7 @@ const LogoSVG = ({ color = "#031926" }) => (
             </tspan>
           </text>
           <circle
-            fill="#279AEE"
+            fill="#5AB1BB"
             fillRule="evenodd"
             cx="136"
             cy="39"
