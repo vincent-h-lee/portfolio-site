@@ -71,7 +71,7 @@ function SEO({ description, lang, meta, title }) {
       link={[
         {
           href:
-            "https://fonts.googleapis.com/css?family=Nunito:300,400,700&display=swap",
+            "https://fonts.googleapis.com/css?family=Lato:300,400,500,600,700&display=swap",
           rel: "stylesheet",
         },
       ]}

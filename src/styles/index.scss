@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 html {
-  font-family: "Nunito";
+  scroll-behavior: smooth;
+  font-family: "Lato", sans-serif;
   @apply text-gray-900;
 }
 
@@ -25,23 +26,50 @@ h6 {
 }
 
 .paragraph {
-  @apply text-2xl;
+  @apply text-xl;
 
   @screen md {
-    @apply text-3xl;
+    @apply text-2xl;
   }
 }
 
 .module {
   @apply py-24;
+}
 
-  @screen md {
-    @apply py-32;
-  }
+.module--large {
+  @apply py-32;
 }
 
 .scroll-container {
   @media only screen and (max-width: 640px) {
     @apply px-0;
   }
+}
+
+.hero {
+  @apply flex flex-col justify-center h-auto min-h-screen;
+}
+
+.stacked-element {
+  @apply absolute top-0 left-0;
+}
+
+.stacked-element--current {
+  transition-property: z-index transform;
+  @apply translate-x-0 translate-y-0 opacity-100 z-20 duration-500;
+}
+
+.stacked-element--next {
+  transition-property: z-index transform;
+  @apply opacity-100 z-10 transform -translate-x-4 -translate-y-4 top-0 duration-500 delay-200;
+}
+
+.stacked-element--prev {
+  transition-property: z-index transform;
+  @apply opacity-100 transform translate-x-4 translate-y-4 top-0 duration-500 delay-200;
+}
+
+.stacked-element--none {
+  @apply opacity-0 relative;
 }

@@ -7,7 +7,8 @@ import Card from "../components/card"
 import FeaturedProject from "../components/featured-project"
 import Project from "../components/project"
 import Tab, { useTabs } from "../components/tab"
-import UnderstatedButton from "../components/understated-button"
+import UnderstatedCta from "../components/understated-cta"
+import useStack from "../components/use-stack"
 import Layout from "../layout/layout"
 import SEO from "../layout/seo"
 
@@ -25,7 +26,7 @@ const IndexPage = () => {
   const skills = [
     {
       area: "backend",
-      competencies: ["nodejs", "php", "java", "clojure", "kotlin"],
+      competencies: ["nodejs", "php", "java", "clojure"],
     },
     {
       area: "frontend",
@@ -33,7 +34,7 @@ const IndexPage = () => {
     },
     {
       area: "infra",
-      competencies: ["gitlab-ci", "docker", "aws", "terraform", "ansible"],
+      competencies: ["gitlab-ci", "aws", "terraform", "ansible"],
     },
   ]
 
@@ -42,7 +43,7 @@ const IndexPage = () => {
       company: "Cisco",
       title: "Software Engineer III",
       date: {
-        start: "May 2020",
+        start: "2020",
         end: "Present",
       },
       description:
@@ -52,8 +53,8 @@ const IndexPage = () => {
       company: "CMLS Financial",
       title: "Consultant",
       date: {
-        start: "Feb 2020",
-        end: "May 2020",
+        start: "2020",
+        end: "2020",
       },
       description:
         "I design and develop services for customers of all sizes, specializing in creating stylish, modern websites. I design and develop services for customers of all sizes, specializing in creating stylish, modern websites",
@@ -62,8 +63,8 @@ const IndexPage = () => {
       company: "Briteweb",
       title: "Senior Fullstack Developer",
       date: {
-        start: "Jan 2019",
-        end: "Jan 2020",
+        start: "2019",
+        end: "2020",
       },
       description:
         "I design and develop services for customers of all sizes, specializing in creating stylish, modern websites. I design and develop services for customers of all sizes, specializing in creating stylish, modern websites",
@@ -72,8 +73,8 @@ const IndexPage = () => {
       company: "Grow",
       title: "Software Engineer",
       date: {
-        start: "Jan 2018",
-        end: "Aug 2018",
+        start: "2018",
+        end: "2018",
       },
       description:
         "I design and develop services for customers of all sizes, specializing in creating stylish, modern websites. I design and develop services for customers of all sizes, specializing in creating stylish, modern websites",
@@ -97,40 +98,48 @@ const IndexPage = () => {
       skills: ["react", "nodejs"],
     },
   ]
+  const stackControls = useStack({
+    initialActive: 0,
+    totalCount: workExperiences.length,
+  })
 
   return (
     <Layout>
       <SEO title="Home" />
 
-      <div className="bg-brand-darkgreen flex flex-col justify-center h-auto min-h-screen md:h-screen">
+      <div className="hero bg-brand-darkgreen">
         <div className="container">
           <h1 className="text-white text-4xl md:text-5xl font-bold m-0">
             Hi, I'm Vincent Lee
           </h1>
-          <h2 className="text-white opacity-7 text-4xl md:text-5xl font-bold m-0">
-            I build applications for complex domains
+          <h2 className="text-white opacity-50 text-4xl md:text-5xl font-bold m-0">
+            I build solutions in complex domains
           </h2>
+          <p className="py-6 text-xl md:text-2xl text-gray-300 font-thin lg:w-1/2">
+            I'm a software engineer based in Vancouver, BC. I specialize in
+            applications, documentation, and processes.
+          </p>
         </div>
       </div>
 
       <div className="container module">
         <article>
-          <h2 className="text-brand-lightgreen font-bold text-4xl md:text-5xl m-0 mb-8 md:mb-16">
+          <h2 className="text-brand-lightgreen font-bold text-4xl md:text-5xl m-0 mb-10">
             About
           </h2>
-          <section className="flex flex-wrap flex-col md:flex-row">
-            <p className="paragraph font-thin md:w-1/2 pb-10">
+          <section className="flex flex-wrap flex-col md:flex-row relative">
+            <p className="paragraph font-thin md:w-1/2 mb-8">
               I design and develop services for customers of all sizes,
               specializing in creating stylish, modern websites, web services
               and online stores. My passion is to design digital user
               experiences through the bold interface and meaningful
               interactions.
             </p>
-            <div className="flex justify-center md:justify-end py-16 md:py-0 md:w-1/2">
+            <div className="flex flex-row justify-center mb-8 md:absolute right-0 top-0">
               <img src="https://picsum.photos/250/300" className="rounded-lg" />
             </div>
           </section>
-          <ul className="text-xl list-none p-0">
+          <ul className="text-xl list-none p-0 mb-8">
             {skills.map(({ area, competencies }) => (
               <li
                 key={area}
@@ -139,7 +148,7 @@ const IndexPage = () => {
                 <div className="font-bold md:w-40">{area}</div>
                 <div className="flex flex-wrap">
                   {competencies.map((competency) => (
-                    <span key={competency} className="mr-2">
+                    <span key={competency} className="mr-2 text-brand-darkgray">
                       {competency}
                     </span>
                   ))}
@@ -148,53 +157,69 @@ const IndexPage = () => {
             ))}
           </ul>
 
-          <UnderstatedButton>Get in touch</UnderstatedButton>
+          <UnderstatedCta as="a" href="#contact">
+            Get in touch
+          </UnderstatedCta>
         </article>
       </div>
 
-      <div className="bg-brand-lightgray module">
+      <div className="module bg-brand-yellow">
         <div className="container">
           <h2 className="font-bold text-4xl md:text-5xl mb-8 md:mb-16">
             Work Experience
           </h2>
         </div>
         <div className="container scroll-container">
-          <section className="flex flex-col lg:flex-row flex-wrap">
-            <nav className="flex flex-row overflow-x-auto w-full mb-12 px-8 sm:px-0 lg:mb-0 lg:flex-col lg:w-auto lg:pr-32">
+          <section className="flex flex-col flex-wrap lg:flex-row lg:justify-center">
+            <nav className="flex flex-row overflow-x-auto w-full mb-12 px-8 sm:px-0 lg:ml-32 lg:mb-0 lg:flex-col lg:w-auto">
               {workExperiences.map((workExp, index) => (
                 <Tab
                   key={workExp.company}
-                  active={tabControls.isCurrentTab(index)}
-                  setActive={tabControls.setCurrentTab}
+                  active={stackControls.isActiveIndex(index)}
+                  setActive={stackControls.setActiveIndex}
                   tabKey={index}
                 >
-                  <span className="text-2xl lg:text-3xl font-semibold">
+                  <span className="text-xl lg:text-2xl font-medium">
                     {workExp.company}
                   </span>
                 </Tab>
               ))}
             </nav>
-            <div className="relative flex-1 px-8 md:px-0">
+            <div className="relative w-9/12 md:w-2/3 lg:w-1/2 mx-auto">
               {workExperiences.map((workExp, index) => (
                 <Card
                   key={workExp.company}
-                  className={classnames({
-                    hidden: !tabControls.isCurrentTab(index),
-                    block: tabControls.isCurrentTab(index),
+                  className={classnames("stacked-element", {
+                    "stacked-element--next": stackControls.isForwardIndex(
+                      index
+                    ),
+                    "stacked-element--prev": stackControls.isBackwardIndex(
+                      index
+                    ),
+                    "stacked-element--current": stackControls.isActiveIndex(
+                      index
+                    ),
+                    "stacked-element--none": [
+                      stackControls.isForwardIndex,
+                      stackControls.isBackwardIndex,
+                      stackControls.isActiveIndex,
+                    ].every((fn) => !fn(index)),
                   })}
                 >
-                  <div className="flex flex-col-reverse mb-8 md:mb-16 md:mb-20 lg:flex-row lg:justify-between lg:items-center">
+                  <div className="flex flex-col-reverse mb-8 lg:flex-row lg:justify-between lg:items-center">
                     <div>
-                      <h3 className="text-2xl md:text-3xl m-0 font-semibold">
+                      <h3 className="text-lg md:text-xl m-0 font-bold">
                         {workExp.title}
                       </h3>
-                      <h3 className="text-2xl md:text-3xl m-0 font-semibold text-brand-lightgreen">
+                      <h3 className="text-lg md:text-xl m-0 font-bold text-brand-lightgreen">
                         {workExp.company}
                       </h3>
                     </div>
                     <div className="flex flex-row justify-end mb-12 md:mb-0">
-                      <div className="text-lg md:text-xl text-center inline-block bg-brand-lightgreen text-white rounded-full py-2 px-3 w-auto">
-                        {workExp.date.start} - {workExp.date.end}
+                      <div className="text-lg font-semibold md:text-xl text-center inline-block bg-brand-lightgreen text-white rounded-full py-2 px-3 w-auto">
+                        {workExp.date.start !== workExp.date.end
+                          ? `${workExp.date.start} - ${workExp.date.end}`
+                          : workExp.date.start}
                       </div>
                     </div>
                   </div>
@@ -208,27 +233,8 @@ const IndexPage = () => {
         </div>
       </div>
 
-      <div className="container module">
-        <h2 className="font-bold text-4xl md:text-5xl mb-8 md:mb-16">
-          Projects
-        </h2>
-
-        <section>
-          <FeaturedProject />
-
-          <h3 className="text-2xl md:text-3xl mb-4 font-semibold text-right md:hidden">
-            More Projects
-          </h3>
-          <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-8">
-            {projects.map((project) => (
-              <Project key={project.title} {...project} />
-            ))}
-          </div>
-        </section>
-      </div>
-
-      <div className="container flex flex-col md:flex-row pb-24">
-        <h2 className="text-4xl md:text-5xl font-semibold md:w-1/2">
+      <div className="container flex flex-col md:flex-row py-32 xl:py-40">
+        <h2 className="text-4xl md:text-5xl font-bold md:w-1/2">
           Let's connect
         </h2>
         <p className="text-4xl md:text-5xl font-thin md:w-1/2">
@@ -236,10 +242,10 @@ const IndexPage = () => {
         </p>
       </div>
 
-      <div className="bg-brand-lightgray module">
+      <div className="bg-brand-lightgray module--large">
         <div className="container">
-          <section className="bg-white rounded-lg shadow p-8 md:mx-32 lg:mx-56">
-            <h3 className="text-center mt-0 mb-8 font-semibold">
+          <section className="bg-white rounded-lg shadow p-8 md:mx-24 lg:mx-48 xl:mx-56">
+            <h3 className="text-center mt-0 mt-4 mb-12 font-semibold">
               Don’t hesitate to reach out with any questions
             </h3>
             <form
@@ -252,31 +258,34 @@ const IndexPage = () => {
             >
               <input type="hidden" name="form-name" value="contact" />
 
-              <div className="grid gap-4">
-                <div className="border border-solid border-brand-gray rounded-sm p-2 focus-within:border-brand-lightgreen">
+              <div className="grid gap-6">
+                <div className="border border-solid border-brand-gray rounded p-2 focus-within:border-brand-lightgreen">
                   <input
                     type="text"
                     placeholder="Name"
                     className="border-0 w-full outline-none"
                   />
                 </div>
-                <div className="border border-solid border-brand-gray rounded-sm p-2 focus-within:border-brand-lightgreen">
+                <div className="border border-solid border-brand-gray rounded p-2 focus-within:border-brand-lightgreen">
                   <input
                     type="email"
                     placeholder="Email"
                     className="border-0 w-full outline-none"
                   />
                 </div>
-                <div className="md:col-span-2 border border-solid border-brand-gray rounded-sm p-2 focus-within:border-brand-lightgreen">
+                <div className="md:col-span-2 border border-solid border-brand-gray rounded p-2 focus-within:border-brand-lightgreen">
                   <textarea
                     placeholder="Message"
-                    className="border-0 w-full outline-none"
+                    className="border-0 w-full outline-none h-40"
                   />
                 </div>
               </div>
               <div className="flex flex-row justify-center w-full">
-                <button className="flex flex-row items-center text-brand-lightgreen border-brand-lightgreen border-2 outline-none px-5 py-3 mt-8 rounded font-bold">
-                  Contact <FaArrowRight className="ml-2" />
+                <button className="group flex flex-row items-center text-brand-lightgreen border-brand-lightgreen border-2 outline-none px-5 py-3 mt-8 rounded font-bold hover:bg-brand-lightgreen hover:text-white transition-colors duration-150">
+                  Contact
+                  <span className="ml-1 transform transition-transform duration-150 group-hover:translate-x-2">
+                    <FaArrowRight />
+                  </span>
                 </button>
               </div>
             </form>

@@ -26,13 +26,14 @@ const Header = ({ menuLinks }) => {
     >
       <nav
         className={classnames(
-          "container py-10 flex flex-row justify-between items-center transition-colors transition-padding ease-in-out duration-300",
+          "container flex flex-row justify-between items-center transition-colors transition-padding ease-in-out duration-300",
           {
-            "py-3 md:py-4": isScrolled,
+            "py-6 md:py-10": !isScrolled,
+            "py-4 md:py-6": isScrolled,
           }
         )}
       >
-        <h1 className="m-0">
+        <h1>
           <a href="/">
             <LogoSVG color={isScrolled ? undefined : "white"} />
           </a>
@@ -111,7 +112,7 @@ const Header = ({ menuLinks }) => {
           {menuLinks.map((menuItem) => (
             <li
               key={menuItem.name}
-              className="mx-4 lowercase hover:text-gray-400"
+              className="mx-4 lowercase hover:text-brand-lightgreen"
             >
               <a href={menuItem.link}>{menuItem.name}</a>
             </li>

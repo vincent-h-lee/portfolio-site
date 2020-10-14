@@ -19,7 +19,7 @@ const Tab = ({ active, children, setActive, tabKey }) => (
     className={classnames(
       "px-6 py-5 bg-transparent outline-none border-0 border-b-4 whitespace-no-wrap text-left lg:border-b-0 lg:border-l-4 hover:text-brand-lightgreen cursor-pointer focus:outline-none",
       {
-        "border-brand-gray text-brand-darkgray": !active,
+        "border-gray-500 text-gray-500": !active,
         "border-brand-lightgreen text-brand-lightgreen": active,
       }
     )}

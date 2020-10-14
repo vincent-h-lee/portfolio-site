@@ -5,7 +5,7 @@ import classnames from "classnames"
 const Project = ({ background, description, skills, title }) => (
   <article
     className={classnames(
-      "text-white p-4 rounded-sm flex flex-col justify-between",
+      "text-white p-4 rounded-sm flex flex-col justify-between h-full",
       background
     )}
   >

@@ -506,6 +506,7 @@ module.exports = {
     textColor: ["responsive", "hover", "focus"],
     textDecoration: ["responsive", "hover", "focus"],
     textTransform: ["responsive"],
+    translate: ["responsive", "hover", "focus", "group-hover"],
     userSelect: ["responsive"],
     verticalAlign: ["responsive"],
     visibility: ["responsive"],

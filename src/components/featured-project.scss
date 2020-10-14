@@ -3,11 +3,11 @@
 }
 
 .featured-project__label {
-  @apply text-brand-lightgreen text-3xl text-right font-semibold;
+  @apply text-brand-lightgreen text-3xl text-right font-bold;
 }
 
 .featured-project__title {
-  @apply text-right text-3xl font-semibold mb-12;
+  @apply text-right text-3xl font-bold mb-12;
 
   @screen md {
     @apply mb-20;

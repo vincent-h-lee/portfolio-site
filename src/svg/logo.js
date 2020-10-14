@@ -5,12 +5,7 @@ const LogoSVG = ({ color = "#031926" }) => (
     <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
       <g transform="translate(-39.000000, -37.000000)">
         <g transform="translate(39.000000, 26.000000)">
-          <text
-            fontFamily="Nunito-medium, Nunito"
-            fontSize="40"
-            fontWeight="500"
-            fill={color}
-          >
+          <text fontFamily="Lato" fontSize="40" fontWeight="500" fill={color}>
             <tspan x="0" y="40">
               vincent
             </tspan>
