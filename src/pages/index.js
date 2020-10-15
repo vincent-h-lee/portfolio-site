@@ -4,16 +4,13 @@ import classnames from "classnames"
 import { FaArrowRight } from "react-icons/fa"
 
 import Card from "../components/card"
-import FeaturedProject from "../components/featured-project"
-import Project from "../components/project"
-import Tab, { useTabs } from "../components/tab"
+import { Tab, Tabs } from "../components/tab"
 import UnderstatedCta from "../components/understated-cta"
 import useStack from "../components/use-stack"
 import Layout from "../layout/layout"
 import SEO from "../layout/seo"
 
 const IndexPage = () => {
-  const tabControls = useTabs(0)
   const { pagesYaml } = useStaticQuery(indexPageQuery)
   const {
     intro,
@@ -81,24 +78,13 @@ const IndexPage = () => {
     },
   ]
 
-  const projects = [
-    {
-      title: "Portfolio 1",
-      description: "Description description description",
-      skills: ["react", "nodejs"],
-    },
-    {
-      title: "Portfolio 2",
-      description: "Description description description",
-      skills: ["react", "nodejs"],
-    },
-    {
-      title: "Portfolio 3",
-      description: "Description description description",
-      skills: ["react", "nodejs"],
-    },
-  ]
-  const stackControls = useStack({
+  const {
+    activeIndex,
+    isActiveIndex,
+    setActiveIndex,
+    isForwardIndex,
+    isBackwardIndex,
+  } = useStack({
     initialActive: 0,
     totalCount: workExperiences.length,
   })
@@ -122,7 +108,7 @@ const IndexPage = () => {
         </div>
       </div>
 
-      <div className="container module">
+      <div className="container module--large">
         <article>
           <h2 className="text-brand-lightgreen font-bold text-4xl md:text-5xl m-0 mb-10">
             About
@@ -171,42 +157,25 @@ const IndexPage = () => {
         </div>
         <div className="container scroll-container">
           <section className="flex flex-col flex-wrap lg:flex-row lg:justify-center">
-            <nav className="flex flex-row overflow-x-auto w-full mb-12 px-8 sm:px-0 lg:ml-32 lg:mb-0 lg:flex-col lg:w-auto">
-              {workExperiences.map((workExp, index) => (
-                <Tab
-                  key={workExp.company}
-                  active={stackControls.isActiveIndex(index)}
-                  setActive={stackControls.setActiveIndex}
-                  tabKey={index}
-                >
-                  <span className="text-xl lg:text-2xl font-medium">
-                    {workExp.company}
-                  </span>
-                </Tab>
-              ))}
-            </nav>
+            <Tabs
+              activeIndex={activeIndex}
+              tabs={workExperiences.map((exp) => exp.company)}
+              isActiveIndex={isActiveIndex}
+              setActiveIndex={setActiveIndex}
+            />
+
             <div className="relative w-9/12 md:w-2/3 lg:w-1/2 mx-auto">
               {workExperiences.map((workExp, index) => (
                 <Card
                   key={workExp.company}
                   className={classnames("stacked-element", {
-                    "stacked-element--next": stackControls.isForwardIndex(
-                      index
-                    ),
-                    "stacked-element--prev": stackControls.isBackwardIndex(
-                      index
-                    ),
-                    "stacked-element--current": stackControls.isActiveIndex(
-                      index
-                    ),
-                    "stacked-element--none": [
-                      stackControls.isForwardIndex,
-                      stackControls.isBackwardIndex,
-                      stackControls.isActiveIndex,
-                    ].every((fn) => !fn(index)),
+                    "stacked-element--next": isForwardIndex(index),
+                    "stacked-element--prev": isBackwardIndex(index),
+                    "stacked-element--current": isActiveIndex(index),
+                    "stacked-element--none": [isForwardIndex,isBackwardIndex,isActiveIndex].every((fn) => !fn(index)),
                   })}
                 >
-                  <div className="flex flex-col-reverse mb-8 lg:flex-row lg:justify-between lg:items-center">
+                  <div className="flex flex-col-reverse sm:flex-row sm:justify-between sm:items-center mb-4">
                     <div>
                       <h3 className="text-lg md:text-xl m-0 font-bold">
                         {workExp.title}
@@ -215,8 +184,8 @@ const IndexPage = () => {
                         {workExp.company}
                       </h3>
                     </div>
-                    <div className="flex flex-row justify-end mb-12 md:mb-0">
-                      <div className="text-lg font-semibold md:text-xl text-center inline-block bg-brand-lightgreen text-white rounded-full py-2 px-3 w-auto">
+                    <div className="flex flex-row justify-end mb-4 sm:mb-0">
+                      <div className="text-lg font-semibold text-center inline-block bg-brand-lightgreen text-white rounded-full py-1 px-3 w-auto">
                         {workExp.date.start !== workExp.date.end
                           ? `${workExp.date.start} - ${workExp.date.end}`
                           : workExp.date.start}
