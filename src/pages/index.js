@@ -9,65 +9,65 @@ import useStack from "../components/use-stack"
 import Layout from "../layout/layout"
 import SEO from "../layout/seo"
 
+const skills = [
+  {
+    area: "backend",
+    competencies: ["nodejs", "php", "kotlin", "java", "clojure"],
+  },
+  {
+    area: "frontend",
+    competencies: ["reactjs", "vuejs"],
+  },
+  {
+    area: "infra",
+    competencies: ["gitlab-ci", "aws", "terraform", "ansible"],
+  },
+]
+
+const workExperiences = [
+  {
+    company: "Cisco",
+    title: "Software Engineer III",
+    date: {
+      start: "2020",
+      end: "Present",
+    },
+    description:
+      "End-to-end development on security applications in a decentralized, polyglot environment. Focus on process automation, scalability, and cross-functional collaboration.",
+  },
+  {
+    company: "CMLS Financial",
+    title: "Consultant",
+    date: {
+      start: "2020",
+      end: "2020",
+    },
+    description:
+      "Lead workshops on React and defined standards of practice for the development team. Audited the application and provided a phased implementation plan to address issues. ",
+  },
+  {
+    company: "Briteweb",
+    title: "Senior Fullstack Developer",
+    date: {
+      start: "2019",
+      end: "2020",
+    },
+    description:
+      "Owned the FE architecture of an education product. Added robust features with an agile team including a spreadsheet editor, survey builder. Standardized handoffs with cross-functional partners.",
+  },
+  {
+    company: "Grow",
+    title: "Software Engineer",
+    date: {
+      start: "2018",
+      end: "2018",
+    },
+    description:
+      "Lead a compliance SPA re-launch improving security policies, UX, and complex features like pre-auth bill switching. Championed processes to coordinate releases and dependencies between teams.",
+  },
+]
+
 const IndexPage = () => {
-  const skills = [
-    {
-      area: "backend",
-      competencies: ["nodejs", "php", "kotlin", "java", "clojure"],
-    },
-    {
-      area: "frontend",
-      competencies: ["reactjs", "vuejs"],
-    },
-    {
-      area: "infra",
-      competencies: ["gitlab-ci", "aws", "terraform", "ansible"],
-    },
-  ]
-
-  const workExperiences = [
-    {
-      company: "Cisco",
-      title: "Software Engineer III",
-      date: {
-        start: "2020",
-        end: "Present",
-      },
-      description:
-        "End-to-end development on security applications in a decentralized, polyglot environment. Focus on process automation, scalability, and cross-functional collaboration.",
-    },
-    {
-      company: "CMLS Financial",
-      title: "Consultant",
-      date: {
-        start: "2020",
-        end: "2020",
-      },
-      description:
-        "Lead workshops on React and defined standards of practice for the development team. Audited the application and provided a phased implementation plan to address issues. ",
-    },
-    {
-      company: "Briteweb",
-      title: "Senior Fullstack Developer",
-      date: {
-        start: "2019",
-        end: "2020",
-      },
-      description:
-        "Owned the FE architecture of an education product. Added robust features with an agile team including a spreadsheet editor, survey builder. Standardized handoffs with cross-functional partners.",
-    },
-    {
-      company: "Grow",
-      title: "Software Engineer",
-      date: {
-        start: "2018",
-        end: "2018",
-      },
-      description:
-        "Lead a compliance SPA re-launch improving security policies, UX, and complex features like pre-auth bill switching. Championed processes to coordinate releases and dependencies between teams.",
-    },
-  ]
-
   const {
     activeIndex,
     isActiveIndex,
