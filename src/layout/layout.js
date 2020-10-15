@@ -8,11 +8,10 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import { FaGithub, FaLinkedinIn } from "react-icons/fa"
 
-import Footer from "./footer"
-import GlobalStyle from "./global-style"
 import Header from "./header"
-import "./normalize.css"
+import "../styles/index.scss"
 
 const Layout = ({ children }) => {
   const { allTestimonialsYaml, site } = useStaticQuery(graphql`
@@ -42,19 +41,33 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <GlobalStyle />
       <Header
         menuLinks={site.siteMetadata.menuLinks}
         siteTitle={site.siteMetadata.title}
       />
       <main>{children}</main>
-
-      <Footer
-        mediaLinks={site.siteMetadata.mediaLinks}
-        menuLinks={site.siteMetadata.menuLinks}
-        siteTitle={site.siteMetadata.title}
-        testimonial={allTestimonialsYaml.nodes[0]}
-      />
+      <footer className="bg-brand-darkblue">
+        <section className="container text-white py-4 flex justify-between items-center">
+          <h4 className="text-white font-semibold">Site by Vincent Lee</h4>
+          <div className="flex flex-row items-center text-2xl">
+            <a
+              href="https://github.com/vincent-h-lee"
+              target="_blank"
+              className="mr-2"
+              rel="noreferrer"
+            >
+              <FaGithub aria-label="Github" />
+            </a>
+            <a
+              href="https://linkedin.com/in/leevincenth"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FaLinkedinIn aria-label="Linkedin" />
+            </a>
+          </div>
+        </section>
+      </footer>
     </>
   )
 }

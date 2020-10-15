@@ -1,6 +1,6 @@
 import React from "react"
 
-const QuotesSVG = props => (
+const QuotesSVG = (props) => (
   <svg width="48px" height="40px" viewBox="0 0 48 40" version="1.1" {...props}>
     <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
       <g
