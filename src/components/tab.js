@@ -31,7 +31,7 @@ export const Tabs = ({ activeIndex, tabs, isActiveIndex, setActiveIndex }) => {
   }
 
   const setSliderStyle = () => {
-    if (window.innerWidth > 1024) {
+    if (window.innerWidth >= 768) {
       slider.current.style.removeProperty("width")
       slider.current.style.removeProperty("bottom")
       slider.current.style.left = 0
@@ -51,8 +51,8 @@ export const Tabs = ({ activeIndex, tabs, isActiveIndex, setActiveIndex }) => {
   }
 
   return (
-    <section className="px-8 sm:px-0 w-full md:w-auto">
-      <nav className="relative flex flex-row overflow-x-auto w-full mb-12 lg:ml-32 lg:mb-0 lg:flex-col lg:w-auto">
+    <section className="px-8 md:px-0 w-full md:w-auto">
+      <nav className="relative flex flex-row overflow-x-auto w-full mb-12 lg:ml-32 md:mb-0 md:flex-col md:w-auto no-scrollbar">
         <div
           ref={slider}
           className="absolute h-1 bottom-0 lg:w-1 bg-brand-lightgreen transition-transform duration-300 delay-75 ease-in-out"
@@ -78,7 +78,7 @@ export const Tab = forwardRef(
     <button
       ref={ref}
       className={classnames(
-        "px-6 py-5 bg-transparent outline-none border-0 border-b-4 whitespace-no-wrap text-left lg:border-b-0 lg:border-l-4 cursor-pointer focus:outline-none",
+        "px-6 py-5 bg-transparent outline-none border-0 border-b-4 whitespace-no-wrap text-left md:border-b-0 md:border-l-4 cursor-pointer focus:outline-none",
         {
           "text-white border-white": !active,
         }
