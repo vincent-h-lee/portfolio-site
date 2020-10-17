@@ -200,7 +200,7 @@ const IndexPage = () => {
         <div className="container flex flex-col lg:flex-row lg:justify-between lg:items-center module--large">
           <div className="lg:w-2/5 pb-16 lg:pb-0">
             <p className="text-4xl md:text-5xl font-thin">
-              Tell me about your project or team
+              Tell me about what you're working on
             </p>
           </div>
           <div className="lg:w-1/2">
@@ -222,6 +222,7 @@ const IndexPage = () => {
                   <label className="font-semibold text-xl">
                     Name
                     <input
+                      autoComplete="name"
                       type="text"
                       placeholder="Name"
                       className="mt-3 border border-solid border-brand-gray rounded p-2 focus:border-brand-lightgreen w-full outline-none"
@@ -231,6 +232,7 @@ const IndexPage = () => {
                   <label className="font-semibold text-xl">
                     Email
                     <input
+                      autoComplete="email"
                       type="email"
                       placeholder="Email"
                       className="mt-3 border border-solid border-brand-gray rounded p-2 focus:border-brand-lightgreen w-full outline-none"
