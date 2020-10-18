@@ -6,6 +6,7 @@ import { useScrollPosition } from "@n8tb1t/use-scroll-position"
 import LogoSVG from "../svg/logo"
 
 const Header = ({ menuLinks }) => {
+  const [menuState, setMenuState] = useState(false)
   const [isScrolled, setScrolled] = useState(false)
   useScrollPosition(({ currPos }) => {
     const currentlyScrolled = Math.abs(currPos.y) > 75
@@ -41,6 +42,8 @@ const Header = ({ menuLinks }) => {
 
         <div className="sm:hidden">
           <Menu
+            isOpen={menuState}
+            onStateChange={(state) => setMenuState(state.isOpen)}
             right={true}
             styles={{
               bmBurgerButton: {
@@ -101,7 +104,11 @@ const Header = ({ menuLinks }) => {
           >
             <a href="/">Home</a>
             {menuLinks.map((menuItem) => (
-              <a href={menuItem.link} key={menuItem.name}>
+              <a
+                href={menuItem.link}
+                key={menuItem.name}
+                onClick={() => setMenuState(false)}
+              >
                 {menuItem.name}
               </a>
             ))}
