@@ -70,13 +70,13 @@ const Header = ({ menuLinks }) => {
                 top: 0,
               },
               bmMenu: {
-                background: "#2d3748",
+                background: "#0A1128",
                 padding: "2.5em 1.5em 0",
                 fontSize: "1.15em",
                 width: "100%",
               },
               bmMorphShape: {
-                fill: "#2d3748",
+                fill: "#0A1128",
               },
               bmItemList: {
                 color: "white",
