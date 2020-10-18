@@ -226,6 +226,7 @@ const IndexPage = () => {
                       type="text"
                       placeholder="Name"
                       className="mt-3 border border-solid border-brand-gray rounded p-2 focus:border-brand-lightgreen w-full outline-none"
+                      required
                     />
                   </label>
 
@@ -236,6 +237,7 @@ const IndexPage = () => {
                       type="email"
                       placeholder="Email"
                       className="mt-3 border border-solid border-brand-gray rounded p-2 focus:border-brand-lightgreen w-full outline-none"
+                      required
                     />
                   </label>
                   <label className="font-semibold text-xl">
@@ -245,6 +247,7 @@ const IndexPage = () => {
                       placeholder="Message"
                       style={{ minHeight: "100px" }}
                       className="mt-3 border border-solid border-brand-gray rounded p-2 focus:border-brand-lightgreen w-full outline-none"
+                      required
                     />
                   </label>
                 </div>
