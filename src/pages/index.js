@@ -33,7 +33,7 @@ const workExperiences = [
       end: "Present",
     },
     description:
-      "End-to-end development on security applications in a decentralized, polyglot environment. Focus on process automation, scalability, and cross-functional collaboration.",
+      "End-to-end development on security applications in a decentralized, polyglot environment. Focus on process automation, scalability, agile training, and cross-functional collaboration.",
   },
   {
     company: "CMLS Financial",
@@ -53,7 +53,7 @@ const workExperiences = [
       end: "2020",
     },
     description:
-      "Owned the FE architecture of an education product. Added robust features with an agile team including a spreadsheet editor, survey builder. Standardized handoffs with cross-functional partners.",
+      "Owned the FE architecture of an education product. Worked with an agile team including a spreadsheet editor, survey builder. Standardized handoffs with cross-functional partners.",
   },
   {
     company: "Grow",
