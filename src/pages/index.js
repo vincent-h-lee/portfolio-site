@@ -199,7 +199,7 @@ const IndexPage = () => {
       <section className="bg-brand-lightgray">
         <div className="container flex flex-col lg:flex-row lg:justify-between lg:items-center module--large">
           <div className="lg:w-2/5 pb-16 lg:pb-0">
-            <p className="text-4xl md:text-5xl font-thin">
+            <p className="text-4xl md:text-5xl font-semibold">
               Tell me about what you're working on
             </p>
           </div>
