@@ -224,6 +224,7 @@ const IndexPage = () => {
                     <input
                       autoComplete="name"
                       type="text"
+                      name="name"
                       placeholder="Name"
                       className="mt-3 border border-solid border-brand-gray rounded p-2 focus:border-brand-lightgreen w-full outline-none"
                       required
@@ -235,6 +236,7 @@ const IndexPage = () => {
                     <input
                       autoComplete="email"
                       type="email"
+                      name="email"
                       placeholder="Email"
                       className="mt-3 border border-solid border-brand-gray rounded p-2 focus:border-brand-lightgreen w-full outline-none"
                       required
@@ -243,6 +245,7 @@ const IndexPage = () => {
                   <label className="font-semibold text-xl">
                     Message
                     <textarea
+                      name="message"
                       type="text"
                       placeholder="Message"
                       style={{ minHeight: "100px" }}
