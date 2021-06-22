@@ -1,12 +1,12 @@
 import React from "react"
 
 import Layout from "../layout/layout"
-import SEO from "../layout/seo"
+import Seo from "../layout/seo"
 
-const NotFoundPage = () => (
+const SuccessPage = () => (
   <Layout>
-    <SEO title="Success" />
+    <Seo title="Success" />
   </Layout>
 )
 
-export default NotFoundPage
+export default SuccessPage

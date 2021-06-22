@@ -5,12 +5,12 @@ import { Flashcard } from "../modules/flashcard"
 import { Details } from "../modules/details"
 import { Contact } from "../modules/contact"
 import Layout from "../layout/layout"
-import SEO from "../layout/seo"
+import Seo from "../layout/seo"
 
 const IndexPage = () => {
   return (
     <Layout>
-      <SEO title="Home" />
+      <Seo title="Home" />
 
       <Hero />
 
