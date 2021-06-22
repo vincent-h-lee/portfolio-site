@@ -4,7 +4,7 @@ import UnderstatedCta from "../components/understated-cta"
 const workExperiences = [
   {
     company: "Cisco",
-    title: "Software Engineer III",
+    title: "Software Engineer",
     date: {
       start: "2020",
       end: "present",
