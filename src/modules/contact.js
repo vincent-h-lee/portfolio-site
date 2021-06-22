@@ -14,8 +14,8 @@ export const Contact = () => {
         <div className="w-full">
           <div className="mx-auto p-4 md:p-8 shadow rounded bg-white relative">
             <div
-              className="absolute w-full h-full bg-brand-red rounded"
-              style={{ zIndex: -10, top: "5%", left: "5%" }}
+              className="absolute w-full h-full bg-brand-blue rounded"
+              style={{ zIndex: -10, top: "1.5rem", left: "1.5rem" }}
             ></div>
             <form
               name="contact"
@@ -51,7 +51,7 @@ export const Contact = () => {
                 </label>
               </div>
               <div className="flex flex-row justify-center w-full">
-                <button className="group flex flex-row items-center text-brand-red border-brand-red border-2 outline-none px-5 py-3 mt-4 rounded font-bold hover:bg-brand-red hover:text-white transition-colors duration-150">
+                <button className="group flex flex-row items-center text-brand-blue border-brand-blue border-2 outline-none px-5 py-3 mt-4 rounded font-bold hover:bg-brand-blue hover:text-white transition-colors duration-150">
                   Contact
                   <span className="ml-1 transform transition-transform duration-150 group-hover:translate-x-2">
                     <FaArrowRight />
