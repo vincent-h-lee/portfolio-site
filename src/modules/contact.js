@@ -3,7 +3,7 @@ import { FaArrowRight } from "react-icons/fa"
 
 export const Contact = () => {
   return (
-    <section className="module module--top">
+    <section className="module module--top" id="contact">
       <div className="container flex flex-col md:flex-row md:space-x-8">
         <div className="max-w-sm w-full">
           <h2 className="module__heading">
@@ -18,7 +18,6 @@ export const Contact = () => {
               style={{ zIndex: -10, top: "5%", left: "5%" }}
             ></div>
             <form
-              id="contact"
               name="contact"
               method="post"
               action="/pages/success"
