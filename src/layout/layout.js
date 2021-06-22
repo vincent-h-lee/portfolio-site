@@ -39,7 +39,7 @@ const Layout = ({ children }) => {
         menuLinks={site.siteMetadata.menuLinks}
         siteTitle={site.siteMetadata.title}
       />
-      <main>{children}</main>
+      <main className="flex-1 flex flex-col">{children}</main>
       <footer className="bg-brand-darkblue">
         <section className="container text-white py-4 flex justify-between items-center">
           <p className="text-white font-semibold">Site by Vincent Lee</p>
