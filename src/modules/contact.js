@@ -28,7 +28,7 @@ export const Contact = () => {
               <input type="hidden" name="form-name" value="contact" />
               <div className="grid gap-2">
                 <label className="text-xl">
-                  <span class="lowercase">Email</span>
+                  <span className="lowercase">Email</span>
                   <input
                     autoComplete="email"
                     type="email"
@@ -39,7 +39,7 @@ export const Contact = () => {
                   />
                 </label>
                 <label className="text-xl">
-                  <span class="lowercase">Message</span>
+                  <span className="lowercase">Message</span>
                   <textarea
                     name="message"
                     type="text"

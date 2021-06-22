@@ -35,13 +35,3 @@ export const Flashcard = ({ title, content, link, screen }) => {
     </section>
   )
 }
-
-Flashcard.defaultProps = {
-  title: "About",
-  content:
-    "Hello, I'm Vincent. I have years of working in cross-functional teams, shipping and maintaining product, and transforming ideas into experiences. I do full end-to-end development -- I can help build requirements-rich applications, configure pipelines, or improve team operations.",
-  link: {
-    url: "#contact",
-    text: "Get in touch",
-  },
-}

@@ -1,42 +1,30 @@
 import React from "react"
 import UnderstatedCta from "../components/understated-cta"
 
-const workExperiences = [
-  {
-    company: "Cisco",
-    title: "Software Engineer",
-    date: {
-      start: "2020",
-      end: "present",
-    },
-  },
-  {
-    company: "CMLS Financial",
-    title: "Consultant",
-    date: {
-      start: "2020",
-      end: "2020",
-    },
-  },
-  {
-    company: "Briteweb",
-    title: "Senior Fullstack Developer",
-    date: {
-      start: "2019",
-      end: "2020",
-    },
-  },
-  {
-    company: "Grow",
-    title: "Software Engineer",
-    date: {
-      start: "2018",
-      end: "2018",
-    },
-  },
-]
+/**
+ * Return a year range from two timestamps
+ * @param {string} start timestamp
+ * @param {string} end timestamp
+ * @returns {string}
+ */
+const getRange = (start, end) => {
+  const startYear = (new Date(start)).getFullYear();
+  const endYear = end ? (new Date(end)).getFullYear() : null;
 
-export const Details = ({ title, link }) => {
+  if (!endYear) {
+    return `${startYear} - Present`
+  }
+
+  if (startYear == endYear) {
+    return `${startYear}`
+  }
+
+  return `${startYear} - ${endYear}`
+}
+
+
+export const Details = ({ title, link, workExperience }) => {
+
   return (
     <section className="module module--top bg-brand-neutral">
       <div className="container">
@@ -44,20 +32,18 @@ export const Details = ({ title, link }) => {
 
         <div className="flex relative md:flex-row md:space-x-16 mb-8">
           <div className="grid gap-4 md:gap-8 md:grid-cols-2 lg:grid-cols-4 w-full">
-            {workExperiences.map((workExp) => (
-              <div className="bg-white shadow px-4 py-2 rounded">
+            {workExperience.map((workExp) => (
+              <div className="bg-white shadow px-4 py-2 rounded" key={workExp.company}>
                 <div className="flex flex-col h-full justify-around">
                   <h3 className="m-0 font-bold">
                     {workExp.company}
                     <br />
-                    <span className="font-thin">{workExp.title}</span>
+                    <span className="font-thin">{workExp.position}</span>
                   </h3>
 
                   <div>
                     <p className="mt-2 font-thin">
-                      {workExp.date.start !== workExp.date.end
-                        ? `${workExp.date.start} - ${workExp.date.end}`
-                        : workExp.date.start}
+                      {getRange(workExp.start_date, workExp.end_date)}
                     </p>
                   </div>
                 </div>

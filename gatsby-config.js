@@ -49,7 +49,9 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `./src/data`,
+        name: `data`,
+        path: `${__dirname}/content/`,
+        ignore: [`**/\.*`], // ignore files starting with a dot
       },
     },
     {
@@ -70,5 +72,6 @@ module.exports = {
         ],
       },
     },
+    `gatsby-plugin-netlify-cms`
   ],
 }
