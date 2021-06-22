@@ -42,7 +42,7 @@ const Layout = ({ children }) => {
       <main>{children}</main>
       <footer className="bg-brand-darkblue">
         <section className="container text-white py-4 flex justify-between items-center">
-          <h4 className="text-white font-semibold">Site by Vincent Lee</h4>
+          <p className="text-white font-semibold">Site by Vincent Lee</p>
           <div className="flex flex-row items-center text-2xl">
             <a
               href="https://github.com/vincent-h-lee"

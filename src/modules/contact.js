@@ -6,10 +6,11 @@ export const Contact = () => {
     <section className="module module--top">
       <div className="container flex flex-col md:flex-row md:space-x-8">
         <div className="max-w-sm w-full">
-          <h2 className="module__heading mx-auto">
+          <h2 className="module__heading">
             Let's connect! Tell me about your team, projects, product
           </h2>
         </div>
+
         <div className="w-full">
           <div className="mx-auto p-4 md:p-8 shadow rounded bg-white relative">
             <div
