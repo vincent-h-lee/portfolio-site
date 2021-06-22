@@ -14,14 +14,8 @@ import Header from "./header"
 import "../styles/index.scss"
 
 const Layout = ({ children }) => {
-  const { allTestimonialsYaml, site } = useStaticQuery(graphql`
+  const { site } = useStaticQuery(graphql`
     query SiteQuery {
-      allTestimonialsYaml(limit: 1) {
-        nodes {
-          attestant
-          quote
-        }
-      }
       site {
         siteMetadata {
           title

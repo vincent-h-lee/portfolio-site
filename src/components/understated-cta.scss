@@ -1,15 +1,16 @@
 .understated-button {
-  @apply mt-8 text-2xl font-semibold bg-transparent border-0 relative;
+  @apply mt-8 text-xl font-semibold bg-transparent border-0 relative lowercase;
 
   &:after {
     content: "";
     left: 105%;
     height: 3px;
-    transition-property: width;
-    @apply absolute top-1/2 w-12 bg-black duration-300 ease-in rounded;
+    transition-property: width, color;
+    @apply absolute top-1/2 w-12 bg-brand-orange duration-300 ease-in rounded;
   }
 
   &:hover {
+    @apply text-brand-orange;
     &:after {
       @apply w-16;
     }

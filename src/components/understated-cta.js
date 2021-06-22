@@ -4,7 +4,10 @@ import classnames from "classnames"
 import "./understated-cta.scss"
 
 const UnderstatedCta = ({ className, children, href }) => (
-  <a className={classnames(className, "understated-button")} href={href}>
+  <a
+    className={classnames(className, "lowercase understated-button")}
+    href={href}
+  >
     {children}
   </a>
 )

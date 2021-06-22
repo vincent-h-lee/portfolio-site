@@ -5,7 +5,6 @@
 html {
   scroll-behavior: smooth;
   font-family: "Lato", sans-serif;
-  @apply text-gray-900;
 }
 
 a,
@@ -26,29 +25,27 @@ h6 {
 }
 
 .paragraph {
-  @apply text-base;
-
-  @screen md {
-    @apply text-lg;
-  }
-
-  @screen xl {
-    @apply text-2xl;
-  }
+  @apply text-xl font-thin;
 }
 
 .module {
-  @apply py-24;
+  @apply pb-20;
+}
+
+.module--top {
+  @apply pt-20;
 }
 
 .module--large {
-  @apply py-32;
+  @apply pb-32;
 }
 
-.scroll-container {
-  @media only screen and (max-width: 640px) {
-    @apply px-0;
-  }
+.module__heading {
+  @apply text-3xl font-bold mb-4 lowercase;
+}
+
+.module__description {
+  @apply font-normal;
 }
 
 .no-scrollbar {
@@ -58,12 +55,8 @@ h6 {
   }
 
   /* Hide scrollbar for IE, Edge and Firefox */
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-}
-
-.hero {
-  @apply flex flex-col justify-center h-auto min-h-screen;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 .stacked-element {
@@ -87,4 +80,8 @@ h6 {
 
 .stacked-element--none {
   @apply opacity-0 relative;
+}
+
+.contact-form {
+  @apply max-w-md rounded-lg shadow-xl p-8 relative bg-white z-10;
 }

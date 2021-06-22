@@ -3,7 +3,6 @@ import PropTypes from "prop-types"
 import classnames from "classnames"
 import { bubble as Menu } from "react-burger-menu"
 import { useScrollPosition } from "@n8tb1t/use-scroll-position"
-import LogoSVG from "../svg/logo"
 
 const Header = ({ menuLinks }) => {
   const [menuState, setMenuState] = useState(false)
@@ -18,25 +17,28 @@ const Header = ({ menuLinks }) => {
   return (
     <header
       className={classnames(
-        "z-50 bg-transparent fixed w-full transition ease-linear duration-150",
+        "fixed z-50 bg-transparent w-full transition ease-linear duration-15 text-black",
         {
-          "text-white": !isScrolled,
           "bg-white shadow-lg text-black": isScrolled,
         }
       )}
     >
       <nav
         className={classnames(
-          "container flex flex-row justify-between items-center transition-colors transition-padding ease-in-out duration-300",
+          "container flex flex-row justify-between items-center transition-padding ease-in-out duration-300",
           {
-            "py-6 md:py-10": !isScrolled,
-            "py-4 md:py-6": isScrolled,
+            "py-4": !isScrolled,
+            "py-2": isScrolled,
           }
         )}
       >
         <h1>
-          <a href="/">
-            <LogoSVG color={isScrolled ? undefined : "white"} />
+          <a
+            href="/"
+            className="text-3xl font-bold"
+            aria-label="Link to homepage"
+          >
+            vincent
           </a>
         </h1>
 
@@ -55,7 +57,7 @@ const Header = ({ menuLinks }) => {
                 transform: "translateY(-50%)",
               },
               bmBurgerBars: {
-                background: isScrolled ? "#1a202c" : "white",
+                background: "#0A1128",
               },
               bmBurgerBarsHover: {
                 background: "#a90000",
@@ -115,11 +117,11 @@ const Header = ({ menuLinks }) => {
           </Menu>
         </div>
 
-        <ul className="flex flex-col sm:flex-row list-none -mx-4 my-0 text-xl hidden sm:flex">
+        <ul className="hidden sm:flex flex-col sm:flex-row list-none -mx-4 my-0 text-xl">
           {menuLinks.map((menuItem) => (
             <li
               key={menuItem.name}
-              className="mx-4 lowercase hover:text-brand-lightgreen"
+              className="mx-4 lowercase font-bold hover:text-brand-orange"
             >
               <a href={menuItem.link}>{menuItem.name}</a>
             </li>
