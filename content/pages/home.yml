@@ -1,0 +1,40 @@
+templateKey: index-page
+hero:
+  title: Software Engineer, Web Applications
+  content: "I'm a software engineer based in Vancouver, BC. I build solutions in
+    complex domains. <span class='text-brand-orange font-semibold'
+    style='text-decoration: underline'>Currently working on security reporting
+    tools @ Cisco.</span>"
+about:
+  title: About
+  content: Hello, I'm Vincent. I have years of working in cross-functional teams,
+    shipping and maintaining product, and transforming ideas into experiences. I
+    do full end-to-end development -- I can help build requirements-rich
+    applications, configure pipelines, or improve team operations.
+  link:
+    url: /#contact
+    text: Get in touch
+professional_background:
+  title: Professional Background
+  link:
+    text: See Linkedin
+    url: https://linkedin.com/in/leevincenth
+  work_experience:
+    - start_date: 2020-05-25T20:50:39.045Z
+      end_date: ""
+      company: Cisco
+      position: Software Engineer
+    - start_date: 2019-01-07T21:50:59.019Z
+      end_date: 2020-01-10T21:50:59.042Z
+      company: Briteweb
+      position: Fullstack Developer
+    - start_date: 2020-02-10T21:51:34.434Z
+      end_date: 2020-05-15T20:51:34.457Z
+      company: CMLS Financial
+      position: Frontend Consultant
+    - start_date: 2018-01-22T21:52:17.617Z
+      end_date: 2018-08-17T20:52:17.639Z
+      company: Grow
+      position: Software Engineer
+contact:
+  title: let's connect! tell me about your team, projects, product
