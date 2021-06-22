@@ -15,9 +15,3 @@ export const Hero = ({ title, content }) => (
     </div>
   </section>
 )
-
-Hero.defaultProps = {
-  title: "Software Engineer, Web Applications",
-  content:
-    "I'm a software engineer based in Vancouver, BC. I build solutions in complex domains. <span class='text-brand-orange font-semibold' style='text-decoration: underline'>Currently working on security reporting tools @ Cisco.</span>",
-}
