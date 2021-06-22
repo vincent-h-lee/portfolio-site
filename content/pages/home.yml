@@ -1,13 +1,12 @@
 templateKey: index-page
 hero:
   title: Software Engineer, Web Applications
-  content: "I'm a software engineer based in Vancouver, BC. I build solutions in
-    complex domains. <span class='text-brand-orange font-semibold underline'>Currently working on security reporting
-    tools @ Cisco.</span>"
+  content: I'm a software engineer based in Vancouver, BC. I build solutions in
+    complex domains. <span class='text-brand-orange font-semibold
+    underline'>Currently working on security reporting tools @ Cisco.</span>
 about:
   title: About
-  content:
-    Hello, I'm Vincent. I have years of working in cross-functional teams,
+  content: Hello, I'm Vincent. I have years of working in cross-functional teams,
     shipping and maintaining product, and transforming ideas into experiences. I
     do full end-to-end development -- I can help build requirements-rich
     applications, configure pipelines, or improve team operations.
@@ -37,4 +36,4 @@ professional_background:
       company: Grow
       position: Software Engineer
 contact:
-  title: let's connect! tell me about your team, projects, product
+  title: let's connect! tell me about your team, projects, or product
