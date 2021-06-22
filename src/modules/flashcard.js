@@ -1,4 +1,5 @@
 import React from "react"
+import classnames from "classnames"
 import UnderstatedCta from "../components/understated-cta"
 
 const skills = [
@@ -16,9 +17,9 @@ const skills = [
   },
 ]
 
-export const Flashcard = ({ title, content, link }) => {
+export const Flashcard = ({ title, content, link, screen }) => {
   return (
-    <section className="bg-brand-blue">
+    <section className={classnames("bg-brand-blue", { "flex-1 pt-32": screen })}>
       <div className="container module module--top">
         <article className="flex flex-col md:flex-row md:space-x-8">
           <div className="max-w-sm w-full"></div>

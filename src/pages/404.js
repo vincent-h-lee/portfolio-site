@@ -10,8 +10,9 @@ const NotFoundPage = () => (
 
     <Flashcard
       title="Page not found"
-      content="You might have better luck on the homepage"
+      content="Uh oh, this page doesn't exist. You might have better luck on the homepage"
       link={{ url: "/", text: "Go to homepage" }}
+      screen={true}
     />
   </Layout>
 )

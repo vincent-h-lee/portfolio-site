@@ -24,6 +24,10 @@ h6 {
   @apply font-medium m-0;
 }
 
+#gatsby-focus-wrapper {
+  @apply flex flex-col min-h-screen;
+}
+
 .paragraph {
   @apply text-xl font-thin;
 }
