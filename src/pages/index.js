@@ -11,7 +11,7 @@ import Seo from "../layout/seo"
 const IndexPage = ({ data: { page } }) => {
   return (
     <Layout>
-      <Seo title="Home" />
+      <Seo />
 
       <Hero {...page.hero} />
 

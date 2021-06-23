@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
     siteUrl: `https://www.leevincenth.com`,
-    title: `Vincent Lee Technology Consulting`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Vincent Lee`,
+    description: `Product-focused software engineer with a background in fintech and security reporting web applications.`,
+    author: `Vincent Lee`,
     mediaLinks: [
       {
         name: "Github",
