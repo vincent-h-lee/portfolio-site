@@ -1,6 +1,6 @@
 module.exports = {
   prefix: "",
-  purge: ["./src/**/*.js", "./src/**/*.jsx", "./src/**/*.ts", "./src/**/*.tsx", "./content/*"],
+  purge: ["./src/**/*.js", "./src/**/*.jsx", "./src/**/*.ts", "./src/**/*.tsx", "./content/**/*.*"],
   important: false,
   separator: ":",
   theme: {
