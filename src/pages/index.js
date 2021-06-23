@@ -1,31 +1,17 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-import { Hero } from "../modules/hero"
-import { Flashcard } from "../modules/flashcard"
-import { Details } from "../modules/details"
-import { Contact } from "../modules/contact"
+import { IndexPageTemplate } from "../templates/index-page"
 import Layout from "../layout/layout"
 import Seo from "../layout/seo"
 
-const IndexPage = ({ data: { page } }) => {
-  return (
-    <Layout>
-      <Seo />
+const IndexPage = ({ data: { page } }) => (
+  <Layout>
+    <Seo title="Home" />
 
-      <Hero {...page.hero} />
-
-      <Flashcard {...page.about} />
-
-      <Details
-        {...page.professional_background}
-        workExperience={page.professional_background.work_experience}
-      />
-
-      <Contact {...page.contact} />
-    </Layout>
-  )
-}
+    <IndexPageTemplate {...page} />
+  </Layout>
+)
 
 export default IndexPage
 

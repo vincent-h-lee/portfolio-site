@@ -18,7 +18,7 @@ collections:
     name: "pages"
     files:
       - label: "Home Page"
-        name: "home"
+        name: "index"
         file: "content/pages/home.yml"
         fields:
           - {
