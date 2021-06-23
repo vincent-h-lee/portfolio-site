@@ -16,7 +16,7 @@ const getRange = (start, end) => {
     return `${startYear} - Present`
   }
 
-  if (startYear == endYear) {
+  if (startYear === endYear) {
     return `${startYear}`
   }
 
