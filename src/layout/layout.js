@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
+import React, { useEffect } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import { FaGithub, FaLinkedinIn } from "react-icons/fa"
@@ -15,11 +15,13 @@ import "aos/dist/aos.css" // You can also use <link> for styles
 import Header from "./header"
 import "../styles/index.scss"
 
-AOS.init({
-  once: true,
-})
-
 const Layout = ({ children }) => {
+  useEffect(() => {
+    AOS.init({
+      once: true,
+    })
+  }, [])
+
   const { site } = useStaticQuery(graphql`
     query SiteQuery {
       site {
