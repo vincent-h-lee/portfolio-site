@@ -1,21 +1,7 @@
 import React from "react"
 import classnames from "classnames"
+import PropTypes from "prop-types"
 import UnderstatedCta from "../components/understated-cta"
-
-const skills = [
-  {
-    area: "backend",
-    competencies: ["nodejs", "php", "kotlin", "java", "clojure"],
-  },
-  {
-    area: "frontend",
-    competencies: ["reactjs", "vuejs"],
-  },
-  {
-    area: "infra",
-    competencies: ["gitlab-ci", "aws", "terraform"],
-  },
-]
 
 export const Flashcard = ({ title, content, link, screen }) => {
   return (
@@ -34,4 +20,14 @@ export const Flashcard = ({ title, content, link, screen }) => {
       </div>
     </section>
   )
+}
+
+Flashcard.propTypes = {
+  title: PropTypes.string,
+  content: PropTypes.string,
+  link: PropTypes.shape({
+    url: PropTypes.string,
+    text: PropTypes.string
+  }),
+  screen: PropTypes.bool
 }

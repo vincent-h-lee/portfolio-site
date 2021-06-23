@@ -1,4 +1,5 @@
 import React from "react"
+import PropTypes from "prop-types"
 import UnderstatedCta from "../components/understated-cta"
 
 /**
@@ -60,10 +61,16 @@ export const Details = ({ title, link, workExperience }) => {
   )
 }
 
-Details.defaultProps = {
-  title: "Professional Background",
-  link: {
-    url: "https://linkedin.com/in/leevincenth",
-    text: "see linkedin",
-  },
+Details.propTypes = {
+  title: PropTypes.string,
+  link: PropTypes.shape({
+    url: PropTypes.string,
+    text: PropTypes.string
+  }),
+  workExperience: PropTypes.arrayOf(PropTypes.shape({
+    company: PropTypes.string,
+    position: PropTypes.string,
+    start_date: PropTypes.string,
+    end_date: PropTypes.string
+  }))
 }

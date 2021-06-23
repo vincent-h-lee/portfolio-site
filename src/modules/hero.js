@@ -1,4 +1,5 @@
 import React from "react"
+import PropTypes from "prop-types"
 
 export const Hero = ({ title, content }) => (
   <section className="module pt-48 min-h-screen md:min-h-0">
@@ -8,10 +9,15 @@ export const Hero = ({ title, content }) => (
       </div>
       <div className="w-full">
         <div
-          className="text-2xl max-w-xl font-thin"
+          className="text-2xl font-thin"
           dangerouslySetInnerHTML={{ __html: content }}
         ></div>
       </div>
     </div>
   </section>
 )
+
+Hero.propTypes = {
+  title: PropTypes.string,
+  content: PropTypes.string
+}

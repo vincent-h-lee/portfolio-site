@@ -1,13 +1,14 @@
 import React from "react"
+import PropTypes from "prop-types"
 import { FaArrowRight } from "react-icons/fa"
 
-export const Contact = () => {
+export const Contact = ({ title }) => {
   return (
     <section className="module module--top" id="contact">
       <div className="container flex flex-col md:flex-row md:space-x-8">
         <div className="max-w-sm w-full">
           <h2 className="module__heading">
-            Let's connect! Tell me about your team, projects, product
+            {title}
           </h2>
         </div>
 
@@ -64,4 +65,8 @@ export const Contact = () => {
       </div>
     </section>
   )
+}
+
+Contact.propTypes = {
+  title: PropTypes.string
 }
