@@ -57,7 +57,7 @@ const Header = ({ menuLinks }) => {
                 transform: "translateY(-50%)",
               },
               bmBurgerBars: {
-                background: "#0A1128",
+                background: "#2D3142",
               },
               bmBurgerBarsHover: {
                 background: "#a90000",
@@ -75,13 +75,13 @@ const Header = ({ menuLinks }) => {
                 top: 0,
               },
               bmMenu: {
-                background: "#0A1128",
+                background: "#2D3142",
                 padding: "2.5em 1.5em 0",
                 fontSize: "1.15em",
                 width: "100%",
               },
               bmMorphShape: {
-                fill: "#0A1128",
+                fill: "#2D3142",
               },
               bmItemList: {
                 color: "white",
