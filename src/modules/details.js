@@ -9,8 +9,8 @@ import UnderstatedCta from "../components/understated-cta"
  * @returns {string}
  */
 const getRange = (start, end) => {
-  const startYear = (new Date(start)).getFullYear();
-  const endYear = end ? (new Date(end)).getFullYear() : null;
+  const startYear = new Date(start).getFullYear()
+  const endYear = end ? new Date(end).getFullYear() : null
 
   if (!endYear) {
     return `${startYear} - Present`
@@ -23,9 +23,7 @@ const getRange = (start, end) => {
   return `${startYear} - ${endYear}`
 }
 
-
 export const Details = ({ title, link, workExperience }) => {
-
   return (
     <section className="module module--top bg-brand-neutral">
       <div className="container">
@@ -34,7 +32,10 @@ export const Details = ({ title, link, workExperience }) => {
         <div className="flex relative md:flex-row md:space-x-16 mb-8">
           <div className="grid gap-4 md:gap-8 md:grid-cols-2 lg:grid-cols-4 w-full">
             {workExperience.map((workExp) => (
-              <div className="bg-white shadow px-4 py-2 rounded" key={workExp.company}>
+              <div
+                className="bg-white shadow px-4 py-2 rounded"
+                key={workExp.company}
+              >
                 <div className="flex flex-col h-full justify-around">
                   <h3 className="m-0 font-bold">
                     {workExp.company}
@@ -65,12 +66,14 @@ Details.propTypes = {
   title: PropTypes.string,
   link: PropTypes.shape({
     url: PropTypes.string,
-    text: PropTypes.string
+    text: PropTypes.string,
   }),
-  workExperience: PropTypes.arrayOf(PropTypes.shape({
-    company: PropTypes.string,
-    position: PropTypes.string,
-    start_date: PropTypes.string,
-    end_date: PropTypes.string
-  }))
+  workExperience: PropTypes.arrayOf(
+    PropTypes.shape({
+      company: PropTypes.string,
+      position: PropTypes.string,
+      start_date: PropTypes.string,
+      end_date: PropTypes.string,
+    })
+  ),
 }

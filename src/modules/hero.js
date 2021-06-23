@@ -19,5 +19,5 @@ export const Hero = ({ title, content }) => (
 
 Hero.propTypes = {
   title: PropTypes.string,
-  content: PropTypes.string
+  content: PropTypes.string,
 }

@@ -7,9 +7,7 @@ export const Contact = ({ title }) => {
     <section className="module module--top" id="contact">
       <div className="container flex flex-col md:flex-row md:space-x-8">
         <div className="max-w-sm w-full">
-          <h2 className="module__heading">
-            {title}
-          </h2>
+          <h2 className="module__heading">{title}</h2>
         </div>
 
         <div className="w-full">
@@ -68,5 +66,5 @@ export const Contact = ({ title }) => {
 }
 
 Contact.propTypes = {
-  title: PropTypes.string
+  title: PropTypes.string,
 }

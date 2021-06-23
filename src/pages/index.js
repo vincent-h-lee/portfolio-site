@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from 'gatsby'
+import { graphql } from "gatsby"
 
 import { Hero } from "../modules/hero"
 import { Flashcard } from "../modules/flashcard"
@@ -9,7 +9,6 @@ import Layout from "../layout/layout"
 import Seo from "../layout/seo"
 
 const IndexPage = ({ data: { page } }) => {
-  
   return (
     <Layout>
       <Seo title="Home" />
@@ -18,7 +17,10 @@ const IndexPage = ({ data: { page } }) => {
 
       <Flashcard {...page.about} />
 
-      <Details {...page.professional_background} workExperience={page.professional_background.work_experience} />
+      <Details
+        {...page.professional_background}
+        workExperience={page.professional_background.work_experience}
+      />
 
       <Contact {...page.contact} />
     </Layout>
@@ -28,37 +30,36 @@ const IndexPage = ({ data: { page } }) => {
 export default IndexPage
 
 export const pageQuery = graphql`
-query IndexPage {
-  page: pagesYaml(templateKey: {eq: "index-page"}) {
-    hero {
-      content
-      title
-    }
-    contact {
-      title
-    }
-    professional_background {
-      link {
-        text
-        url
+  query IndexPage {
+    page: pagesYaml(templateKey: { eq: "index-page" }) {
+      hero {
+        content
+        title
       }
-      title
-      work_experience {
-        company
-        end_date
-        position
-        start_date
+      contact {
+        title
       }
-    }
-    about {
-      content
-      link {
-        text
-        url
+      professional_background {
+        link {
+          text
+          url
+        }
+        title
+        work_experience {
+          company
+          end_date
+          position
+          start_date
+        }
       }
-      title
+      about {
+        content
+        link {
+          text
+          url
+        }
+        title
+      }
     }
   }
-}
-
 `
