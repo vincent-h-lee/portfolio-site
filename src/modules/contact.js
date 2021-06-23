@@ -15,7 +15,7 @@ export const Contact = ({ title, content }) => (
 
       <div
         className="w-full"
-        data-aos="fade-left"
+        data-aos="fade-up"
         data-aos-delay="200"
         data-aos-duration="1200"
       >

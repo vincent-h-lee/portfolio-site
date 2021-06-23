@@ -7,7 +7,7 @@ export const Flashcard = ({ title, content, link, screen }) => (
   <section className={classnames("bg-brand-blue", { "flex-1 pt-32": screen })}>
     <div
       className="container module module--top"
-      data-aos="fade-right"
+      data-aos="fade-up"
       data-aos-delay="200"
       data-aos-offset="300"
       data-aos-duration="1200"
