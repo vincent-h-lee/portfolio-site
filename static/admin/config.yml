@@ -82,6 +82,7 @@ collections:
             summary: "{{fields.title}}"
             fields:
               - { label: "Title", name: "title", widget: "string" }
+              - { label: "Content", name: "content", widget: "markdown" }
   - name: "blog"
     label: "Blog"
     folder: "content/blog"
