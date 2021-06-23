@@ -5,7 +5,13 @@ import UnderstatedCta from "../components/understated-cta"
 
 export const Flashcard = ({ title, content, link, screen }) => (
   <section className={classnames("bg-brand-blue", { "flex-1 pt-32": screen })}>
-    <div className="container module module--top">
+    <div
+      className="container module module--top"
+      data-aos="fade-right"
+      data-aos-delay="200"
+      data-aos-offset="300"
+      data-aos-duration="1200"
+    >
       <article className="flex flex-col md:flex-row md:space-x-8">
         <div className="p-4 md:p-8 rounded w-full bg-white">
           <h2 className="text-brand-darkblue module__heading">{title}</h2>

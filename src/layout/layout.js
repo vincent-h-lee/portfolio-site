@@ -9,9 +9,15 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import { FaGithub, FaLinkedinIn } from "react-icons/fa"
+import AOS from "aos"
+import "aos/dist/aos.css" // You can also use <link> for styles
 
 import Header from "./header"
 import "../styles/index.scss"
+
+AOS.init({
+  once: true,
+})
 
 const Layout = ({ children }) => {
   const { site } = useStaticQuery(graphql`

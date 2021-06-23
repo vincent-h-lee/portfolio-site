@@ -13,7 +13,12 @@ export const Contact = ({ title, content }) => (
         />
       </div>
 
-      <div className="w-full">
+      <div
+        className="w-full"
+        data-aos="fade-left"
+        data-aos-delay="200"
+        data-aos-duration="1200"
+      >
         <div className="mx-auto p-4 md:p-8 shadow rounded bg-white relative">
           <div
             className="absolute w-full h-full bg-brand-blue rounded"
