@@ -36,11 +36,19 @@ h6 {
 }
 
 .module {
-  @apply pb-20;
+  @apply pb-24;
+
+  @screen md {
+    @apply pb-32;
+  }
 }
 
 .module--top {
-  @apply pt-20;
+  @apply pt-24;
+
+  @screen md {
+    @apply pt-32;
+  }
 }
 
 .module--large {

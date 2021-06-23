@@ -7,7 +7,6 @@ export const Flashcard = ({ title, content, link, screen }) => (
   <section className={classnames("bg-brand-blue", { "flex-1 pt-32": screen })}>
     <div className="container module module--top">
       <article className="flex flex-col md:flex-row md:space-x-8">
-        <div className="max-w-sm w-full"></div>
         <div className="p-4 md:p-8 rounded w-full bg-white">
           <h2 className="text-brand-darkblue module__heading">{title}</h2>
           <div
@@ -18,6 +17,7 @@ export const Flashcard = ({ title, content, link, screen }) => (
             {link.text}
           </UnderstatedCta>
         </div>
+        <div className="max-w-sm w-full"></div>
       </article>
     </div>
   </section>
