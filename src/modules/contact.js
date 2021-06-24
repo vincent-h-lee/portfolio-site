@@ -4,7 +4,7 @@ import { FaArrowRight } from "react-icons/fa"
 
 export const Contact = ({ title, content }) => (
   <section className="module module--top" id="contact">
-    <div className="container flex flex-col md:flex-row md:space-x-8">
+    <div className="container flex flex-col md:flex-row space-y-8 md:space-y-0 md:space-x-8">
       <div className="max-w-sm w-full">
         <h2 className="module__heading">{title}</h2>
         <div
