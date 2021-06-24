@@ -51,11 +51,10 @@ const Layout = ({ children }) => {
       <footer className="bg-brand-darkblue">
         <section className="container text-white py-4 flex justify-between items-center">
           <p className="text-white font-semibold">Site by Vincent Lee</p>
-          <div className="flex flex-row items-center text-2xl">
+          <div className="flex flex-row items-center text-2xl space-x-4">
             <a
               href="https://github.com/vincent-h-lee"
               target="_blank"
-              className="mr-2"
               rel="noreferrer"
             >
               <FaGithub aria-label="Github" />
