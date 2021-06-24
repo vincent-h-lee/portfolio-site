@@ -58,7 +58,7 @@ export const Contact = ({ title, content }) => (
               </label>
             </div>
             <div className="flex flex-row justify-center w-full">
-              <button className="group flex flex-row items-center text-brand-orange border-brand-orange border-2 outline-none px-5 py-3 mt-4 rounded font-bold duration-150">
+              <button className="group flex flex-row items-center text-brand-orange border-brand-orange border-2 outline-none px-5 py-3 mt-4 rounded font-bold duration-150 lowercase">
                 Contact
                 <span className="ml-1 transform transition-transform duration-150 group-hover:translate-x-1">
                   <FaArrowRight />
