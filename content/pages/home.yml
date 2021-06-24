@@ -8,27 +8,26 @@ hero:
 about:
   title: about
   content: >-
-    Hi, I'm Vincent. I enjoy deep-diving into products, understanding complex
+    Hi, I'm Vincent. I enjoy deep-diving into products and complex
     domains, building features end-to-end, and collaborating with
     cross-functional teams.
 
-
-    <br/>
 
     Some of the technologies I've been working with:
 
 
     * react
 
-    * concourse
-
+    * typescript
+    
     * aws
 
     * clojure, kotlin, java
 
+    * concourse
+
     * terraform
 
-    * typescript
   link:
     url: /#contact
     text: Get in touch

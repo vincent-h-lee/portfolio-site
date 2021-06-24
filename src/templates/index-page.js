@@ -13,7 +13,10 @@ export const IndexPageTemplate = ({
   <>
     <Hero {...hero} />
 
-    <Flashcard {...about} />
+    <Flashcard
+      {...about}
+      avatar={{ src: "/profile.png", alt: "vincent lee profile avatar" }}
+    />
 
     <Details
       {...professional_background}

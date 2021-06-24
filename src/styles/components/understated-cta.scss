@@ -1,5 +1,5 @@
 .understated-button {
-  @apply mt-8 text-xl font-semibold bg-transparent border-0 relative lowercase;
+  @apply text-xl font-semibold bg-transparent border-0 relative lowercase;
 
   &:after {
     content: "";

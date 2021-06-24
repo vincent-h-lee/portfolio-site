@@ -56,10 +56,18 @@ h6 {
 }
 
 .module__heading {
-  @apply text-3xl font-bold mb-4 lowercase;
+  @apply text-3xl font-bold mb-8 lowercase;
 }
 
 .flashcard__markdown {
+  p {
+    @apply pb-2;
+
+    &:last-child {
+      @apply pb-0;
+    }
+  }
+
   ul {
     @apply grid;
 

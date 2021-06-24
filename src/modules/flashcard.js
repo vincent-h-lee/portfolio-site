@@ -4,12 +4,8 @@ import PropTypes from "prop-types"
 import UnderstatedCta from "../components/understated-cta"
 import { Markdown } from "../components/markdown"
 
-export const Flashcard = ({ title, content, link, screen }) => (
-  <section
-    className={classnames("flashcard", "bg-brand-blue", {
-      "flex-1 pt-32": screen,
-    })}
-  >
+export const Flashcard = ({ title, content, link, avatar }) => (
+  <section className={classnames("flashcard", "bg-brand-blue")}>
     <div
       className="container module module--top"
       data-aos="fade-up"
@@ -19,14 +15,21 @@ export const Flashcard = ({ title, content, link, screen }) => (
     >
       <article className="flex flex-col lg:flex-row lg:space-x-8">
         <div className="p-4 md:p-8 rounded w-full bg-white">
-          <h2 className="text-brand-darkblue module__heading">{title}</h2>
+          <h2 className="module__heading">{title}</h2>
+
           <Markdown
-            className="paragraph mb-8 flashcard__markdown"
+            className="paragraph mb-4 flashcard__markdown"
             content={content}
           />
-          <UnderstatedCta as="a" href={link.url}>
-            {link.text}
-          </UnderstatedCta>
+
+          <div className="flex flex-row space-x-4 items-center">
+            {avatar && (
+              <img src={avatar.src} alt={avatar.alt} className="w-16 h-16" />
+            )}
+            <UnderstatedCta as="a" href={link.url}>
+              {link.text}
+            </UnderstatedCta>
+          </div>
         </div>
         <div className="max-w-sm w-full"></div>
       </article>
@@ -41,5 +44,8 @@ Flashcard.propTypes = {
     url: PropTypes.string,
     text: PropTypes.string,
   }),
-  screen: PropTypes.bool,
+  avatar: PropTypes.shape({
+    url: PropTypes.string,
+    src: PropTypes.string,
+  }),
 }
