@@ -58,3 +58,17 @@ h6 {
 .module__heading {
   @apply text-3xl font-bold mb-4 lowercase;
 }
+
+.flashcard__markdown {
+  ul {
+    @apply grid;
+
+    @screen sm {
+      @apply grid-cols-2;
+    }
+
+    li {
+      @apply list-inside list-disc;
+    }
+  }
+}
