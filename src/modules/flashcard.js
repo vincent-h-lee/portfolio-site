@@ -15,21 +15,21 @@ export const Flashcard = ({ title, content, link, avatar }) => (
     >
       <article className="flex flex-col lg:flex-row lg:space-x-8">
         <div className="p-4 md:p-8 rounded w-full bg-white">
-          <h2 className="module__heading">{title}</h2>
+          <div className="flex flex-row space-x-4 items-center mt-4 md:mt-0 mb-4">
+            {avatar && (
+              <img src={avatar.src} alt={avatar.alt} className="w-16 h-16" />
+            )}
+            <h2 className="text-3xl font-bold">{title}</h2>
+          </div>
 
           <Markdown
             className="paragraph mb-4 flashcard__markdown"
             content={content}
           />
 
-          <div className="flex flex-row space-x-4 items-center">
-            {avatar && (
-              <img src={avatar.src} alt={avatar.alt} className="w-16 h-16" />
-            )}
-            <UnderstatedCta as="a" href={link.url}>
-              {link.text}
-            </UnderstatedCta>
-          </div>
+          <UnderstatedCta as="a" href={link.url}>
+            {link.text}
+          </UnderstatedCta>
         </div>
         <div className="max-w-sm w-full"></div>
       </article>
