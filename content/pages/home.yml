@@ -8,9 +8,8 @@ hero:
 about:
   title: about
   content: >-
-    Hi, I'm Vincent. I enjoy deep-diving into products and complex
-    domains, building features end-to-end, and collaborating with
-    cross-functional teams.
+    Hi, I'm Vincent. I enjoy deep-diving into web products in complex domains,
+    building features end-to-end, and collaborating with cross-functional teams.
 
 
     Some of the technologies I've been working with:
@@ -19,15 +18,14 @@ about:
     * react
 
     * typescript
-    
+
     * aws
 
     * clojure, kotlin, java
 
     * concourse
 
-    * terraform
-
+      I have also done design-forward builds of e-commerce and branding sites on the JAMstack, Wordpress, and Shopify.
   link:
     url: /#contact
     text: Get in touch
