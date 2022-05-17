@@ -13,8 +13,8 @@ export const Hero = () => (
       </Box>
       <Box>
         <Text fontSize="xl">
-          I'm a software engineer based in Vancouver, BC. I build solutions for
-          the web in complex domains. Currently working on an enterprise
+          I&apos;m a software engineer based in Vancouver, BC. I build solutions
+          for the web in complex domains. Currently working on an enterprise
           ecommerce build with the{" "}
           <Link
             href="https://www.linkedin.com/company/tile"
