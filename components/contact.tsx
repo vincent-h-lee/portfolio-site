@@ -18,14 +18,16 @@ export const Contact = () => (
     centerContent
     mb="24"
   >
-    <Stack spacing={3} shadow="md" borderWidth="1px" p="8" w="66%">
-      <form
-        name="contact"
-        method="post"
-        action="/pages/success"
-        data-netlify="true"
-        data-netlify-honeypot="bot-field"
-      >
+    <Box
+      w="66%"
+      as="form"
+      name="contact"
+      method="post"
+      action="/pages/success"
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
+    >
+      <Stack spacing={4} shadow="md" borderWidth="1px" p="8">
         <input type="hidden" name="form-name" value="contact" />
 
         <Heading as="h2" fontSize="3xl">
@@ -56,7 +58,7 @@ export const Contact = () => (
             Send
           </Button>
         </Box>
-      </form>
-    </Stack>
+      </Stack>
+    </Box>
   </Container>
 );
