@@ -119,7 +119,9 @@ export const Contact = () => {
             </Heading>
 
             <FormControl isRequired>
-              <FormLabel htmlFor="contact-email">email</FormLabel>
+              <FormLabel htmlFor="contact-email" id="contact-email-label">
+                email
+              </FormLabel>
               <Input
                 id="contact-email"
                 autoComplete="email"
@@ -130,7 +132,9 @@ export const Contact = () => {
               />
             </FormControl>
             <FormControl isRequired>
-              <FormLabel htmlFor="contact-message">message</FormLabel>
+              <FormLabel htmlFor="contact-message" id="contact-message-label">
+                message
+              </FormLabel>
               <Textarea
                 id="contact-message"
                 name="message"
