@@ -36,8 +36,6 @@ const links = [
   },
 ];
 
-const btnRef = createRef();
-
 export const Navigation = () => {
   const btnRef = useRef(null);
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -55,9 +53,7 @@ export const Navigation = () => {
         fontWeight="semibold"
       >
         <Flex justifyContent="space-between" alignItems="center">
-          <Link href="/" passHref>
-            <ChakraLink>vincent</ChakraLink>
-          </Link>
+          <ChakraLink href="/">vincent</ChakraLink>
 
           <Hide above="md">
             <Button variant="ghost" ref={btnRef} onClick={onOpen}>
