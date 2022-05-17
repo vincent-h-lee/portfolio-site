@@ -12,6 +12,7 @@ export const Footer = () => (
             href="https://github.com/vincent-h-lee"
             isExternal={true}
             px="2"
+            aria-label="Vincent Lee Github profile"
           >
             <FaGithub aria-label="Github" size="24" />
           </Link>
@@ -19,6 +20,7 @@ export const Footer = () => (
             href="https://linkedin.com/in/leevincenth"
             isExternal={true}
             px="2"
+            aria-label="Vincent Lee Linkedin profile"
           >
             <FaLinkedinIn aria-label="Linkedin" size="24" />
           </Link>
