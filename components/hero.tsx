@@ -4,7 +4,10 @@ export const Hero = () => (
   <Container as="section" maxW="container.lg">
     <Stack
       spacing="12"
-      py="48"
+      py={{
+        base: "24",
+        lg: "48",
+      }}
       alignItems="center"
       direction={{ base: "column", lg: "row" }}
     >

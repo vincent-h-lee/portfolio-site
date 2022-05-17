@@ -19,7 +19,10 @@ export const Contact = () => (
     mb="24"
   >
     <Box
-      w="66%"
+      w={{
+        base: "full",
+        lg: "66%",
+      }}
       as="form"
       name="contact"
       method="post"
