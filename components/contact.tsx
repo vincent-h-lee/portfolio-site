@@ -92,18 +92,18 @@ export const Contact = () => {
       centerContent
       mb="24"
     >
-      <form
-        onSubmit={handleSubmit}
-        name="contact"
-        method="post"
-        data-netlify="true"
-        data-netlify-honeypot="bot-field"
+      <Box
+        w={{
+          base: "full",
+          lg: "66%",
+        }}
       >
-        <Box
-          w={{
-            base: "full",
-            lg: "66%",
-          }}
+        <form
+          onSubmit={handleSubmit}
+          name="contact"
+          method="post"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
         >
           <Stack spacing={4} shadow="md" borderWidth="1px" p="8">
             <input type="hidden" name="form-name" value="contact" />
@@ -140,8 +140,8 @@ export const Contact = () => {
 
             {renderFormStatus()}
           </Stack>
-        </Box>
-      </form>
+        </form>
+      </Box>
     </Container>
   );
 };
