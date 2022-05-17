@@ -56,8 +56,13 @@ export const Navigation = () => {
           <ChakraLink href="/">vincent</ChakraLink>
 
           <Hide above="md">
-            <Button variant="ghost" ref={btnRef} onClick={onOpen}>
-              <FaHamburger aria-label="mobile menu toggle" size="24" />
+            <Button
+              variant="ghost"
+              ref={btnRef}
+              onClick={onOpen}
+              aria-label="mobile menu toggle"
+            >
+              <FaHamburger aria-label="mobile menu toggle icon" size="24" />
             </Button>
 
             <Drawer
