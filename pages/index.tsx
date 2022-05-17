@@ -9,6 +9,7 @@ const Home: NextPage = () => {
   return (
     <div>
       <Head>
+        <html lang="en" />
         <title>Vincent Lee, software engineer</title>
         <meta
           name="description"
