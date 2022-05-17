@@ -47,11 +47,14 @@ export const Navigation = () => {
       <Container
         maxW="container.lg"
         as="nav"
-        py="6"
+        py={{
+          base: "4",
+          lg: "6",
+        }}
         fontSize="lg"
         fontWeight="semibold"
       >
-        <Flex justifyContent="space-between">
+        <Flex justifyContent="space-between" alignItems="center">
           <Link href="/" passHref>
             <ChakraLink>vincent</ChakraLink>
           </Link>
