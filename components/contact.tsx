@@ -1,6 +1,8 @@
 import {
   Alert,
+  AlertDescription,
   AlertIcon,
+  AlertTitle,
   Box,
   Button,
   CloseButton,
@@ -55,12 +57,17 @@ export const Contact = () => {
         return (
           <Alert status="success">
             <AlertIcon />
-            Message received!
+
+            <Box>
+              <AlertTitle>Success</AlertTitle>
+              <AlertDescription>Message received!</AlertDescription>
+            </Box>
+
             <CloseButton
               alignSelf="flex-start"
-              position="relative"
-              right={-1}
-              top={-1}
+              position="absolute"
+              right="12px"
+              top="12px"
               onClick={onClose}
             />
           </Alert>
@@ -69,12 +76,17 @@ export const Contact = () => {
         return (
           <Alert status="error">
             <AlertIcon />
-            Something went wrong with the contact form.
+            <Box>
+              <AlertTitle>Error</AlertTitle>
+              <AlertDescription>
+                Something went wrong with your submission.
+              </AlertDescription>
+            </Box>
             <CloseButton
               alignSelf="flex-start"
-              position="relative"
-              right={-1}
-              top={-1}
+              position="absolute"
+              right="12px"
+              top="12px"
               onClick={onClose}
             />
           </Alert>
@@ -133,7 +145,12 @@ export const Contact = () => {
               />
             </FormControl>
             <Box>
-              <Button type="submit" px="8" disabled={isLoading}>
+              <Button
+                type="submit"
+                px="8"
+                disabled={isLoading}
+                isLoading={isLoading}
+              >
                 Send
               </Button>
             </Box>
