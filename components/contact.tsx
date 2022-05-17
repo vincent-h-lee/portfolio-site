@@ -16,12 +16,6 @@ import {
 } from "@chakra-ui/react";
 import { FormEventHandler, useState } from "react";
 
-const encode = (data: any) => {
-  return Object.keys(data)
-    .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-    .join("&");
-};
-
 export const Contact = () => {
   const [status, setStatus] = useState<
     "loading" | "success" | "error" | "idle"
@@ -38,7 +32,7 @@ export const Contact = () => {
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode(data),
+      body: new URLSearchParams(data as Record<string, string>).toString(),
     })
       .then(() => {
         setStatus("success");
