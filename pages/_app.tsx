@@ -15,6 +15,15 @@ const theme = extendTheme(
         xl: "1280px",
       },
     },
+    components: {
+      Form: {
+        baseStyle: {
+          requiredIndicator: {
+            color: "red.600",
+          },
+        },
+      },
+    },
   },
   baseTheme
 );
