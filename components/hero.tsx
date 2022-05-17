@@ -16,7 +16,7 @@ export const Hero = () => (
       </Box>
       <Box>
         <Text fontSize="xl">
-          I&apos;m a software engineer based in Vancouver, BC. I build solutions
+          I&apos;m, Vincent Lee, a software engineer based in Vancouver, BC. I build solutions
           for the web. Currently working on an
           ecommerce solution with the{" "}
           <Link
