@@ -114,7 +114,7 @@ export const Contact = () => {
           <Stack spacing={4} shadow="md" borderWidth="1px" p="8">
             <input type="hidden" name="form-name" value="contact" />
 
-            <Heading as="h2" fontSize="3xl">
+            <Heading as="h2" fontSize="2xl">
               get in touch
             </Heading>
 
