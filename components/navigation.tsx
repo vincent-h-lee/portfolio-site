@@ -8,15 +8,12 @@ import {
   DrawerContent,
   DrawerOverlay,
   Flex,
-  Hide,
   HStack,
   Link as ChakraLink,
-  Show,
   useDisclosure,
   VStack,
 } from "@chakra-ui/react";
-import Link from "next/link";
-import { createRef, useRef } from "react";
+import { useRef } from "react";
 import { FaHamburger } from "react-icons/fa";
 
 const links = [
@@ -55,7 +52,7 @@ export const Navigation = () => {
         <Flex justifyContent="space-between" alignItems="center">
           <ChakraLink href="/">vincent</ChakraLink>
 
-          <Hide above="md">
+          <Box display={{ md: "none" }}>
             <Button
               variant="ghost"
               ref={btnRef}
@@ -64,35 +61,9 @@ export const Navigation = () => {
             >
               <FaHamburger aria-label="mobile menu toggle icon" size="24" />
             </Button>
+          </Box>
 
-            <Drawer
-              isOpen={isOpen}
-              placement="right"
-              onClose={onClose}
-              finalFocusRef={btnRef}
-            >
-              <DrawerOverlay />
-              <DrawerContent>
-                <DrawerCloseButton />
-
-                <DrawerBody>
-                  <VStack spacing="4" py="12" fontWeight="semibold">
-                    {links.map(({ text, href, isExternal }) => (
-                      <ChakraLink
-                        key={text}
-                        href={href}
-                        isExternal={isExternal ?? false}
-                      >
-                        {text}
-                      </ChakraLink>
-                    ))}
-                  </VStack>
-                </DrawerBody>
-              </DrawerContent>
-            </Drawer>
-          </Hide>
-
-          <Show above="md">
+          <Box display={{ base: "none", md: "block" }}>
             <HStack spacing="4">
               {links.map(({ text, href, isExternal }) => (
                 <ChakraLink
@@ -104,9 +75,37 @@ export const Navigation = () => {
                 </ChakraLink>
               ))}
             </HStack>
-          </Show>
+          </Box>
         </Flex>
       </Container>
+
+      <Drawer
+        isOpen={isOpen}
+        placement="right"
+        onClose={onClose}
+        finalFocusRef={btnRef}
+        size="full"
+      >
+        <DrawerOverlay />
+        <DrawerContent>
+          <DrawerCloseButton />
+
+          <DrawerBody display="flex" flexDir="column" justifyContent="center">
+            <VStack spacing="6" py="12" fontWeight="semibold" fontSize="2xl">
+              {links.map(({ text, href, isExternal }) => (
+                <ChakraLink
+                  key={text}
+                  href={href}
+                  isExternal={isExternal ?? false}
+                  fontWeight="semibold"
+                >
+                  {text}
+                </ChakraLink>
+              ))}
+            </VStack>
+          </DrawerBody>
+        </DrawerContent>
+      </Drawer>
     </Box>
   );
 };
