@@ -16,13 +16,14 @@ export const Hero = () => (
       </Box>
       <Box>
         <Text fontSize="xl">
-          I&apos;m, Vincent Lee, a software engineer based in Vancouver, BC. I build solutions
-          for the web. Currently working on an
-          ecommerce solution with the{" "}
+          I&apos;m, Vincent Lee, a software engineer based in Vancouver, BC. I
+          build solutions for the web. Currently working on an ecommerce
+          solution with the{" "}
           <Link
             href="https://www.linkedin.com/company/tile"
             display="inline"
-            textDecoration="underline"
+            color="cyan.600"
+            fontWeight="bold"
             isExternal={true}
           >
             web and platform team at Tile.
