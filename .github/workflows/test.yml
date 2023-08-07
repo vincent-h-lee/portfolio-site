@@ -1,0 +1,14 @@
+name: test
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: vincent-h-lee/sitemap-urls-test-action
+        with:
+          sitemap_url: https://leevincenth.com/sitemap.xml
