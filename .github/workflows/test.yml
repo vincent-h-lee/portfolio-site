@@ -9,6 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: vincent-h-lee/sitemap-urls-test-action
+      - name: Sitemap URLs Test Action
+        uses: vincent-h-lee/sitemap-urls-test-action@v1.2.1
         with:
           sitemap_url: https://leevincenth.com/sitemap.xml
