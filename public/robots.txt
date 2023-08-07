@@ -1,9 +1,0 @@
-# *
-User-agent: *
-Allow: /
-
-# Host
-Host: https://leevincenth.com
-
-# Sitemaps
-Sitemap: https://leevincenth.com/sitemap.xml
