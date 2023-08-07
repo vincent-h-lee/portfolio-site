@@ -22,7 +22,7 @@ export const Hero = () => (
           <Link
             href="https://www.linkedin.com/company/tile"
             display="inline"
-            color="cyan.600"
+            color="cyan.800"
             fontWeight="bold"
             isExternal={true}
           >
