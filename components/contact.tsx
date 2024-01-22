@@ -111,7 +111,14 @@ export const Contact = () => {
           data-netlify="true"
           data-netlify-honeypot="bot-field"
         >
-          <Stack spacing={4} shadow="md" borderWidth="1px" p="8">
+          <Stack
+            spacing={4}
+            shadow="md"
+            borderWidth="1px"
+            py="8"
+            px="4"
+            borderRadius="lg"
+          >
             <input type="hidden" name="form-name" value="contact" />
 
             <Heading as="h2" fontSize="2xl">
